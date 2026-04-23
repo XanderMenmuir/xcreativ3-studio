@@ -4,7 +4,7 @@ l>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>xcreativ3™ — Brand Identity Studio</title>
+<title>xcreativ3™   Brand Identity Studio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
@@ -217,20 +217,100 @@ section { padding: 7rem 5%; }
 }
 .slots-text p { font-size: 0.8rem; color: var(--muted-dark); margin-top: 0.2rem; }
 
+/* LOGO SECTION DARK */
+.pkg-logo-section {
+  background: var(--black);
+  padding: 7rem 5%;
+}
+.pkg-logo-section .pkg-section-title { color: var(--white); }
+.pkg-logo-section .pkg-section-desc { color: var(--muted-dark); }
+.packages--identity { padding-top: 7rem; }
+
+.packages-grid--single {
+  grid-template-columns: repeat(3, 1fr);
+}
+.packages-grid--single .pkg-card {
+  grid-column: 1 / -1;
+}
+@media (max-width: 600px) {
+  .packages-grid--single { grid-template-columns: 1fr; }
+}
+
+/* DARK CARD VARIANT */
+.pkg-card--dark {
+  background: var(--off-black);
+  border: 1px solid var(--border-dark);
+}
+.pkg-card--dark:hover { background: #181818; }
+.pkg-card--dark .pkg-name { color: var(--white); }
+.pkg-card--dark .pkg-tagline { color: var(--grey); }
+.pkg-card--dark .pkg-desc { color: var(--muted-dark); }
+.pkg-divider--dark { background: var(--border-dark); }
+.pkg-includes-toggle--dark { color: var(--grey); }
+.pkg-includes-toggle--dark:hover { color: var(--red); }
+.pkg-includes--dark ul li { color: var(--muted-dark); border-bottom-color: rgba(255,255,255,0.04); }
+.pkg-detail-toggle--dark { color: var(--muted-dark); }
+.pkg-detail-toggle--dark:hover { color: var(--red); }
+.pkg-detail-toggle--dark.open { color: var(--red); }
+.pkg-detail-panel--dark { border-top-color: var(--border-dark); }
+.pkg-detail-panel--dark .pkg-detail-group-title { color: var(--red); }
+.pkg-detail-panel--dark .pkg-detail-group ul li { color: var(--muted-dark); border-bottom-color: rgba(255,255,255,0.04); }
+.pkg-detail-panel--dark .pkg-detail-group ul li::before { background: rgba(180,0,13,0.5); }
+.pkg-cta--dark {
+  border-color: var(--border-dark);
+  color: var(--muted-dark);
+}
+.pkg-cta--dark:hover { border-color: var(--red); color: var(--red); }
+
+/* PACKAGES SECTION DARK GRID */
+.pkg-logo-section .packages-grid--single {
+  background: var(--border-dark);
+  border-color: var(--border-dark);
+}
+.pkg-section-header {
+  margin-bottom: 2rem;
+}
+.pkg-section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--light-text);
+  margin-bottom: 1rem; line-height: 1.05;
+  display: flex; align-items: center; gap: 0.9rem;
+}
+.pkg-section-title::before {
+  content: none;
+}
+.pkg-section-desc {
+  font-size: 0.88rem; color: var(--light-muted);
+  line-height: 1.85; max-width: 100%;
+}
+.packages-grid--single {
+  grid-template-columns: repeat(3, 1fr);
+}
+.packages-grid--single .pkg-card {
+  grid-column: 1 / -1;
+}
+@media (max-width: 600px) {
+  .packages-grid--single { grid-template-columns: 1fr; }
+}
+
 /* PACKAGES */
 .packages { background: var(--light-bg); }
 .packages-header {
-  display: flex; justify-content: space-between; align-items: flex-end;
-  flex-wrap: wrap; gap: 2rem; margin-bottom: 4rem;
+  margin-bottom: 4rem;
 }
 .packages .section-label { color: var(--red); }
 .packages .section-label::before { background: var(--red); }
 .packages .section-title { color: var(--light-text); }
 .packages-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1px; background: var(--light-border);
   border: 1px solid var(--light-border);
+}
+@media (max-width: 900px) {
+  .packages-grid { grid-template-columns: 1fr; }
 }
 .pkg-card {
   background: var(--light-bg2);
@@ -312,6 +392,47 @@ section { padding: 7rem 5%; }
 }
 .pkg-actions {
   margin-top: auto; padding-top: 2rem;
+}
+/* Detailed breakdown */
+.pkg-detail-toggle {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.65rem; letter-spacing: 0.11em; text-transform: uppercase;
+  color: var(--light-muted); font-weight: 500; font-family: 'DM Sans', sans-serif;
+  cursor: pointer; background: none; border: none; padding: 0;
+  transition: color 0.2s; margin-top: 0.9rem;
+}
+.pkg-detail-toggle:hover { color: var(--red); }
+.pkg-detail-toggle svg { transition: transform 0.3s; flex-shrink: 0; }
+.pkg-detail-toggle.open svg { transform: rotate(180deg); }
+.pkg-detail-toggle.open { color: var(--red); }
+.pkg-detail-panel {
+  display: none; margin-top: 1rem;
+  border-top: 1px dashed var(--light-border);
+  padding-top: 1rem;
+}
+.pkg-detail-panel.open { display: block; }
+.pkg-detail-group { margin-bottom: 1.2rem; }
+.pkg-detail-group:last-child { margin-bottom: 0; }
+.pkg-detail-group-title {
+  font-size: 0.63rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--red); font-weight: 700; margin-bottom: 0.5rem;
+  font-family: 'DM Sans', sans-serif;
+}
+.pkg-detail-group ul { list-style: none; }
+.pkg-detail-group ul li {
+  font-size: 0.8rem; color: var(--light-muted);
+  padding: 0.28rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.03);
+  display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.5;
+}
+.pkg-detail-group ul li::before {
+  content: ' '; color: rgba(180,0,13,0.4); flex-shrink: 0;
+  font-size: 0.7rem; margin-top: 0.05rem;
+}
+.pkg-detail-note {
+  font-size: 0.78rem; color: rgba(180,0,13,0.7);
+  font-style: italic; line-height: 1.6; margin-top: 0.6rem;
+  border-left: 2px solid rgba(180,0,13,0.3); padding-left: 0.75rem;
 }
 .pkg-cta {
   display: block; width: 100%; padding: 0.9rem; text-align: center;
@@ -460,7 +581,7 @@ section { padding: 7rem 5%; }
 .cs-card-link svg { transition: transform 0.3s; }
 .cs-card:hover .cs-card-link svg { transform: translateX(4px); }
 
-/* — DETAILED CASE STUDY PANEL — */
+/*   DETAILED CASE STUDY PANEL   */
 .cs-detail {
   display: none;
   background: var(--off-black);
@@ -605,12 +726,12 @@ footer {
 }
 
 /* PROCESS */
-.process-section { background: var(--light-bg); padding: 7rem 5%; }
+.process-section { background: var(--black); padding: 7rem 5%; }
 .process-section .section-label { color: var(--red); }
 .process-section .section-label::before { background: var(--red); }
-.process-section .section-title { color: var(--light-text); }
+.process-section .section-title { color: var(--white); }
 .process-intro {
-  font-size: 0.92rem; color: var(--light-muted);
+  font-size: 0.92rem; color: var(--muted-dark);
   line-height: 1.8; max-width: 520px; margin-bottom: 5rem;
 }
 .process-steps { display: flex; flex-direction: column; gap: 0; }
@@ -618,12 +739,12 @@ footer {
   display: grid;
   grid-template-columns: 80px 1fr;
   gap: 0 3rem;
-  border-top: 1px solid var(--light-border);
+  border-top: 1px solid var(--border-dark);
   padding: 2.4rem 0;
   transition: background 0.3s;
 }
-.process-step:last-child { border-bottom: 1px solid var(--light-border); }
-.process-step:hover { background: rgba(0,0,0,0.02); }
+.process-step:last-child { border-bottom: 1px solid var(--border-dark); }
+.process-step:hover { background: rgba(255,255,255,0.02); }
 .process-step-num {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.65rem; font-weight: 700;
@@ -639,10 +760,10 @@ footer {
 .process-step-title {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem; font-weight: 600;
-  color: var(--light-text); line-height: 1.2; letter-spacing: -0.01em;
+  color: var(--white); line-height: 1.2; letter-spacing: -0.01em;
 }
 .process-step-body {
-  font-size: 0.87rem; color: var(--light-muted); line-height: 1.82; margin-top: 0.2rem;
+  font-size: 0.87rem; color: var(--muted-dark); line-height: 1.82; margin-top: 0.2rem;
 }
 .process-step-note {
   margin-top: 0.8rem; font-size: 0.78rem; color: rgba(180,0,13,0.7);
@@ -652,19 +773,19 @@ footer {
 .process-img-toggle {
   display: inline-flex; align-items: center; gap: 0.45rem;
   font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--light-muted); font-weight: 500;
+  color: var(--muted-dark); font-weight: 500;
   font-family: 'DM Sans', sans-serif;
   background: none; border: none; padding: 0;
   cursor: pointer; margin-top: 0.9rem; transition: color 0.25s;
 }
-.process-img-toggle:hover { color: var(--light-text); }
+.process-img-toggle:hover { color: var(--white); }
 .process-img-toggle svg { transition: transform 0.3s; flex-shrink: 0; }
 .process-img-toggle.open svg { transform: rotate(180deg); }
 .process-img-toggle.open { color: var(--red); }
 .process-img-drawer {
   display: none; margin-top: 0.9rem;
 }
-.process-section .process-step-img-wrap { border-color: var(--light-border); }
+.process-section .process-step-img-wrap { border-color: var(--border-dark); }
 .process-img-drawer.open { display: block; }
 .process-step-img-wrap {
   width: 100%; aspect-ratio: 16/9;
@@ -676,6 +797,86 @@ footer {
 }
 @media (max-width: 900px) {
   .process-step { grid-template-columns: 44px 1fr; gap: 0 1.2rem; }
+}
+
+/* ABOUT */
+.about-section {
+  background: var(--black);
+  padding: 7rem 5%;
+  border-top: 1px solid var(--border-dark);
+  border-bottom: 1px solid var(--border-dark);
+}
+.about-inner {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 6rem;
+  align-items: center;
+  max-width: 1200px;
+}
+.about-img-wrap {
+  position: relative;
+}
+.about-img {
+  width: 100%;
+  display: block;
+  filter: grayscale(15%);
+}
+.about-img-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(10,10,10,0.4), transparent);
+  pointer-events: none;
+}
+.about-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+.about-role {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--red);
+  font-weight: 500;
+  margin-bottom: 1.8rem;
+}
+.about-divider {
+  height: 1px;
+  background: var(--border-dark);
+  margin-bottom: 1.8rem;
+}
+.about-body {
+  font-size: 0.92rem;
+  color: var(--muted-dark);
+  line-height: 1.85;
+}
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+.about-tag {
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--muted-dark);
+  border: 1px solid var(--border-dark);
+  padding: 0.35rem 0.85rem;
+}
+@media (max-width: 900px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .about-img { max-width: 380px; }
 }
 
 /* IMAGE MARQUEE STRIP */
@@ -933,198 +1134,31 @@ footer {
   </div>
 </div>
 
-<!-- SLOTS BANNER -->
-<div class="slots-banner">
-  <div class="slots-left">
-    <div class="slots-dot"></div>
-    <div class="slots-text">
-      <h3>Limited Slots Available</h3>
-      <p>We take on a select number of clients each month to maintain exceptional quality.</p>
+<!-- ABOUT -->
+<section class="about-section">
+  <div class="about-inner">
+    <div class="about-img-wrap">
+      <img src="https://lh3.googleusercontent.com/d/1Kkz4q4KEH28L-QFoPJUpJTenesOHOP_R" alt="Xander Menmuir" class="about-img" />
     </div>
-  </div>
-  <a href="#contact" class="btn-primary">Secure Your Slot</a>
-</div>
-
-
-<!-- PACKAGES -->
-<section class="packages" id="packages">
-  <div class="packages-header" style="align-items:flex-start;">
-    <div style="max-width:460px;">
-      <p class="section-label">Logo &amp; Identity Pricing</p>
-      <h2 class="section-title" style="color:var(--light-text); margin-bottom:1.2rem;">Choose your<br><span class="accent">package.</span></h2>
-      <p style="font-size:0.97rem; color:var(--light-muted); line-height:1.8; margin-bottom:1rem; font-style:italic; color:rgba(10,10,10,0.65);">Every brand starts from a different place, which is why we offer four clear tiers — designed so the right level of strategy, structure, and execution meets you where you are right now.</p>
-    </div>
-    <div style="max-width:520px; padding-top:0.5rem;">
-      <p style="font-size:0.88rem; color:var(--light-muted); line-height:1.85; margin-bottom:1rem;">A logo alone is only one part of your brand. While it acts as a visual identifier, it doesn't define how your business communicates, appears across platforms, or is perceived by your audience.</p>
-      <p style="font-size:0.88rem; color:var(--light-muted); line-height:1.85;">A brand identity system builds everything around the logo, giving your business structure, clarity, and consistency. It ensures your visuals, messaging, and overall presence work together as one cohesive system, helping you build trust, recognition, and long-term credibility, so your brand looks consistent everywhere it exists.</p>
-    </div>
-  </div>
-  <div class="packages-grid">
-
-    <!-- KICKSTART -->
-    <div class="pkg-card">
-      <div class="pkg-header">
-        <p class="pkg-name">Kickstart</p>
-        <p class="pkg-price">R12,000</p>
-      </div>
-      <p class="pkg-tagline">Built for early-stage founders who need a clear, professional brand to launch with confidence.</p>
-      <div class="pkg-divider"></div>
-      <p class="pkg-desc">Get everything you need to look credible and consistent from day one. This package gives you a complete logo system, defined colours and typography, and a simple brand guide so you can apply your identity correctly across digital platforms without second-guessing.</p>
-      <button class="pkg-includes-toggle" onclick="toggleIncludes(this)">
-        What's included
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-      <div class="pkg-includes">
-        <ul>
-          <li>Streamlined digital brand guide</li>
-          <li>Core logo variations</li>
-          <li>Colour and font systems</li>
-          <li>Iconography set</li>
-          <li>Brand pattern for website and digital use</li>
-          <li>Visual direction for photography and imagery</li>
-        </ul>
-      </div>
-      <div class="pkg-actions">
-        <a href="mailto:xcreativ3@gmail.com?subject=Kickstart Package Enquiry" class="pkg-cta">Get Started</a>
+    <div class="about-content">
+      <p class="section-label">About</p>
+      <h2 class="about-name">Xander Menmuir</h2>
+      <p class="about-role">Logo &amp; Brand Identity Specialist</p>
+      <div class="about-divider"></div>
+      <p class="about-body">I'm a Senior Brand Designer with a focus on logos, visual identities, and brand strategy. With experience across agencies, in-house teams, and freelance projects, I bring a well-rounded perspective to every challenge — combining sharp strategic thinking with hands-on craft to build brands that are built to last.</p>
+      <p class="about-body" style="margin-top:1rem;">Specialising in logos, branding, brand strategy, graphic design, and videography, I work with founders, growing businesses, and established brands to create identities that communicate with clarity and stand out with intention.</p>
+      <div class="about-tags">
+        <span class="about-tag">Logos</span>
+        <span class="about-tag">Branding</span>
+        <span class="about-tag">Brand Strategy</span>
+        <span class="about-tag">Graphic Design</span>
+        <span class="about-tag">Videography</span>
       </div>
     </div>
-
-    <!-- BUILD -->
-    <div class="pkg-card">
-      <div class="pkg-header">
-        <p class="pkg-name">Build</p>
-        <p class="pkg-price">R20,000</p>
-      </div>
-      <p class="pkg-tagline">Designed for growing businesses ready to elevate their brand with more depth, flexibility, and real-world application.</p>
-      <div class="pkg-divider"></div>
-      <p class="pkg-desc">Move beyond the basics with a more refined and versatile identity system. Greater control over how your brand shows up across platforms, with expanded typography, colour variations, and supporting visual elements that create a more distinctive and cohesive look.</p>
-      <button class="pkg-includes-toggle" onclick="toggleIncludes(this)">
-        What's included
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-      <div class="pkg-includes">
-        <ul>
-          <li>Comprehensive digital brand guide</li>
-          <li>Complete logo system</li>
-          <li>Extended colour palette with tints and shades</li>
-          <li>Full typography system</li>
-          <li>Defined Iconography Set</li>
-          <li>Photography direction</li>
-          <li>Custom visual elements</li>
-          <li>Choice of two essential branded assets (business cards, social media, or email)</li>
-        </ul>
-      </div>
-      <div class="pkg-actions">
-        <a href="mailto:xcreativ3@gmail.com?subject=Build Package Enquiry" class="pkg-cta">Get Started</a>
-      </div>
-    </div>
-
-    <!-- SCALE -->
-    <div class="pkg-card featured">
-      <span class="pkg-badge">Most Popular</span>
-      <div class="pkg-header">
-        <p class="pkg-name">Scale</p>
-        <p class="pkg-price">R30,000</p>
-      </div>
-      <p class="pkg-tagline">Built for established brands that need a fully developed, scalable identity system with consistency across every touchpoint.</p>
-      <div class="pkg-divider"></div>
-      <p class="pkg-desc">Designed to give your brand depth, structure, and complete clarity. With detailed guidelines, expanded visual systems, and real application across multiple assets — everything needed to maintain a strong, consistent presence as your brand grows.</p>
-      <button class="pkg-includes-toggle" onclick="toggleIncludes(this)">
-        What's included
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-      <div class="pkg-includes">
-        <ul>
-          <li>Comprehensive digital brand guide with in-depth logo usage and layout variations</li>
-          <li>Expanded colour system with hierarchy, tints, and shades</li>
-          <li>Typography with real usage examples</li>
-          <li>Extended iconography set</li>
-          <li>Refined photography direction</li>
-          <li>Custom visual elements (patterns or illustrations)</li>
-          <li>Full set of essential branded collateral</li>
-          <li>Social media assets</li>
-        </ul>
-      </div>
-      <div class="pkg-actions">
-        <a href="mailto:xcreativ3@gmail.com?subject=Scale Package Enquiry" class="pkg-cta">Get Started</a>
-      </div>
-    </div>
-
-    <!-- DOMINATE -->
-    <div class="pkg-card">
-      <div class="pkg-header">
-        <p class="pkg-name">Dominate</p>
-        <p class="pkg-price">R50,000</p>
-      </div>
-      <p class="pkg-tagline">Built for brands that want to lead their space with a fully realised, strategic identity designed for long-term growth and impact.</p>
-      <div class="pkg-divider"></div>
-      <p class="pkg-desc">A complete brand system that goes beyond visuals. It defines not just how your brand looks, but what it stands for and how it communicates — giving you clarity, consistency, and authority across every touchpoint.</p>
-      <button class="pkg-includes-toggle" onclick="toggleIncludes(this)">
-        What's included
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-      <div class="pkg-includes">
-        <ul>
-          <li>In-depth digital brand guide with full brand story, strategy, and verbal identity</li>
-          <li>Comprehensive visual system with logo usage, layouts, and real-world application</li>
-          <li>Fully developed colour and typography systems with hierarchy and spacing</li>
-          <li>Expanded iconography set</li>
-          <li>Detailed photography direction</li>
-          <li>Rich set of custom visual elements</li>
-          <li>Brand-in-action mockups</li>
-          <li>Full suite of branded collateral and social media assets</li>
-          <li>Working/master files for full ownership and flexibility</li>
-        </ul>
-      </div>
-      <div class="pkg-actions">
-        <a href="mailto:xcreativ3@gmail.com?subject=Dominate Package Enquiry" class="pkg-cta">Get Started</a>
-      </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
-
-<!-- STONE BREAK -->
-<div class="stone-break">
-  <div class="stone-break-bg"></div>
-  <div class="stone-break-content">
-    <p>Identities built to<br><span class="accent">outlast trends.</span></p>
-  </div>
-</div>
-
-
-
-
-
-<!-- SERVICES -->
-<div class="services-strip" id="services">
-  <div class="services-strip-inner">
-    <div class="service-tile">
-      <h3>Adhoc Design</h3>
-      <p class="rate">R5,000 — 5 Hours <span style="font-weight:400;color:var(--light-muted);letter-spacing:0;">(Valid for 1 Month)</span></p>
-      <p>Flexible design support for general or additional tasks outside your main project. Hours are booked in advance (5-hour minimum) and used within 1 month.</p>
-      <div class="tile-note">
-        <div class="dot-sm"></div>
-        Limited slots available
-      </div>
-    </div>
-    <div class="service-tile">
-      <h3>Social Media Management</h3>
-      <p class="rate">Limited Slots</p>
-      <p>Regular content creation, design and scheduling of posts via a monthly social media calendar — Frees up your time so you can focus on your business.</p>
-      <div class="tile-note">
-        <div class="dot-sm"></div>
-        Limited slots available
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<!-- IMAGE MARQUEE -->
+<!-- IMAGE MARQUEE (moved from below services) -->
 <div class="img-marquee-strip">
   <div class="img-marquee-track">
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1uPeWGK3lZItgdadxv9PqfjJTXbcqLK9S" alt="climber" loading="lazy" /></div>
@@ -1144,11 +1178,402 @@ footer {
   </div>
 </div>
 
+
+<!-- STONE BREAK — LOGO -->
+<div class="stone-break" id="packages">
+  <div class="stone-break-bg"></div>
+  <div class="stone-break-content">
+    <p>Every great brand<br>starts with a <span class="accent">great logo.</span></p>
+  </div>
+</div>
+
+<!-- LOGO PACKAGE -->
+<section class="packages">
+  <div class="packages-grid packages-grid--single">
+    <!-- KICKSTART -->
+    <div class="pkg-card">
+      <div class="pkg-header">
+        <p class="pkg-name">Kickstart</p>
+        <p class="pkg-price">R7,000</p>
+      </div>
+      <p class="pkg-tagline">You're looking for the essentials: a logo, a font, and logo colours.</p>
+      <div class="pkg-divider"></div>
+      <p class="pkg-desc">For those who need a strong, considered logo without the full identity system. You'll walk away with a clean, professional mark, the right font, and a defined colour set, enough to show up with confidence while you build toward something bigger.</p>
+      <button class="pkg-includes-toggle" onclick="toggleIncludes(this)">
+        What's included
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="pkg-includes">
+        <ul>
+          <li>Full Logo</li>
+          <li>Logo Font</li>
+          <li>Logo Colours</li>
+        </ul>
+      </div>
+      <button class="pkg-detail-toggle" onclick="toggleDetail(this)">
+        View full breakdown
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="pkg-detail-panel">
+        <div class="pkg-detail-note">2–3pg Digital Logo Guide &nbsp;·&nbsp; 1 revision per element</div>
+        <div class="pkg-detail-group" style="margin-top:1rem;">
+          <p class="pkg-detail-group-title">Onboarding &amp; Discovery</p>
+          <ul>
+            <li>Onboarding session</li>
+            <li>Moodboard</li>
+            <li>Logo Concepts (×2)</li>
+            <li>Final logo + logomark</li>
+          </ul>
+        </div>
+        <div class="pkg-detail-group">
+          <p class="pkg-detail-group-title">Deliverables</p>
+          <ul>
+            <li>Logo colour &amp; font sheet</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pkg-actions">
+        <a href="mailto:xcreativ3@gmail.com?subject=Kickstart Package Enquiry" class="pkg-cta">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STONE BREAK — IDENTITIES -->
+<div class="stone-break">
+  <div class="stone-break-bg"></div>
+  <div class="stone-break-content">
+    <p>Identities built to<br><span class="accent">outlast trends.</span></p>
+  </div>
+</div>
+
+<!-- IDENTITY PACKAGES -->
+<section class="packages">
+  <div class="packages-grid">
+
+    <!-- BUILD -->
+    <div class="pkg-card">
+      <div class="pkg-header">
+        <p class="pkg-name">Build</p>
+        <p class="pkg-price">R20,000</p>
+      </div>
+      <p class="pkg-tagline">Your brand needs more than a logo. This is where the full identity system begins.</p>
+      <div class="pkg-divider"></div>
+      <p class="pkg-desc">Build gives you a complete, structured brand guide covering your logo system, colour palette, typography, iconography, photography direction, and custom visual elements. With defined rules for how everything works together, you and anyone you work with can apply your brand consistently, without guesswork. Two branded collateral assets are included so your identity is ready to use from day one.</p>
+      <button class="pkg-includes-toggle" onclick="toggleIncludes(this)">
+        What's included
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="pkg-includes">
+        <ul>
+          <li>Comprehensive digital brand guide</li>
+          <li>Complete logo system</li>
+          <li>Extended colour palette with tints and shades</li>
+          <li>Full typography system</li>
+          <li>Defined Iconography Set</li>
+          <li>Photography direction</li>
+          <li>Custom visual elements</li>
+          <li>Choice of two essential branded assets (business cards, social media, or email)</li>
+        </ul>
+      </div>
+      <button class="pkg-detail-toggle" onclick="toggleDetail(this)">
+        View full breakdown
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="pkg-detail-panel">
+        <div class="pkg-detail-note">15–20pg Digital CI Guide &nbsp;·&nbsp; 2 revisions per element</div>
+        <div class="pkg-detail-group" style="margin-top:1rem;">
+          <p class="pkg-detail-group-title">Onboarding &amp; Discovery</p>
+          <ul>
+            <li>Onboarding session</li>
+            <li>Moodboard</li>
+            <li>Logo Concepts (×3)</li>
+            <li>Final logo + logomark</li>
+          </ul>
+        </div>
+        <div class="pkg-detail-group">
+          <p class="pkg-detail-group-title">Logo Lockups &amp; Application</p>
+          <ul>
+            <li>Logomark &amp; Final Logo</li>
+            <li>Logo clearance &amp; sizing</li>
+          </ul>
+        </div>
+        <div class="pkg-detail-group">
+          <p class="pkg-detail-group-title">Colour Palette</p>
+          <ul>
+            <li>RGB, CMYK &amp; hex values</li>
+            <li>Tints &amp; shades</li>
+          </ul>
+        </div>
+        <div class="pkg-detail-group">
+          <p class="pkg-detail-group-title">Typography</p>
+          <ul>
+            <li>Primary &amp; secondary fonts</li>
+            <li>Weights</li>
+          </ul>
+        </div>
+        <div class="pkg-detail-group">
+          <p class="pkg-detail-group-title">Visual Direction</p>
+          <ul>
+            <li>Iconography Style set (×6)</li>
+            <li>Photography style (×6)</li>
+            <li>Spot illustration, Pattern style or Graphic elements (×2)</li>
+          </ul>
+        </div>
+        <div class="pkg-detail-group">
+          <p class="pkg-detail-group-title">Branding &amp; Collateral</p>
+          <p class="pkg-detail-note" style="margin-bottom:0.5rem;">Choose 2 assets only &nbsp;·&nbsp; Done on Canva or Illustrator &nbsp;·&nbsp; 1 revision per element</p>
+          <ul>
+            <li>Business card template</li>
+            <li>Letterhead template</li>
+            <li>Email signature template (template design, not coded)</li>
+            <li>Social media banners (×2)</li>
+            <li>Curated social media template posts (×2)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pkg-actions">
+        <a href="mailto:xcreativ3@gmail.com?subject=Build Package Enquiry" class="pkg-cta">Get Started</a>
+      </div>
+    </div>
+
+    <!-- SCALE -->
+    <div class="pkg-card featured">
+      <span class="pkg-badge">Most Popular</span>
+      <div class="pkg-header">
+        <p class="pkg-name">Scale</p>
+        <p class="pkg-price">R30,000</p>
+      </div>
+      <p class="pkg-tagline">A fully developed identity system built to grow with your brand across every platform and touchpoint.</p>
+      <div class="pkg-divider"></div>
+      <p class="pkg-desc">Scale goes deeper into every element of your identity. An expanded colour system with hierarchy and tints, typography shown in real use, a larger iconography and photography set, and custom visual elements that give your brand a distinct, ownable aesthetic. A full suite of branded collateral and social media assets means your identity doesn't just live in a guide, it's ready to work across the platforms that matter most to your business.</p>
+      <button class="pkg-includes-toggle" onclick="toggleIncludes(this)">
+        What's included
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="pkg-includes">
+        <ul>
+          <li>Comprehensive digital brand guide with in-depth logo usage and layout variations</li>
+          <li>Expanded colour system with hierarchy, tints, and shades</li>
+          <li>Typography with real usage examples</li>
+          <li>Extended iconography set</li>
+          <li>Refined photography direction</li>
+          <li>Custom visual elements (patterns or illustrations)</li>
+          <li>Full set of essential branded collateral</li>
+          <li>Social media assets</li>
+        </ul>
+      </div>
+      <button class="pkg-detail-toggle" onclick="toggleDetail(this)">
+        View full breakdown
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="pkg-detail-panel">
+        <div class="pkg-detail-note">20–25pg Digital CI Guide &nbsp;·&nbsp; 3 revisions per element</div>
+        <div class="pkg-detail-group" style="margin-top:1rem;">
+          <p class="pkg-detail-group-title">Onboarding &amp; Discovery</p>
+          <ul>
+            <li>Onboarding session</li>
+            <li>Moodboard</li>
+            <li>Logo Concepts (×4)</li>
+            <li>Final logos + logomark</li>
+          </ul>
+        </div>
+        <div class="pkg-detail-group">
+          <p class="pkg-detail-group-title">Logo Lockups &amp; Application</p>
+          <ul>
+            <li>Logomark, Vertical &amp; Horizontal lockups</li>
+            <li>Logo clearance &amp; sizing</li>
+            <li>Misuse of Logos</li>
+          </ul>
+        </div>
+        <div class="pkg-detail-group">
+          <p class="pkg-detail-group-title">Colour Palette</p>
+          <ul>
+            <li>RGB, CMYK &amp; hex values</li>
+            <li>Tints &amp; shades</li>
+            <li>Colour hierarchy</li>
+          </ul>
+        </div>
+        <div class="pkg-detail-group">
+          <p class="pkg-detail-group-title">Typography</p>
+          <ul>
+            <li>Primary &amp; secondary fonts</li>
+            <li>Weights</li>
+            <li>Type in use</li>
+          </ul>
+        </div>
+        <div class="pkg-detail-group">
+          <p class="pkg-detail-group-title">Visual Direction</p>
+          <ul>
+            <li>Iconography Style set (×8)</li>
+            <li>Photography style (×8)</li>
+            <li>Spot illustration, Pattern style or Graphic elements (×2)</li>
+          </ul>
+        </div>
+        <div class="pkg-detail-group">
+          <p class="pkg-detail-group-title">Branding &amp; Collateral</p>
+          <p class="pkg-detail-note" style="margin-bottom:0.5rem;">Done on Canva or Illustrator &nbsp;·&nbsp; 1 revision per element</p>
+          <ul>
+            <li>Business card template</li>
+            <li>Letterhead template</li>
+            <li>Email signature template (template design, not coded)</li>
+            <li>Social media banners (×2)</li>
+            <li>Curated social media template posts (×3)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pkg-actions">
+        <a href="mailto:xcreativ3@gmail.com?subject=Scale Package Enquiry" class="pkg-cta">Get Started</a>
+      </div>
+    </div>
+
+    <!-- DOMINATE -->
+    <div class="pkg-card budget-card">
+      <div class="pkg-header">
+        <p class="pkg-name">Dominate</p>
+        <p class="pkg-price">R50,000</p>
+      </div>
+      <p class="pkg-tagline">The complete brand system for businesses that are serious about leading their space.</p>
+      <div class="pkg-divider"></div>
+      <p class="pkg-desc">Dominate goes beyond the visual. It builds the full strategic foundation of your brand, including your story, positioning, and verbal identity, then brings it to life with an exhaustive visual system. Every element is documented in a 45+ page CI guide with working master files, so your brand is built to be handed off, scaled, and applied with complete confidence by anyone, anywhere, at any stage of your growth.</p>
+      <button class="pkg-includes-toggle" onclick="toggleIncludes(this)">
+        What's included
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="pkg-includes">
+        <ul>
+          <li>In-depth digital brand guide with full brand story, strategy, and verbal identity</li>
+          <li>Comprehensive visual system with logo usage, layouts, and real-world application</li>
+          <li>Fully developed colour and typography systems with hierarchy and spacing</li>
+          <li>Expanded iconography set</li>
+          <li>Detailed photography direction</li>
+          <li>Rich set of custom visual elements</li>
+          <li>Brand-in-action mockups</li>
+          <li>Full suite of branded collateral and social media assets</li>
+          <li>Working/master files for full ownership and flexibility</li>
+        </ul>
+      </div>
+      <button class="pkg-detail-toggle" onclick="toggleDetail(this)">
+        View full breakdown
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="pkg-detail-panel">
+        <div class="pkg-detail-note">45+pg Digital CI Guide &nbsp;·&nbsp; Working/master file (AI) &nbsp;·&nbsp; 3 revisions per element</div>
+        <div class="pkg-detail-group" style="margin-top:1rem;">
+          <p class="pkg-detail-group-title">Onboarding &amp; Discovery</p>
+          <ul>
+            <li>Onboarding session</li>
+            <li>Moodboard</li>
+            <li>Logo Concepts (×5)</li>
+            <li>Final logos + logomark</li>
+          </ul>
+        </div>
+        <div class="pkg-detail-group">
+          <p class="pkg-detail-group-title">Deeper Brand Meaning</p>
+          <ul>
+            <li>Introduction</li>
+            <li>Our Story</li>
+            <li>Our Strategy</li>
+            <li>Our Verbal Identity</li>
+            <li>Visual Identity Overview (Logo in action)</li>
+          </ul>
+        </div>
+        <div class="pkg-detail-group">
+          <p class="pkg-detail-group-title">Logo Lockups &amp; Application</p>
+          <ul>
+            <li>Logomark, Vertical &amp; Horizontal lockups</li>
+            <li>Logo clearance &amp; sizing</li>
+            <li>Misuse of Logos</li>
+          </ul>
+        </div>
+        <div class="pkg-detail-group">
+          <p class="pkg-detail-group-title">Colour Palette</p>
+          <ul>
+            <li>Primary, Neutral &amp; Support palettes</li>
+            <li>RGB, CMYK &amp; hex values</li>
+            <li>Colour hierarchy</li>
+            <li>Tints &amp; shades</li>
+          </ul>
+        </div>
+        <div class="pkg-detail-group">
+          <p class="pkg-detail-group-title">Typography</p>
+          <ul>
+            <li>Primary &amp; secondary fonts</li>
+            <li>Weights</li>
+            <li>Type Spacing</li>
+            <li>Type in use</li>
+          </ul>
+        </div>
+        <div class="pkg-detail-group">
+          <p class="pkg-detail-group-title">Visual Direction</p>
+          <ul>
+            <li>Iconography Style set (×10)</li>
+            <li>Photography style (×10)</li>
+            <li>Spot illustration, Pattern style or Graphic elements (×3)</li>
+            <li>Brand in Action (Mockups)</li>
+          </ul>
+        </div>
+        <div class="pkg-detail-group">
+          <p class="pkg-detail-group-title">Branding &amp; Collateral</p>
+          <p class="pkg-detail-note" style="margin-bottom:0.5rem;">Done on Canva or Illustrator &nbsp;·&nbsp; 2 revisions per element</p>
+          <ul>
+            <li>Business card template</li>
+            <li>Letterhead template</li>
+            <li>Email signature template (template design, not coded)</li>
+            <li>Social media banners (×2)</li>
+            <li>Curated social media template posts (×5)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pkg-actions">
+        <a href="mailto:xcreativ3@gmail.com?subject=Dominate Package Enquiry" class="pkg-cta">Get Started</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- STONE BREAK — ADHOC & SOCIAL -->
+<div class="stone-break">
+  <div class="stone-break-bg"></div>
+  <div class="stone-break-content">
+    <p>Design support that<br>keeps your brand <span class="accent">moving.</span></p>
+  </div>
+</div>
+
+
+<!-- SERVICES -->
+<div class="services-strip" id="services">
+  <div class="services-strip-inner">
+    <div class="service-tile">
+      <h3>Adhoc Design</h3>
+      <p class="rate">R5,000   5 Hours <span style="font-weight:400;color:var(--light-muted);letter-spacing:0;">(Valid for 1 Month)</span></p>
+      <p>Flexible design support for general or additional tasks outside your main project. Hours are booked in advance (5-hour minimum) and used within 1 month.</p>
+      <div class="tile-note">
+        <div class="dot-sm"></div>
+        Limited slots available
+      </div>
+    </div>
+    <div class="service-tile">
+      <h3>Social Media Management</h3>
+      <p class="rate">Limited Slots</p>
+      <p>Regular content creation, design and scheduling of posts via a monthly social media calendar. Frees up your time so you can focus on your business.</p>
+      <div class="tile-note">
+        <div class="dot-sm"></div>
+        Limited slots available
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 <!-- PROCESS -->
 <section class="process-section" id="process">
   <p class="section-label">How It Works</p>
   <h2 class="section-title">The <span class="accent">process.</span></h2>
-  <p class="process-intro">A clear, structured approach from first conversation to final delivery — so you always know where we are and what comes next.</p>
+  <p class="process-intro">A clear, structured approach from first conversation to final delivery, so you always know where we are and what comes next.</p>
   <p style="font-size:0.78rem; color:var(--red); font-style:italic; margin-top:-3.5rem; margin-bottom:5rem; opacity:0.8;">Please note: the process may vary slightly depending on your chosen package.</p>
 
   <div class="process-steps">
@@ -1207,7 +1632,7 @@ footer {
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
       </button>
       <div class="process-img-drawer">
-        <div class="process-step-img-wrap"><img class="process-step-img" src="https://lh3.googleusercontent.com/d/1RbTVYARYRdp65Dm_jeVMSb_2cwhF8VKq" alt="Final Logo" /></div>
+        <div class="process-step-img-wrap"><img class="process-step-img" src="https://lh3.googleusercontent.com/d/1SJRu5PPdyTScLS-oOyvvXrPDepk2-DxK" alt="Final Logo" /></div>
       </div>
       </div>
     </div>
@@ -1227,7 +1652,7 @@ footer {
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
       </button>
       <div class="process-img-drawer">
-        <div class="process-step-img-wrap"><img class="process-step-img" src="https://lh3.googleusercontent.com/d/1SJRu5PPdyTScLS-oOyvvXrPDepk2-DxK" alt="Brand Identity" /></div>
+        <div class="process-step-img-wrap"><img class="process-step-img" src="https://lh3.googleusercontent.com/d/1RbTVYARYRdp65Dm_jeVMSb_2cwhF8VKq" alt="Brand Identity" /></div>
       </div>
       </div>
     </div>
@@ -1288,12 +1713,12 @@ footer {
     <!-- DR J -->
     <a class="cs-card" href="https://www.behance.net/gallery/245377331/Dr-J-Logo-Identity" target="_blank" rel="noopener">
       <div class="cs-card-img">
-        <img src="https://lh3.googleusercontent.com/d/1Pp2YtJHyHwhp7bBBS0Q4Akem-OQ2vqE_" alt="Dr J — Logo &amp; Identity" loading="lazy" />
+        <img src="https://lh3.googleusercontent.com/d/1Pp2YtJHyHwhp7bBBS0Q4Akem-OQ2vqE_" alt="Dr J Logo &amp; Identity" loading="lazy" />
       </div>
       <div class="cs-card-body">
         <p class="cs-tag">Logo &amp; Identity</p>
         <h3 class="cs-card-name">Dr J</h3>
-        <p class="cs-card-excerpt">A fluid, custom script identity for Dr Jeanne Fredericks — personal, transformative, and anchored in expert-led authority.</p>
+        <p class="cs-card-excerpt">A fluid, custom script identity for Dr Jeanne Fredericks, personal, transformative, and anchored in expert-led authority.</p>
         <p class="cs-card-tagline">Sophisticated. Adaptive. Designed for transformation.</p>
         <span class="cs-card-link">
           View on Behance
@@ -1305,12 +1730,12 @@ footer {
     <!-- JET COFFEE -->
     <a class="cs-card" href="https://www.behance.net/gallery/220578107/Jet-Coffee-Logo-Visual-Identity" target="_blank" rel="noopener">
       <div class="cs-card-img">
-        <img src="https://lh3.googleusercontent.com/d/1XREgk25tALmFXPgxa7-vVpXmUl5jt-nn" alt="Jet Coffee — Logo &amp; Identity" loading="lazy" />
+        <img src="https://lh3.googleusercontent.com/d/1XREgk25tALmFXPgxa7-vVpXmUl5jt-nn" alt="Jet Coffee Logo &amp; Identity" loading="lazy" />
       </div>
       <div class="cs-card-body">
         <p class="cs-tag">Logo &amp; Identity</p>
         <h3 class="cs-card-name">Jet Coffee</h3>
-        <p class="cs-card-excerpt">A high-contrast, high-energy visual system engineered for London's urban movers — barista-level quality in under 60 seconds.</p>
+        <p class="cs-card-excerpt">A high-contrast, high-energy visual system engineered for London's urban movers, barista-level quality in under 60 seconds.</p>
         <p class="cs-card-tagline">Fast. Sustainable. Engineered for speed.</p>
         <span class="cs-card-link">
           View on Behance
@@ -1322,12 +1747,12 @@ footer {
     <!-- THE CHANGE HUB -->
     <a class="cs-card" href="https://www.behance.net/gallery/236758523/The-Change-Hub-Logo-Visual-Identity" target="_blank" rel="noopener">
       <div class="cs-card-img">
-        <img src="https://lh3.googleusercontent.com/d/1VqWTl6wPDvBGQZg9sPHz1CgTRa5u5sjU" alt="The Change Hub — Logo &amp; Identity" loading="lazy" />
+        <img src="https://lh3.googleusercontent.com/d/1VqWTl6wPDvBGQZg9sPHz1CgTRa5u5sjU" alt="The Change Hub Logo &amp; Identity" loading="lazy" />
       </div>
       <div class="cs-card-body">
         <p class="cs-tag">Logo &amp; Identity</p>
         <h3 class="cs-card-name">The Change Hub</h3>
-        <p class="cs-card-excerpt">A dynamic visual identity for a strategic change-management partner — balancing professional structure with the fluid nature of organisational evolution.</p>
+        <p class="cs-card-excerpt">A dynamic visual identity for a strategic change-management partner, balancing professional structure with the fluid nature of organisational evolution.</p>
         <p class="cs-card-tagline">Strategic. Collaborative. Engineered for impact.</p>
         <span class="cs-card-link">
           View on Behance
@@ -1339,12 +1764,12 @@ footer {
     <!-- XCREATIV3 -->
     <a class="cs-card" href="https://www.behance.net/gallery/245335877/xcreativ3-Logo-Visual-Identity" target="_blank" rel="noopener">
       <div class="cs-card-img">
-        <img src="https://lh3.googleusercontent.com/d/1QpDmyRWQ4TVOuPcc7fTYh03GicaIOhqJ" alt="xcreativ3 — Logo &amp; Identity" loading="lazy" />
+        <img src="https://lh3.googleusercontent.com/d/1QpDmyRWQ4TVOuPcc7fTYh03GicaIOhqJ" alt="xcreativ3   Logo &amp; Identity" loading="lazy" />
       </div>
       <div class="cs-card-body">
         <p class="cs-tag">Logo &amp; Identity</p>
         <h3 class="cs-card-name">xcreativ3</h3>
-        <p class="cs-card-excerpt">A refined geometric identity built around a custom X mark — representing structure, clarity, and intentional forward movement.</p>
+        <p class="cs-card-excerpt">A refined geometric identity built around a custom X mark, representing structure, clarity, and intentional forward movement.</p>
         <p class="cs-card-tagline">Simple. Strategic. Built to perform.</p>
         <span class="cs-card-link">
           View on Behance
@@ -1413,21 +1838,30 @@ function toggleProcImg(btn) {
   btn.childNodes[0].textContent = isOpen ? 'View image' : 'Hide image';
 }
 
+function toggleDetail(btn) {
+  const panel = btn.nextElementSibling;
+  const isOpen = panel.classList.contains('open');
+  if (isOpen) {
+    panel.classList.remove('open');
+    btn.classList.remove('open');
+    btn.childNodes[0].textContent = "View full breakdown";
+  } else {
+    panel.classList.add('open');
+    btn.classList.add('open');
+    btn.childNodes[0].textContent = "Hide breakdown";
+  }
+}
+
 function toggleIncludes(btn) {
   const includes = btn.nextElementSibling;
   const isOpen = includes.classList.contains('open');
 
-  // Close all other open dropdowns first
-  document.querySelectorAll('.pkg-includes.open').forEach(function(el) {
-    el.classList.remove('open');
-  });
-  document.querySelectorAll('.pkg-includes-toggle.open').forEach(function(b) {
-    b.classList.remove('open');
-    b.childNodes[0].textContent = "What's included";
-  });
-
-  // If this one was closed, open it; if it was open, leave it closed (toggle off)
-  if (!isOpen) {
+  // Toggle only this dropdown - others stay as they are
+  if (isOpen) {
+    includes.classList.remove('open');
+    btn.classList.remove('open');
+    btn.childNodes[0].textContent = "What's included";
+  } else {
     includes.classList.add('open');
     btn.classList.add('open');
     btn.childNodes[0].textContent = "Hide includes";
@@ -1520,7 +1954,7 @@ function toggleIncludes(btn) {
       isHeld = false;
       strip.style.cursor = 'grab';
 
-      if (!hasMoved) return; // plain click — just resume auto-scroll
+      if (!hasMoved) return; // plain click   just resume auto-scroll
 
       // Momentum glide then resume auto-scroll
       var momentum = velX * 120;
@@ -1535,7 +1969,7 @@ function toggleIncludes(btn) {
           var p = Math.min((ts - startTime) / duration, 1);
           var ease = 1 - Math.pow(1 - p, 3);
           // Apply momentum on top of where offset currently is
-          // (tick() is still running but isHeld=false — we nudge offset here)
+          // (tick() is still running but isHeld=false   we nudge offset here)
           offset = wrap(startOffset + momentum * ease);
           if (p < 1) {
             requestAnimationFrame(glide);
