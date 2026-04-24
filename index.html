@@ -309,7 +309,7 @@ section { padding: 7rem 5%; }
 .pkg-includes-toggle.open svg { transform: rotate(180deg); }
 .pkg-includes {
   display: none; margin-top: 1rem;
-  border-top: 1px solid var(--light-border);
+  border-top: 1px solid var(--border-dark);
   padding-top: 1rem;
 }
 .pkg-includes.open { display: block; }
@@ -365,7 +365,7 @@ section { padding: 7rem 5%; }
 .services-strip {
   background: var(--light-bg2);
   padding: 5rem 5%;
-  border-top: 1px solid var(--light-border);
+  border-top: 1px solid var(--border-dark);
 }
 .services-strip-inner {
   display: grid; grid-template-columns: 1fr 1fr 1fr;
@@ -620,12 +620,12 @@ footer {
 }
 
 /* PROCESS */
-.process-section { background: var(--light-bg); padding: 7rem 5%; }
+.process-section { background: var(--black); padding: 7rem 5%; }
 .process-section .section-label { color: var(--red); }
 .process-section .section-label::before { background: var(--red); }
-.process-section .section-title { color: var(--light-text); }
+.process-section .section-title { color: var(--white); }
 .process-intro {
-  font-size: 0.92rem; color: var(--light-muted);
+  font-size: 0.92rem; color: rgba(223,223,224,0.55);
   line-height: 1.8; max-width: 520px; margin-bottom: 5rem;
 }
 .process-steps { display: flex; flex-direction: column; gap: 0; }
@@ -633,12 +633,12 @@ footer {
   display: grid;
   grid-template-columns: 80px 1fr;
   gap: 0 3rem;
-  border-top: 1px solid var(--light-border);
+  border-top: 1px solid var(--border-dark);
   padding: 2.4rem 0;
   transition: background 0.3s;
 }
-.process-step:last-child { border-bottom: 1px solid var(--light-border); }
-.process-step:hover { background: rgba(0,0,0,0.02); }
+.process-step:last-child { border-bottom: 1px solid var(--border-dark); }
+.process-step:hover { background: rgba(255,255,255,0.03); }
 .process-step-num {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.65rem; font-weight: 700;
@@ -654,10 +654,10 @@ footer {
 .process-step-title {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem; font-weight: 600;
-  color: var(--light-text); line-height: 1.2; letter-spacing: -0.01em;
+  color: var(--white); line-height: 1.2; letter-spacing: -0.01em;
 }
 .process-step-body {
-  font-size: 0.87rem; color: var(--light-muted); line-height: 1.82; margin-top: 0.2rem;
+  font-size: 0.87rem; color: rgba(223,223,224,0.55); line-height: 1.82; margin-top: 0.2rem;
 }
 .process-step-note {
   margin-top: 0.8rem; font-size: 0.78rem; color: rgba(180,0,13,0.7);
@@ -667,19 +667,19 @@ footer {
 .process-img-toggle {
   display: inline-flex; align-items: center; gap: 0.45rem;
   font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--light-muted); font-weight: 500;
+  color: rgba(223,223,224,0.45); font-weight: 500;
   font-family: 'DM Sans', sans-serif;
   background: none; border: none; padding: 0;
   cursor: pointer; margin-top: 0.9rem; transition: color 0.25s;
 }
-.process-img-toggle:hover { color: var(--light-text); }
+.process-img-toggle:hover { color: var(--white); }
 .process-img-toggle svg { transition: transform 0.3s; flex-shrink: 0; }
 .process-img-toggle.open svg { transform: rotate(180deg); }
 .process-img-toggle.open { color: var(--red); }
 .process-img-drawer {
   display: none; margin-top: 0.9rem;
 }
-.process-section .process-step-img-wrap { border-color: var(--light-border); }
+.process-section .process-step-img-wrap { border-color: var(--border-dark); }
 .process-img-drawer.open { display: block; }
 .process-step-img-wrap {
   width: 100%; aspect-ratio: 16/9;
@@ -1050,6 +1050,48 @@ footer {
   </div>
 </section>
 
+<!-- IMAGE MARQUEE -->
+<div class="img-marquee-strip">
+      <div class="img-marquee-track">
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1dfojep3yeSb0i4qFK-zR-VQe6P7MdEeA" alt="drj" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1gJES7Wb8u5M5koCI2l_UKAtuxDrhjQ-T" alt="jetcoffee" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/15sGOqZrQiSCvwFLIU4TJK5cKuDQY_hIC" alt="tigerforge" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1r1z_-ZDnoZffi7srs6XewPR7Aykdc9Gb" alt="new9" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1D2KTESycRxlXDk5WoD_QbO9kluDaRYAW" alt="sadiepizzey" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1bweh3boXC-1hHBnTpHwXAYV9x9sbk_yt" alt="xcreativ3" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/17ruYBxMjqfleX2JjZmR6jXjI9BdhnX9t" alt="new2" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/11D0KgFZfkwE-Mvi8pGBbXVQ2Cz0I0fxf" alt="new10" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/183FTZx5pi-MzWVz9oHofZ2ofYyXQuhJH" alt="kineticskunk" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1fr8Z_B8dGvwC4Cv8Kj_Ep0lwOPnbMT0-" alt="new4" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1n2J2BvBdRXs87T93gIvDu46s52FD7FHA" alt="new1" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/18qQd9iRYHt-nYb3YSHf8hj5OD65HFPVk" alt="new11" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1EktyPe9mXoGFeF-dXy1hA42ZDoHgrqp4" alt="new6" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1swgQhq3npLW7zGfw526uI1olapaMHzL0" alt="new3" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1cahi68Ql2xEnXvf61bZdMG0IgKYy86e4" alt="new8" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1tfZWjPtndvBwm2lt6hwxoz5zkC8xFLl_" alt="new12" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1UWq06OD-O5Xy_30P-X34AtKgrcsvRAJF" alt="new5" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1zq8YRkcNkDisP1Ev5NdM-zHSZ39FKNLN" alt="new7" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1dfojep3yeSb0i4qFK-zR-VQe6P7MdEeA" alt="drj" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1gJES7Wb8u5M5koCI2l_UKAtuxDrhjQ-T" alt="jetcoffee" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/15sGOqZrQiSCvwFLIU4TJK5cKuDQY_hIC" alt="tigerforge" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1r1z_-ZDnoZffi7srs6XewPR7Aykdc9Gb" alt="new9" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1D2KTESycRxlXDk5WoD_QbO9kluDaRYAW" alt="sadiepizzey" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1bweh3boXC-1hHBnTpHwXAYV9x9sbk_yt" alt="xcreativ3" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/17ruYBxMjqfleX2JjZmR6jXjI9BdhnX9t" alt="new2" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/11D0KgFZfkwE-Mvi8pGBbXVQ2Cz0I0fxf" alt="new10" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/183FTZx5pi-MzWVz9oHofZ2ofYyXQuhJH" alt="kineticskunk" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1fr8Z_B8dGvwC4Cv8Kj_Ep0lwOPnbMT0-" alt="new4" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1n2J2BvBdRXs87T93gIvDu46s52FD7FHA" alt="new1" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/18qQd9iRYHt-nYb3YSHf8hj5OD65HFPVk" alt="new11" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1EktyPe9mXoGFeF-dXy1hA42ZDoHgrqp4" alt="new6" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1swgQhq3npLW7zGfw526uI1olapaMHzL0" alt="new3" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1cahi68Ql2xEnXvf61bZdMG0IgKYy86e4" alt="new8" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1tfZWjPtndvBwm2lt6hwxoz5zkC8xFLl_" alt="new12" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1UWq06OD-O5Xy_30P-X34AtKgrcsvRAJF" alt="new5" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1zq8YRkcNkDisP1Ev5NdM-zHSZ39FKNLN" alt="new7" loading="lazy" /></div>
+  </div>
+</div>
+
 <!-- SLOTS BANNER -->
 <div class="slots-banner">
   <div class="slots-left">
@@ -1245,49 +1287,6 @@ footer {
   </div>
 </div>
 
-
-
-<!-- IMAGE MARQUEE -->
-<div class="img-marquee-strip">
-      <div class="img-marquee-track">
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1dfojep3yeSb0i4qFK-zR-VQe6P7MdEeA" alt="drj" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1gJES7Wb8u5M5koCI2l_UKAtuxDrhjQ-T" alt="jetcoffee" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/15sGOqZrQiSCvwFLIU4TJK5cKuDQY_hIC" alt="tigerforge" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1r1z_-ZDnoZffi7srs6XewPR7Aykdc9Gb" alt="new9" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1D2KTESycRxlXDk5WoD_QbO9kluDaRYAW" alt="sadiepizzey" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1bweh3boXC-1hHBnTpHwXAYV9x9sbk_yt" alt="xcreativ3" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/17ruYBxMjqfleX2JjZmR6jXjI9BdhnX9t" alt="new2" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/11D0KgFZfkwE-Mvi8pGBbXVQ2Cz0I0fxf" alt="new10" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/183FTZx5pi-MzWVz9oHofZ2ofYyXQuhJH" alt="kineticskunk" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1fr8Z_B8dGvwC4Cv8Kj_Ep0lwOPnbMT0-" alt="new4" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1n2J2BvBdRXs87T93gIvDu46s52FD7FHA" alt="new1" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/18qQd9iRYHt-nYb3YSHf8hj5OD65HFPVk" alt="new11" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1EktyPe9mXoGFeF-dXy1hA42ZDoHgrqp4" alt="new6" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1swgQhq3npLW7zGfw526uI1olapaMHzL0" alt="new3" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1cahi68Ql2xEnXvf61bZdMG0IgKYy86e4" alt="new8" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1tfZWjPtndvBwm2lt6hwxoz5zkC8xFLl_" alt="new12" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1UWq06OD-O5Xy_30P-X34AtKgrcsvRAJF" alt="new5" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1zq8YRkcNkDisP1Ev5NdM-zHSZ39FKNLN" alt="new7" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1dfojep3yeSb0i4qFK-zR-VQe6P7MdEeA" alt="drj" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1gJES7Wb8u5M5koCI2l_UKAtuxDrhjQ-T" alt="jetcoffee" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/15sGOqZrQiSCvwFLIU4TJK5cKuDQY_hIC" alt="tigerforge" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1r1z_-ZDnoZffi7srs6XewPR7Aykdc9Gb" alt="new9" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1D2KTESycRxlXDk5WoD_QbO9kluDaRYAW" alt="sadiepizzey" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1bweh3boXC-1hHBnTpHwXAYV9x9sbk_yt" alt="xcreativ3" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/17ruYBxMjqfleX2JjZmR6jXjI9BdhnX9t" alt="new2" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/11D0KgFZfkwE-Mvi8pGBbXVQ2Cz0I0fxf" alt="new10" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/183FTZx5pi-MzWVz9oHofZ2ofYyXQuhJH" alt="kineticskunk" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1fr8Z_B8dGvwC4Cv8Kj_Ep0lwOPnbMT0-" alt="new4" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1n2J2BvBdRXs87T93gIvDu46s52FD7FHA" alt="new1" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/18qQd9iRYHt-nYb3YSHf8hj5OD65HFPVk" alt="new11" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1EktyPe9mXoGFeF-dXy1hA42ZDoHgrqp4" alt="new6" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1swgQhq3npLW7zGfw526uI1olapaMHzL0" alt="new3" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1cahi68Ql2xEnXvf61bZdMG0IgKYy86e4" alt="new8" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1tfZWjPtndvBwm2lt6hwxoz5zkC8xFLl_" alt="new12" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1UWq06OD-O5Xy_30P-X34AtKgrcsvRAJF" alt="new5" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1zq8YRkcNkDisP1Ev5NdM-zHSZ39FKNLN" alt="new7" loading="lazy" /></div>
-  </div>
-</div>
 
 <!-- PROCESS -->
 <section class="process-section" id="process">
