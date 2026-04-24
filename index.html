@@ -552,12 +552,19 @@ section { padding: 7rem 5%; }
   position: relative; overflow: hidden;
   border-top: 1px solid var(--border-dark);
 }
+.cta-section .cta-video-bg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  opacity: 0.45;
+  z-index: 0;
+}
 .cta-section::before {
   content: ''; position: absolute;
   top: 50%; left: 50%; transform: translate(-50%, -50%);
   width: 500px; height: 500px;
   background: radial-gradient(circle, rgba(180,0,13,0.07) 0%, transparent 70%);
-  pointer-events: none;
+  pointer-events: none; z-index: 1;
 }
 .cta-section .section-label { justify-content: center; }
 .cta-section .section-label::before { display: none; }
@@ -1513,6 +1520,10 @@ footer {
 
 <!-- CTA -->
 <section class="cta-section" id="contact">
+  <video class="cta-video-bg" autoplay muted loop playsinline preload="auto">
+    <source src="https://github.com/XanderMenmuir/xcreativ3-assets/raw/main/red-glassy-cubes-rotating-on-black-background-2026-01-28-05-19-44-utc.mp4" type="video/mp4">
+  </video>
+  <div style="position:relative;z-index:2;">
   <p class="section-label">Let's Work Together</p>
   <h2 class="cta-title">Ready to build<br>something <span class="accent">iconic?</span></h2>
   <p class="cta-body">
@@ -1524,6 +1535,7 @@ footer {
       xcreativ3@gmail.com
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
+  </div>
   </div>
 </section>
 
