@@ -4,7 +4,7 @@ l>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>xcreativ3™ — Brand Identity Studio</title>
+<title>xcreativ3™ | Brand Identity Studio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
@@ -65,6 +65,21 @@ nav {
   display: flex; flex-direction: column; justify-content: flex-end;
   padding: 0 5% 7rem;
   position: relative; overflow: hidden;
+}
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100svh;
+    padding: 0 5% 4rem;
+  }
+  .hero-headline {
+    font-size: clamp(2.2rem, 10vw, 3.2rem);
+    margin-bottom: 1.4rem;
+  }
+  .hero-sub {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+  .hero-tag { margin-bottom: 1.4rem; }
 }
 .hero-bg {
   position: absolute; inset: 0;
@@ -353,7 +368,7 @@ section { padding: 7rem 5%; }
   border-top: 1px solid var(--light-border);
 }
 .services-strip-inner {
-  display: grid; grid-template-columns: 1fr 1fr;
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
   gap: 1px; background: var(--light-border);
   border: 1px solid var(--light-border);
 }
@@ -460,7 +475,7 @@ section { padding: 7rem 5%; }
 .cs-card-link svg { transition: transform 0.3s; }
 .cs-card:hover .cs-card-link svg { transform: translateX(4px); }
 
-/* — DETAILED CASE STUDY PANEL — */
+/* DETAILED CASE STUDY PANEL */
 .cs-detail {
   display: none;
   background: var(--off-black);
@@ -720,6 +735,60 @@ footer {
   to { transform: translateX(-50%); }
 }
 
+/* ABOUT SECTION */
+.about-section {
+  background: var(--black);
+  padding: 7rem 5%;
+  border-top: 1px solid var(--border-dark);
+}
+.about-header {
+  display: flex; align-items: flex-start; gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+.about-photo {
+  width: 150px; height: 150px; border-radius: 50%;
+  object-fit: cover; object-position: center top;
+  flex-shrink: 0;
+  background: #1a0000;
+}
+.about-header-text { display: flex; flex-direction: column; justify-content: center; }
+.about-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+}
+.about-role {
+  font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--red); font-weight: 600;
+}
+.about-divider {
+  height: 1px; background: var(--border-dark); margin-bottom: 2.5rem;
+}
+.about-body p {
+  font-size: 1.05rem; color: rgba(223,223,224,0.72);
+  line-height: 1.85; margin-bottom: 1.5rem; max-width: 880px;
+}
+.about-body p:last-child { margin-bottom: 0; }
+.about-tags {
+  display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2.5rem;
+}
+.about-tag {
+  font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(223,223,224,0.6);
+  font-weight: 500;
+}
+@media (max-width: 600px) {
+  .about-header { flex-direction: column; align-items: center; text-align: center; }
+  .about-header-text { align-items: center; }
+  .about-tags { justify-content: center; }
+}
+
 </style>
 </head>
 <body>
@@ -733,6 +802,7 @@ footer {
     <li><a href="#packages">Packages</a></li>
     <li><a href="#process">Process</a></li><li><a href="#case-studies">Work</a></li>
     <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
@@ -933,6 +1003,33 @@ footer {
   </div>
 </div>
 
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <p class="section-label">About</p>
+  <div class="about-header">
+    <img
+      class="about-photo"
+      src="https://lh3.googleusercontent.com/d/1v4yMfbuQC5DOTGMXRsVuK8yPE1A3d5ac"
+      alt="Xander Menmuir"
+    />
+    <div class="about-header-text">
+      <h2 class="about-name">Xander Menmuir</h2>
+      <p class="about-role">Logo &amp; Brand Identity Specialist</p>
+    </div>
+  </div>
+  <div class="about-divider"></div>
+  <div class="about-body">
+    <p>I'm a Senior Brand Designer specialising in logos, visual identities, and brand strategy. With experience across agencies, in-house teams, and freelance projects, I bring a well-rounded perspective to every challenge, combining sharp strategic thinking with hands-on craft to create brands that are built to last.</p>
+  </div>
+  <div class="about-tags">
+    <span class="about-tag">Logos</span>
+    <span class="about-tag">Branding</span>
+    <span class="about-tag">Brand Strategy</span>
+    <span class="about-tag">Graphic Design</span>
+    <span class="about-tag">Videography</span>
+  </div>
+</section>
+
 <!-- SLOTS BANNER -->
 <div class="slots-banner">
   <div class="slots-left">
@@ -952,7 +1049,7 @@ footer {
     <div style="max-width:460px;">
       <p class="section-label">Logo &amp; Identity Pricing</p>
       <h2 class="section-title" style="color:var(--light-text); margin-bottom:1.2rem;">Choose your<br><span class="accent">package.</span></h2>
-      <p style="font-size:0.97rem; color:var(--light-muted); line-height:1.8; margin-bottom:1rem; font-style:italic; color:rgba(10,10,10,0.65);">Every brand starts from a different place, which is why we offer four clear tiers — designed so the right level of strategy, structure, and execution meets you where you are right now.</p>
+      <p style="font-size:0.97rem; color:var(--light-muted); line-height:1.8; margin-bottom:1rem; font-style:italic; color:rgba(10,10,10,0.65);">Every brand starts from a different place, which is why we offer four clear tiers, designed so the right level of strategy, structure, and execution meets you where you are right now.</p>
     </div>
     <div style="max-width:520px; padding-top:0.5rem;">
       <p style="font-size:0.88rem; color:var(--light-muted); line-height:1.85; margin-bottom:1rem;">A logo alone is only one part of your brand. While it acts as a visual identifier, it doesn't define how your business communicates, appears across platforms, or is perceived by your audience.</p>
@@ -1028,7 +1125,7 @@ footer {
       </div>
       <p class="pkg-tagline">Built for established brands that need a fully developed, scalable identity system with consistency across every touchpoint.</p>
       <div class="pkg-divider"></div>
-      <p class="pkg-desc">Designed to give your brand depth, structure, and complete clarity. With detailed guidelines, expanded visual systems, and real application across multiple assets — everything needed to maintain a strong, consistent presence as your brand grows.</p>
+      <p class="pkg-desc">Designed to give your brand depth, structure, and complete clarity. With detailed guidelines, expanded visual systems, and real application across multiple assets, with everything needed to maintain a strong, consistent presence as your brand grows.</p>
       <button class="pkg-includes-toggle" onclick="toggleIncludes(this)">
         What's included
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
@@ -1058,7 +1155,7 @@ footer {
       </div>
       <p class="pkg-tagline">Built for brands that want to lead their space with a fully realised, strategic identity designed for long-term growth and impact.</p>
       <div class="pkg-divider"></div>
-      <p class="pkg-desc">A complete brand system that goes beyond visuals. It defines not just how your brand looks, but what it stands for and how it communicates — giving you clarity, consistency, and authority across every touchpoint.</p>
+      <p class="pkg-desc">A complete brand system that goes beyond visuals. It defines not just how your brand looks, but what it stands for and how it communicates, giving you clarity, consistency, and authority across every touchpoint.</p>
       <button class="pkg-includes-toggle" onclick="toggleIncludes(this)">
         What's included
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
@@ -1102,8 +1199,14 @@ footer {
 <div class="services-strip" id="services">
   <div class="services-strip-inner">
     <div class="service-tile">
+      <h3>Logo Design Only</h3>
+      <p class="rate">R7,000</p>
+      <p>A focused logo design service for businesses that need a strong, professional mark without a full identity system. You'll receive a logo, logo colours, and a logo font.</p>
+      <p class="process-step-note" style="margin-top:1rem;">Keep in mind that without a brand guide, your brand won't have a consistent look across platforms.</p>
+    </div>
+    <div class="service-tile">
       <h3>Adhoc Design</h3>
-      <p class="rate">R5,000 — 5 Hours <span style="font-weight:400;color:var(--light-muted);letter-spacing:0;">(Valid for 1 Month)</span></p>
+      <p class="rate">R5,000 | 5 Hours <span style="font-weight:400;color:var(--light-muted);letter-spacing:0;">(Valid for 1 Month)</span></p>
       <p>Flexible design support for general or additional tasks outside your main project. Hours are booked in advance (5-hour minimum) and used within 1 month.</p>
       <div class="tile-note">
         <div class="dot-sm"></div>
@@ -1113,7 +1216,7 @@ footer {
     <div class="service-tile">
       <h3>Social Media Management</h3>
       <p class="rate">Limited Slots</p>
-      <p>Regular content creation, design and scheduling of posts via a monthly social media calendar — Frees up your time so you can focus on your business.</p>
+      <p>Regular content creation, design and scheduling of posts via a monthly social media calendar, freeing up your time so you can focus on your business.</p>
       <div class="tile-note">
         <div class="dot-sm"></div>
         Limited slots available
@@ -1126,21 +1229,35 @@ footer {
 
 <!-- IMAGE MARQUEE -->
 <div class="img-marquee-strip">
-  <div class="img-marquee-track">
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1uPeWGK3lZItgdadxv9PqfjJTXbcqLK9S" alt="climber" loading="lazy" /></div>
+    <div class="img-marquee-track">
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1dfojep3yeSb0i4qFK-zR-VQe6P7MdEeA" alt="drj" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1y_gMgo2etGbTrfOiMaIWGDmUs2e_OS8a" alt="jetcoffee" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/183FTZx5pi-MzWVz9oHofZ2ofYyXQuhJH" alt="kineticskunk" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1D2KTESycRxlXDk5WoD_QbO9kluDaRYAW" alt="sadiepizzey" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1gJES7Wb8u5M5koCI2l_UKAtuxDrhjQ-T" alt="jetcoffee" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/15sGOqZrQiSCvwFLIU4TJK5cKuDQY_hIC" alt="tigerforge" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1D2KTESycRxlXDk5WoD_QbO9kluDaRYAW" alt="sadiepizzey" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1bweh3boXC-1hHBnTpHwXAYV9x9sbk_yt" alt="xcreativ3" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1uPeWGK3lZItgdadxv9PqfjJTXbcqLK9S" alt="climber" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/17ruYBxMjqfleX2JjZmR6jXjI9BdhnX9t" alt="new2" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/183FTZx5pi-MzWVz9oHofZ2ofYyXQuhJH" alt="kineticskunk" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1fr8Z_B8dGvwC4Cv8Kj_Ep0lwOPnbMT0-" alt="new4" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1n2J2BvBdRXs87T93gIvDu46s52FD7FHA" alt="new1" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1EktyPe9mXoGFeF-dXy1hA42ZDoHgrqp4" alt="new6" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1swgQhq3npLW7zGfw526uI1olapaMHzL0" alt="new3" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1cahi68Ql2xEnXvf61bZdMG0IgKYy86e4" alt="new8" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1UWq06OD-O5Xy_30P-X34AtKgrcsvRAJF" alt="new5" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1zq8YRkcNkDisP1Ev5NdM-zHSZ39FKNLN" alt="new7" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1dfojep3yeSb0i4qFK-zR-VQe6P7MdEeA" alt="drj" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1y_gMgo2etGbTrfOiMaIWGDmUs2e_OS8a" alt="jetcoffee" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/183FTZx5pi-MzWVz9oHofZ2ofYyXQuhJH" alt="kineticskunk" loading="lazy" /></div>
-    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1D2KTESycRxlXDk5WoD_QbO9kluDaRYAW" alt="sadiepizzey" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1gJES7Wb8u5M5koCI2l_UKAtuxDrhjQ-T" alt="jetcoffee" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/15sGOqZrQiSCvwFLIU4TJK5cKuDQY_hIC" alt="tigerforge" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1D2KTESycRxlXDk5WoD_QbO9kluDaRYAW" alt="sadiepizzey" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1bweh3boXC-1hHBnTpHwXAYV9x9sbk_yt" alt="xcreativ3" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/17ruYBxMjqfleX2JjZmR6jXjI9BdhnX9t" alt="new2" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/183FTZx5pi-MzWVz9oHofZ2ofYyXQuhJH" alt="kineticskunk" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1fr8Z_B8dGvwC4Cv8Kj_Ep0lwOPnbMT0-" alt="new4" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1n2J2BvBdRXs87T93gIvDu46s52FD7FHA" alt="new1" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1EktyPe9mXoGFeF-dXy1hA42ZDoHgrqp4" alt="new6" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1swgQhq3npLW7zGfw526uI1olapaMHzL0" alt="new3" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1cahi68Ql2xEnXvf61bZdMG0IgKYy86e4" alt="new8" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1UWq06OD-O5Xy_30P-X34AtKgrcsvRAJF" alt="new5" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1zq8YRkcNkDisP1Ev5NdM-zHSZ39FKNLN" alt="new7" loading="lazy" /></div>
   </div>
 </div>
 
@@ -1148,7 +1265,7 @@ footer {
 <section class="process-section" id="process">
   <p class="section-label">How It Works</p>
   <h2 class="section-title">The <span class="accent">process.</span></h2>
-  <p class="process-intro">A clear, structured approach from first conversation to final delivery — so you always know where we are and what comes next.</p>
+  <p class="process-intro">A clear, structured approach from first conversation to final delivery, so you always know where we are and what comes next.</p>
   <p style="font-size:0.78rem; color:var(--red); font-style:italic; margin-top:-3.5rem; margin-bottom:5rem; opacity:0.8;">Please note: the process may vary slightly depending on your chosen package.</p>
 
   <div class="process-steps">
@@ -1207,7 +1324,7 @@ footer {
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
       </button>
       <div class="process-img-drawer">
-        <div class="process-step-img-wrap"><img class="process-step-img" src="https://lh3.googleusercontent.com/d/1RbTVYARYRdp65Dm_jeVMSb_2cwhF8VKq" alt="Final Logo" /></div>
+        <div class="process-step-img-wrap"><img class="process-step-img" src="https://lh3.googleusercontent.com/d/1SJRu5PPdyTScLS-oOyvvXrPDepk2-DxK" alt="Final Logo" /></div>
       </div>
       </div>
     </div>
@@ -1227,7 +1344,7 @@ footer {
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
       </button>
       <div class="process-img-drawer">
-        <div class="process-step-img-wrap"><img class="process-step-img" src="https://lh3.googleusercontent.com/d/1SJRu5PPdyTScLS-oOyvvXrPDepk2-DxK" alt="Brand Identity" /></div>
+        <div class="process-step-img-wrap"><img class="process-step-img" src="https://lh3.googleusercontent.com/d/1RbTVYARYRdp65Dm_jeVMSb_2cwhF8VKq" alt="Brand Identity" /></div>
       </div>
       </div>
     </div>
@@ -1288,12 +1405,12 @@ footer {
     <!-- DR J -->
     <a class="cs-card" href="https://www.behance.net/gallery/245377331/Dr-J-Logo-Identity" target="_blank" rel="noopener">
       <div class="cs-card-img">
-        <img src="https://lh3.googleusercontent.com/d/1Pp2YtJHyHwhp7bBBS0Q4Akem-OQ2vqE_" alt="Dr J — Logo &amp; Identity" loading="lazy" />
+        <img src="https://lh3.googleusercontent.com/d/1Pp2YtJHyHwhp7bBBS0Q4Akem-OQ2vqE_" alt="Dr J | Logo &amp; Identity" loading="lazy" />
       </div>
       <div class="cs-card-body">
         <p class="cs-tag">Logo &amp; Identity</p>
         <h3 class="cs-card-name">Dr J</h3>
-        <p class="cs-card-excerpt">A fluid, custom script identity for Dr Jeanne Fredericks — personal, transformative, and anchored in expert-led authority.</p>
+        <p class="cs-card-excerpt">A fluid, custom script identity for Dr Jeanne Fredericks: personal, transformative, and anchored in expert-led authority.</p>
         <p class="cs-card-tagline">Sophisticated. Adaptive. Designed for transformation.</p>
         <span class="cs-card-link">
           View on Behance
@@ -1305,12 +1422,12 @@ footer {
     <!-- JET COFFEE -->
     <a class="cs-card" href="https://www.behance.net/gallery/220578107/Jet-Coffee-Logo-Visual-Identity" target="_blank" rel="noopener">
       <div class="cs-card-img">
-        <img src="https://lh3.googleusercontent.com/d/1XREgk25tALmFXPgxa7-vVpXmUl5jt-nn" alt="Jet Coffee — Logo &amp; Identity" loading="lazy" />
+        <img src="https://lh3.googleusercontent.com/d/1XREgk25tALmFXPgxa7-vVpXmUl5jt-nn" alt="Jet Coffee | Logo &amp; Identity" loading="lazy" />
       </div>
       <div class="cs-card-body">
         <p class="cs-tag">Logo &amp; Identity</p>
         <h3 class="cs-card-name">Jet Coffee</h3>
-        <p class="cs-card-excerpt">A high-contrast, high-energy visual system engineered for London's urban movers — barista-level quality in under 60 seconds.</p>
+        <p class="cs-card-excerpt">A high-contrast, high-energy visual system engineered for London's urban movers, with barista-level quality in under 60 seconds.</p>
         <p class="cs-card-tagline">Fast. Sustainable. Engineered for speed.</p>
         <span class="cs-card-link">
           View on Behance
@@ -1322,12 +1439,12 @@ footer {
     <!-- THE CHANGE HUB -->
     <a class="cs-card" href="https://www.behance.net/gallery/236758523/The-Change-Hub-Logo-Visual-Identity" target="_blank" rel="noopener">
       <div class="cs-card-img">
-        <img src="https://lh3.googleusercontent.com/d/1VqWTl6wPDvBGQZg9sPHz1CgTRa5u5sjU" alt="The Change Hub — Logo &amp; Identity" loading="lazy" />
+        <img src="https://lh3.googleusercontent.com/d/1VqWTl6wPDvBGQZg9sPHz1CgTRa5u5sjU" alt="The Change Hub | Logo &amp; Identity" loading="lazy" />
       </div>
       <div class="cs-card-body">
         <p class="cs-tag">Logo &amp; Identity</p>
         <h3 class="cs-card-name">The Change Hub</h3>
-        <p class="cs-card-excerpt">A dynamic visual identity for a strategic change-management partner — balancing professional structure with the fluid nature of organisational evolution.</p>
+        <p class="cs-card-excerpt">A dynamic visual identity for a strategic change-management partner, balancing professional structure with the fluid nature of organisational evolution.</p>
         <p class="cs-card-tagline">Strategic. Collaborative. Engineered for impact.</p>
         <span class="cs-card-link">
           View on Behance
@@ -1339,12 +1456,12 @@ footer {
     <!-- XCREATIV3 -->
     <a class="cs-card" href="https://www.behance.net/gallery/245335877/xcreativ3-Logo-Visual-Identity" target="_blank" rel="noopener">
       <div class="cs-card-img">
-        <img src="https://lh3.googleusercontent.com/d/1QpDmyRWQ4TVOuPcc7fTYh03GicaIOhqJ" alt="xcreativ3 — Logo &amp; Identity" loading="lazy" />
+        <img src="https://lh3.googleusercontent.com/d/1QpDmyRWQ4TVOuPcc7fTYh03GicaIOhqJ" alt="xcreativ3 | Logo &amp; Identity" loading="lazy" />
       </div>
       <div class="cs-card-body">
         <p class="cs-tag">Logo &amp; Identity</p>
         <h3 class="cs-card-name">xcreativ3</h3>
-        <p class="cs-card-excerpt">A refined geometric identity built around a custom X mark — representing structure, clarity, and intentional forward movement.</p>
+        <p class="cs-card-excerpt">A refined geometric identity built around a custom X mark, representing structure, clarity, and intentional forward movement.</p>
         <p class="cs-card-tagline">Simple. Strategic. Built to perform.</p>
         <span class="cs-card-link">
           View on Behance
@@ -1417,17 +1534,12 @@ function toggleIncludes(btn) {
   const includes = btn.nextElementSibling;
   const isOpen = includes.classList.contains('open');
 
-  // Close all other open dropdowns first
-  document.querySelectorAll('.pkg-includes.open').forEach(function(el) {
-    el.classList.remove('open');
-  });
-  document.querySelectorAll('.pkg-includes-toggle.open').forEach(function(b) {
-    b.classList.remove('open');
-    b.childNodes[0].textContent = "What's included";
-  });
-
-  // If this one was closed, open it; if it was open, leave it closed (toggle off)
-  if (!isOpen) {
+  // Toggle only this one; all others stay as they are
+  if (isOpen) {
+    includes.classList.remove('open');
+    btn.classList.remove('open');
+    btn.childNodes[0].textContent = "What's included";
+  } else {
     includes.classList.add('open');
     btn.classList.add('open');
     btn.childNodes[0].textContent = "Hide includes";
@@ -1520,7 +1632,7 @@ function toggleIncludes(btn) {
       isHeld = false;
       strip.style.cursor = 'grab';
 
-      if (!hasMoved) return; // plain click — just resume auto-scroll
+      if (!hasMoved) return; // plain click, just resume auto-scroll
 
       // Momentum glide then resume auto-scroll
       var momentum = velX * 120;
@@ -1535,7 +1647,7 @@ function toggleIncludes(btn) {
           var p = Math.min((ts - startTime) / duration, 1);
           var ease = 1 - Math.pow(1 - p, 3);
           // Apply momentum on top of where offset currently is
-          // (tick() is still running but isHeld=false — we nudge offset here)
+          // (tick() is still running but isHeld=false, we nudge offset here)
           offset = wrap(startOffset + momentum * ease);
           if (p < 1) {
             requestAnimationFrame(glide);
