@@ -783,6 +783,26 @@ footer {
   color: rgba(223,223,224,0.6);
   font-weight: 500;
 }
+.about-content-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.about-left { display: flex; flex-direction: column; gap: 2rem; }
+.about-logos-img {
+  width: 100%;
+  border-radius: 4px;
+  display: block;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .about-content-row {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .about-right { order: -1; }
+}
 @media (max-width: 600px) {
   .about-header { flex-direction: column; align-items: center; text-align: center; }
   .about-header-text { align-items: center; }
@@ -1229,33 +1249,41 @@ footer {
 
 <!-- IMAGE MARQUEE -->
 <div class="img-marquee-strip">
-    <div class="img-marquee-track">
+      <div class="img-marquee-track">
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1dfojep3yeSb0i4qFK-zR-VQe6P7MdEeA" alt="drj" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1gJES7Wb8u5M5koCI2l_UKAtuxDrhjQ-T" alt="jetcoffee" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/15sGOqZrQiSCvwFLIU4TJK5cKuDQY_hIC" alt="tigerforge" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1r1z_-ZDnoZffi7srs6XewPR7Aykdc9Gb" alt="new9" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1D2KTESycRxlXDk5WoD_QbO9kluDaRYAW" alt="sadiepizzey" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1bweh3boXC-1hHBnTpHwXAYV9x9sbk_yt" alt="xcreativ3" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/17ruYBxMjqfleX2JjZmR6jXjI9BdhnX9t" alt="new2" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/11D0KgFZfkwE-Mvi8pGBbXVQ2Cz0I0fxf" alt="new10" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/183FTZx5pi-MzWVz9oHofZ2ofYyXQuhJH" alt="kineticskunk" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1fr8Z_B8dGvwC4Cv8Kj_Ep0lwOPnbMT0-" alt="new4" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1n2J2BvBdRXs87T93gIvDu46s52FD7FHA" alt="new1" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/18qQd9iRYHt-nYb3YSHf8hj5OD65HFPVk" alt="new11" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1EktyPe9mXoGFeF-dXy1hA42ZDoHgrqp4" alt="new6" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1swgQhq3npLW7zGfw526uI1olapaMHzL0" alt="new3" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1cahi68Ql2xEnXvf61bZdMG0IgKYy86e4" alt="new8" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1tfZWjPtndvBwm2lt6hwxoz5zkC8xFLl_" alt="new12" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1UWq06OD-O5Xy_30P-X34AtKgrcsvRAJF" alt="new5" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1zq8YRkcNkDisP1Ev5NdM-zHSZ39FKNLN" alt="new7" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1dfojep3yeSb0i4qFK-zR-VQe6P7MdEeA" alt="drj" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1gJES7Wb8u5M5koCI2l_UKAtuxDrhjQ-T" alt="jetcoffee" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/15sGOqZrQiSCvwFLIU4TJK5cKuDQY_hIC" alt="tigerforge" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1r1z_-ZDnoZffi7srs6XewPR7Aykdc9Gb" alt="new9" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1D2KTESycRxlXDk5WoD_QbO9kluDaRYAW" alt="sadiepizzey" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1bweh3boXC-1hHBnTpHwXAYV9x9sbk_yt" alt="xcreativ3" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/17ruYBxMjqfleX2JjZmR6jXjI9BdhnX9t" alt="new2" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/11D0KgFZfkwE-Mvi8pGBbXVQ2Cz0I0fxf" alt="new10" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/183FTZx5pi-MzWVz9oHofZ2ofYyXQuhJH" alt="kineticskunk" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1fr8Z_B8dGvwC4Cv8Kj_Ep0lwOPnbMT0-" alt="new4" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1n2J2BvBdRXs87T93gIvDu46s52FD7FHA" alt="new1" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/18qQd9iRYHt-nYb3YSHf8hj5OD65HFPVk" alt="new11" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1EktyPe9mXoGFeF-dXy1hA42ZDoHgrqp4" alt="new6" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1swgQhq3npLW7zGfw526uI1olapaMHzL0" alt="new3" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1cahi68Ql2xEnXvf61bZdMG0IgKYy86e4" alt="new8" loading="lazy" /></div>
+    <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1tfZWjPtndvBwm2lt6hwxoz5zkC8xFLl_" alt="new12" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1UWq06OD-O5Xy_30P-X34AtKgrcsvRAJF" alt="new5" loading="lazy" /></div>
     <div class="img-marquee-item"><img src="https://lh3.googleusercontent.com/d/1zq8YRkcNkDisP1Ev5NdM-zHSZ39FKNLN" alt="new7" loading="lazy" /></div>
   </div>
