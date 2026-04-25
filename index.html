@@ -906,6 +906,192 @@ footer {
   z-index: 0;
 }
 .process-section > *:not(.process-video-bg) { position: relative; z-index: 1; }
+
+/* STATS SECTION */
+.stats-section {
+  background: var(--off-black);
+  padding: 6rem 5%;
+  border-top: 1px solid var(--border-dark);
+  border-bottom: 1px solid var(--border-dark);
+  position: relative;
+  overflow: hidden;
+}
+.stats-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 10% 50%, rgba(180,0,13,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse at 90% 50%, rgba(180,0,13,0.04) 0%, transparent 55%);
+  pointer-events: none;
+}
+.stats-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.stats-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr;
+  gap: 0;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.stats-divider {
+  width: 1px;
+  height: 80px;
+  background: var(--border-dark);
+  justify-self: center;
+}
+.stat-item {
+  padding: 1.5rem 3rem;
+  text-align: center;
+}
+.stat-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(3rem, 5.5vw, 5.2rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.stat-number .stat-accent { color: var(--red); }
+.stat-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted-dark);
+  font-weight: 500;
+  display: block;
+  line-height: 1.6;
+}
+.stat-sub {
+  font-size: 0.72rem;
+  color: rgba(223,223,224,0.28);
+  margin-top: 0.4rem;
+  display: block;
+  font-style: italic;
+}
+@media (max-width: 768px) {
+  .stats-inner {
+    grid-template-columns: 1fr;
+  }
+  .stats-divider {
+    width: 40px; height: 1px;
+    margin: 0 auto;
+  }
+  .stat-item { padding: 2rem 1rem; }
+}
+
+/* REVIEWS SECTION */
+.reviews-section {
+  background: var(--black);
+  padding: 7rem 5%;
+  border-top: 1px solid var(--border-dark);
+}
+.reviews-header {
+  margin-bottom: 4rem;
+}
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border-dark);
+  border: 1px solid var(--border-dark);
+}
+.review-card {
+  background: var(--off-black);
+  padding: 2.8rem 2.6rem;
+  position: relative;
+  transition: background 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.review-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--red); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.review-card:hover { background: #131313; }
+.review-card:hover::before { transform: scaleX(1); }
+.review-card--wide {
+  grid-column: 1 / -1;
+}
+.review-stars {
+  display: flex; gap: 0.3rem; align-items: center;
+}
+.review-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem; font-weight: 600;
+  color: var(--white); line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.review-body {
+  font-size: 0.87rem;
+  color: var(--muted-dark);
+  line-height: 1.8;
+  flex: 1;
+}
+.review-author {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-dark);
+  margin-top: auto;
+}
+.review-name {
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--white);
+}
+.review-company {
+  font-size: 0.72rem;
+  color: var(--red);
+  letter-spacing: 0.05em;
+}
+.review-company::before {
+  content: '·';
+  margin-right: 0.75rem;
+  color: var(--border-dark);
+}
+.review-logo-row {
+  display: flex; align-items: center; gap: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+.review-logo-circle {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  padding: 7px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.review-card:hover .review-logo-circle {
+  background: rgba(180,0,13,0.12);
+  border-color: rgba(180,0,13,0.3);
+}
+.review-logo {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+  display: block;
+}
+.review-logo-sep {
+  width: 1px; height: 20px;
+  background: var(--border-dark);
+}
+
+@media (max-width: 768px) {
+  .reviews-grid { grid-template-columns: 1fr; }
+  .review-card--wide { grid-column: 1; }
+  .review-card { padding: 2rem 1.6rem; }
+}
 </style>
 </head>
 <body>
@@ -916,10 +1102,12 @@ footer {
     <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4NDguOTkgMTQ4LjM2Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjZGZkZmUwOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8ZyBpZD0iTGF5ZXJfMS0yIiBkYXRhLW5hbWU9IkxheWVyIDEiPgogICAgPGc+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTU5OC4xOCwwYy0zLjYzLDAtNi42NCwxLjE2LTkuMDQsMy41LTIuNCwyLjMzLTMuNiw1LjI1LTMuNiw4Ljc1czEuMTksNi4yMiwzLjYsOC41NmMyLjQsMi4zMyw1LjQxLDMuNSw5LjA0LDMuNXM2LjgxLTEuMiw5LjE0LTMuNmMyLjMzLTIuNCwzLjUtNS4zNSwzLjUtOC44NXMtMS4yLTYuMTktMy42LTguNDZjLTIuNC0yLjI3LTUuNDEtMy40LTkuMDQtMy40WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNDMuNTgsNjMuOTdjNS4zMS0yLjk4LDExLjM0LTQuNDcsMTguMDgtNC40Nyw1LjU3LDAsMTAuNzksMS4yLDE1LjY1LDMuNiw0Ljg2LDIuNCw4Ljk3LDYuMTIsMTIuMzUsMTEuMThsMTQuMTktOS4xNGMtNC4wMi03LjI2LTkuNjktMTIuNzQtMTcuMDEtMTYuNDMtNy4zMy0zLjctMTUuNjUtNS41NC0yNC45OS01LjU0LTEwLjUsMC0xOS44NiwyLjI0LTI4LjEsNi43MS04LjIzLDQuNDctMTQuNjgsMTAuNjYtMTkuMzQsMTguNTctNC42Nyw3LjkxLTcsMTYuOTgtNywyNy4yMnMyLjM0LDE5LjMxLDcsMjcuMjJjNC42Niw3LjkxLDExLjExLDE0LjEzLDE5LjM0LDE4LjY2LDguMjMsNC41NCwxNy42LDYuODEsMjguMSw2LjgxLDkuMzMsMCwxNy42Ni0xLjkxLDI0Ljk5LTUuNzQsNy4zMi0zLjgyLDEyLjk5LTkuMywxNy4wMS0xNi40M2wtMTQuMTktOC45NGMtMy4zNyw1LjA2LTcuNDksOC43OS0xMi4zNSwxMS4xOC00Ljg2LDIuNC0xMC4wOCwzLjYtMTUuNjUsMy42LTYuNzQsMC0xMi43Ny0xLjQ5LTE4LjA4LTQuNDctNS4zMi0yLjk4LTkuNTMtNy4xOS0xMi42NC0xMi42NC0zLjExLTUuNDQtNC42Ny0xMS44Ni00LjY3LTE5LjI1czEuNTYtMTMuNzcsNC42Ny0xOS4xNWMzLjExLTUuMzgsNy4zMi05LjU2LDEyLjY0LTEyLjU0WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMzYuODIsNjEuNjJ2LTE3LjQ4aC0xNy44OXYxMDMuMDZoMTguNjd2LTUxLjMzYzAtMTEuMjgsMi45Mi0xOS45LDguNzUtMjUuODYsNS44My01Ljk2LDEzLjc0LTguOTQsMjMuNzItOC45NGgyLjA0Yy43MSwwLDEuNDYuMDcsMi4yNC4xOXYtMTguMDhjLTkuODUsMC0xOC4xNSwxLjg4LTI0Ljg5LDUuNjQtNS41NiwzLjEtOS43Myw3LjQyLTEyLjY0LDEyLjgyWiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zNjIuNyw0OS43OGMtNy42NS00LjQtMTYuNDctNi42MS0yNi40NS02LjYxcy0xOC43LDIuMjQtMjYuNTQsNi43MWMtNy44NCw0LjQ3LTE0LDEwLjY2LTE4LjQ3LDE4LjU3LTQuNDcsNy45MS02LjcxLDE2Ljk4LTYuNzEsMjcuMjJzMi4zLDE5LjMxLDYuOSwyNy4yMmM0LjYsNy45MSwxMS4wOCwxNC4xMywxOS40NSwxOC42Niw4LjM2LDQuNTQsMTguMDUsNi44MSwyOS4wNyw2LjgxLDguNTYsMCwxNi4zLTEuNDMsMjMuMjQtNC4yOCw2LjkzLTIuODUsMTIuNzQtNywxNy40LTEyLjQ0bC0xMC4zMS0xMi4wNmMtMy43Niw0LjE1LTguMTQsNy4yNi0xMy4xMiw5LjMzLTQuOTksMi4wOC0xMC41NCwzLjExLTE2LjYyLDMuMTEtNy4zOSwwLTEzLjk0LTEuNDktMTkuNjQtNC40Ny01LjcxLTIuOTgtMTAuMTQtNy4xNi0xMy4zMi0xMi41NC0yLjM0LTMuOTYtMy44MS04LjM0LTQuNDItMTMuMTJoODMuNjZjLjEzLS45MS4yMi0xLjg4LjI5LTIuOTIuMDctMS4wMy4xLTEuOTQuMS0yLjcyLDAtMTAuNjMtMi4xNy0xOS45My02LjUxLTI3LjktNC4zNC03Ljk3LTEwLjM0LTE0LjE2LTE3Ljk5LTE4LjU3Wk0zMTguOTUsNjMuMjljNS4wNi0yLjkyLDEwLjgyLTQuMzcsMTcuMzEtNC4zN3MxMi40MSwxLjQ2LDE3LjQsNC4zN2M0Ljk5LDIuOTIsOC45MSw2Ljk3LDExLjc2LDEyLjE1LDIuMTYsMy45MywzLjQ2LDguMjgsMy45MSwxMy4wM2gtNjYuMjNjLjU0LTQuNzIsMS44Ny05LjAzLDMuOTktMTIuOTMsMi44NS01LjI1LDYuODEtOS4zMywxMS44Ni0xMi4yNVoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNDQ3LjY3LDQzLjE3Yy04LjE3LDAtMTUuOTgsMS4xMy0yMy40MywzLjQtNy40NiwyLjI3LTEzLjg0LDUuNTQtMTkuMTUsOS44Mmw3Ljc4LDE0YzQuMDItMy4zNyw4Ljk0LTYuMDYsMTQuNzgtOC4wNyw1LjgzLTIuMDEsMTEuNzktMy4wMiwxNy44OS0zLjAyLDkuMiwwLDE2LjEsMi4xNywyMC43MSw2LjUyLDQuNiw0LjM0LDYuOSwxMC40Nyw2LjksMTguMzd2My42OWgtMjkuNTVjLTEwLjI0LDAtMTguMzcsMS4zNi0yNC40LDQuMDgtNi4wMywyLjcyLTEwLjM3LDYuMzUtMTMuMDMsMTAuODktMi42Niw0LjU0LTMuOTksOS41OS0zLjk5LDE1LjE3czEuNTYsMTEuMDUsNC42NywxNS42NWMzLjExLDQuNiw3LjU1LDguMiwxMy4zMiwxMC43OSw1Ljc3LDIuNTksMTIuNDcsMy44OSwyMC4xMiwzLjg5LDkuNDYsMCwxNy4zMS0xLjc4LDIzLjUzLTUuMzUsNC4zOS0yLjUxLDcuNzktNS42OSwxMC4zMS05LjQ2djEzLjY0aDE3Ljd2LTYyLjIyYzAtMTQuMTMtMy44My0yNC42My0xMS40Ny0zMS41LTcuNjUtNi44Ny0xOC41NC0xMC4zMS0zMi42Ny0xMC4zMVpNNDYxLjc3LDEyOS4zYy01LjI1LDMuMTEtMTEuMzcsNC42Ny0xOC4zNyw0LjY3cy0xMi43MS0xLjUyLTE2LjcyLTQuNTdjLTQuMDItMy4wNS02LjAzLTcuMS02LjAzLTEyLjE1LDAtNC40LDEuNjItOC4xNyw0Ljg2LTExLjI4LDMuMjQtMy4xMSw5LjUzLTQuNjcsMTguODYtNC42N2gyOC43OHYxNC4zOWMtMi4zMyw1Ljk3LTYuMTIsMTAuNS0xMS4zNywxMy42MVoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNTQyLjE2LDIxLjU4aC0xOC42NnYyMi41NWgtMTcuNXYxNS4zN2gxNy41djU2LjU4YzAsMTAuMzcsMi44NCwxOC4zNCw4LjU2LDIzLjkxLDUuNyw1LjU3LDEzLjczLDguMzYsMjQuMTEsOC4zNiw0LjI4LDAsOC4zOS0uNTcsMTIuMzQtMS43NSwxLjEyLS4zMywyLjE5LS43MSwzLjIyLTEuMTR2LTE2LjgyYy0zLjY3LDIuNjQtOC4xNSwzLjk2LTEzLjQzLDMuOTZzLTkuMTctMS40OC0xMS45Ni00LjQ3Yy0yLjc5LTIuOTgtNC4xOC03LjI1LTQuMTgtMTIuODN2LTU1LjhoMjkuNTZ2LTE1LjM3aC0yOS41NnYtMjIuNTVaIi8+CiAgICAgIDxyZWN0IGNsYXNzPSJjbHMtMSIgeD0iNTg4Ljg1IiB5PSI0NC4xNCIgd2lkdGg9IjE4LjY3IiBoZWlnaHQ9IjEwMy4wNiIvPgogICAgICA8cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iNjc2LjUxIDEyNi43IDY0MS4wNyA0NC4xNCA2MjEuNjMgNDQuMTQgNjY2Ljc0IDE0Ny4xOSA2ODUuNzkgMTQ3LjE5IDczMC45MSA0NC4xNCA3MTIuNjMgNDQuMTQgNjc2LjUxIDEyNi43Ii8+CiAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSI5OS43NSA0NC4xNCA3OS4zMyA0NC4xNCA1MS4wNCA4MS4yOSAyMi43NSA0NC4xNCAxLjk1IDQ0LjE0IDQwLjU4IDk0LjUyIDAgMTQ3LjE5IDIwLjgxIDE0Ny4xOSA1MC44OCAxMDcuNjcgODAuNyAxNDcuMTkgMTAxLjg5IDE0Ny4xOSA2MC45MSA5NC40NSA5OS43NSA0NC4xNCIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik04MDkuODIsOTMuNTdjLTQuMzYtMy45LTEwLjE5LTYuNS0xNy4zOC03Ljc1bDIzLjIxLTI4LjZ2LTEzLjA5aC02OS44NHYxNy40NWg0NC4xMWwtMjEuNjEsMjYuNnYxMy4zNmgxMC40N2M3LjcyLDAsMTMuMzQsMS4zOCwxNi43MSw0LjEsMy4yNSwyLjYxLDQuODMsNS45OSw0LjgzLDEwLjMxcy0xLjY1LDcuOTMtNS4wNSwxMC41NWMtMy41NiwyLjc0LTguNzMsNC4xMy0xNS4zNyw0LjEzLTUuNjIsMC0xMC45NS0uOTMtMTUuODMtMi43Ni00Ljg1LTEuODItOC44My00LjE3LTExLjgzLTYuOTlsLTIuNDItMi4yOC05LjIsMTUuNzksMS42MywxLjQ0YzQuMzYsMy44NSwxMCw2Ljk1LDE2Ljc4LDkuMTksNi43MywyLjIyLDEzLjc2LDMuMzUsMjAuODgsMy4zNSw4Ljc1LDAsMTYuMTItMS40MywyMS45Mi00LjI2LDUuOS0yLjg3LDEwLjM4LTYuODYsMTMuMzQtMTEuODYsMi45My00Ljk3LDQuNDItMTAuNSw0LjQyLTE2LjQ0LDAtOC45NC0zLjI4LTE2LjQyLTkuNzUtMjIuMjNaIi8+CiAgICAgIDxnPgogICAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSI4MTUuOTMgMTguMDEgODIxLjQ3IDE4LjAxIDgyMS40NyAzMi4xNSA4MjMuNzUgMzIuMTUgODIzLjc1IDE4LjAxIDgyOS4yOSAxOC4wMSA4MjkuMjkgMTYgODE1LjkzIDE2IDgxNS45MyAxOC4wMSIvPgogICAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSI4NDguOTkgMzIuMTUgODQ4Ljk3IDE2IDg0Ny4wOCAxNiA4NDAuNDMgMjcuMzQgODMzLjcgMTYgODMxLjggMTYgODMxLjggMzIuMTUgODM0LjAyIDMyLjE1IDgzNC4wMiAyMC40NCA4MzkuODYgMzAuMTkgODQwLjkyIDMwLjE5IDg0Ni43NiAyMC4zNyA4NDYuNzggMzIuMTUgODQ4Ljk5IDMyLjE1Ii8+CiAgICAgIDwvZz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPg==" alt="Xcreativ" />
   </a>
   <ul class="nav-links">
-    <li><a href="#packages">Packages</a></li>
-    <li><a href="#process">Process</a></li><li><a href="#case-studies">Work</a></li>
-    <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#case-studies">Work</a></li>
+    <li><a href="#reviews">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:0.75rem;">
@@ -930,11 +1118,12 @@ footer {
   </div>
 </nav>
 <div class="mobile-nav-drawer" id="mobileNavDrawer">
+  <a href="#about" onclick="closeMobileNav()">About</a>
   <a href="#packages" onclick="closeMobileNav()">Packages</a>
+  <a href="#services" onclick="closeMobileNav()">Services</a>
   <a href="#process" onclick="closeMobileNav()">Process</a>
   <a href="#case-studies" onclick="closeMobileNav()">Work</a>
-  <a href="#services" onclick="closeMobileNav()">Services</a>
-  <a href="#about" onclick="closeMobileNav()">About</a>
+  <a href="#reviews" onclick="closeMobileNav()">Reviews</a>
   <a href="#contact" onclick="closeMobileNav()">Contact</a>
 </div>
 
@@ -2682,6 +2871,126 @@ footer {
         </span>
       </div>
     </a>
+
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section" id="stats">
+  <div class="stats-header">
+    <p class="section-label" style="justify-content:center;">By The Numbers</p>
+    <h2 class="section-title" style="color:var(--white);text-align:center;">Creating since <span class="accent">2019</span></h2>
+  </div>
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number"><span class="stat-accent">10,000<span style="font-size:0.6em;vertical-align:middle;">+</span></span></span>
+      <span class="stat-label">Hours Spent Designing</span>
+    </div>
+    <div class="stats-divider"></div>
+    <div class="stat-item">
+      <span class="stat-number"><span class="stat-accent">400<span style="font-size:0.6em;vertical-align:middle;">+</span></span></span>
+      <span class="stat-label">Projects Completed</span>
+    </div>
+    <div class="stats-divider"></div>
+    <div class="stat-item">
+      <span class="stat-number"><span class="stat-accent">7<span style="font-size:0.6em;vertical-align:middle;">+</span></span></span>
+      <span class="stat-label">Years of Experience</span>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="reviews-header">
+    <p class="section-label">Client Reviews</p>
+    <h2 class="section-title" style="color:var(--white);">What clients <span class="accent">say</span></h2>
+  </div>
+  <div class="reviews-grid">
+
+    <div class="review-card">
+      <div class="review-stars">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="review-title">Professional, communicative and delivered exceptional work efficiently</p>
+      <p class="review-body">It was a pleasure working with Xander. He is highly professional, efficient, and great to collaborate with. His work was of excellent quality, and communication throughout the project was seamless.</p>
+      <div class="review-author">
+        <div class="review-logo-circle"><img class="review-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMjYuNjMgMjYxLjcyIj4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjZmZmOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8ZyBpZD0iTGF5ZXJfMS0yIiBkYXRhLW5hbWU9IkxheWVyIDEiPgogICAgPGc+CiAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIxMzQuODIgNjQuMzYgMTgwLjcyIDkwLjg1IDE4MC43MiAxNjkuOTEgMTEzLjMxIDIwNy4yMiA0NS45MSAxNjkuOTEgNDUuOTEgOTAuODUgMTU4LjI5IDI1Ljk2IDExMy4zMSAwIDAgNjUuNDIgMCAxOTYuMjggMTEzLjMxIDI2MS43MiAyMjYuNjMgMTk2LjI4IDIyNi42MyA2NS40MiAxNzkuNzkgMzguMzkgMTM0LjgyIDY0LjM2Ii8+CiAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIxMTMuMzEgMTgyLjY2IDE1OC43NyAxNTcuNDggMTU4Ljc3IDEwMyAxMTMuMzEgNzYuNzYgNjcuODYgMTAzIDY3Ljg2IDE1Ny40OCAxMTMuMzEgMTgyLjY2Ii8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4=" alt="Revel Africa" /></div>
+        <span class="review-name">Owner</span>
+        <span class="review-company">Revel Africa</span>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="review-title">We fell in love with the brand</p>
+      <p class="review-body">We worked with Xander who was amazing and really helped guide us through the process and ideation. We were quite skeptical at first as this was all new to us, but we're super pleased with the eventual outcome! We're looking forward to the next stage of designing the website and marketing it as we grow our SaaS brand.</p>
+      <div class="review-author">
+        <div class="review-logo-circle"><img class="review-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMzguMTYgMjM4LjE2Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjZmZmOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8ZyBpZD0iTGF5ZXJfMS0yIiBkYXRhLW5hbWU9IkxheWVyIDEiPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjIyLjk0LDEyNC43NGMtMjEuOTcsOS4yOS00MS43MSwyMi42LTU4LjY1LDM5LjU0LTE2Ljk1LDE2Ljk1LTMwLjI1LDM2LjY4LTM5LjU1LDU4LjY2LTIuMTIsNS4wMS00LjAxLDEwLjA4LTUuNjYsMTUuMjJ2LTExOS4wOEgwYzUuMTQtMS42NiwxMC4yMS0zLjU0LDE1LjIyLTUuNjYsMjEuOTctOS4yOSw0MS43MS0yMi42LDU4LjY2LTM5LjU1LDE2Ljk1LTE2Ljk1LDMwLjI1LTM2LjY4LDM5LjU0LTU4LjY1LDIuMTItNS4wMSw0LTEwLjA4LDUuNjYtMTUuMjF2MTE5LjA4aDExOS4wOGMtNS4xMywxLjY2LTEwLjIxLDMuNTQtMTUuMjIsNS42NloiLz4KICA8L2c+Cjwvc3ZnPg==" alt="BrandAxis" /></div>
+        <span class="review-name">Co-Founder</span>
+        <span class="review-company">BrandAxis</span>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="review-title">I just love your creative eye!</p>
+      <p class="review-body">Thank you so much for creating The Change Hub's Logo... I still love it 💞🌸</p>
+      <div class="review-author">
+        <div class="review-logo-row"><div class="review-logo-circle"><img class="review-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNTkuNjkgMjQzLjgzIj4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjZmZmOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8ZyBpZD0iTGF5ZXJfMS0yIiBkYXRhLW5hbWU9IkxheWVyIDEiPgogICAgPGc+CiAgICAgIDxnPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTQyLjYyLDk2LjFoLTkuODV2MjYuNDFoOS44NWM4LjMsMCwxNC4wMy01Ljc3LDE0LjAzLTEzLjJ2LS4wOGMwLTcuNDMtNS43My0xMy4xMy0xNC4wMy0xMy4xM1pNNTEuNzgsMTA5LjM4YzAsNS4xNy0zLjYyLDguOS05LjE3LDguOWgtNS4yMXYtMTcuOTZoNS4yMWM1LjU1LDAsOS4xNywzLjgxLDkuMTcsOC45OHYuMDhaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNjYuMzEsMTA3LjA4di00LjQ5aC00LjZ2MTkuOTJoNC42di03LjU4YzAtNS4yOCwyLjc5LTcuODgsNi43OS03Ljg4aC4yNnYtNC44M2MtMy41MS0uMTUtNS44MSwxLjg5LTcuMDUsNC44N1oiLz4KICAgICAgPC9nPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNTEuMSwxLjI0Yy02LjI2LTIuMjktMTIuOTgtMS4xOS0xOS4xMywxLjYtMTEuNjYsNS4zLTE5LjIsMTUuMzgtMjQuOTksMjYuNjktLjcxLDEuMzgtMS4zMiwyLjY2LTEuMzIsMi42Ni0yLjA1LDQuMzQtMy4zMSw4LjA5LTQuODUsMTIuNy0uNCwxLjItLjcsMi4xMy0uNzgsMi4zNy00LjY3LDE0LjQ1LTcuOTMsMjguNjMtOS43NCw0My43My0xLjk1LDE2LjI1LTMuOSwzMi41LTUuODUsNDguNzUtLjI1LDMuMTUtLjY5LDguMDMtMS40NiwxMy45Ny0yLjIxLDE3LjIyLTQuMiwzMy4xNy0xMi4yLDUwLjE1LTMuOTUsOC4zOC04LjI4LDE2LjI3LTE1LjExLDIyLjQ3LTguNzksNy45Ny0yMC4yNSwxMi4wNi0zMi4xNCw5LjQ5LTEwLjI5LTIuMjItMTYuMzgtMTAuNTktMTUuOTktMjAuNzQuNjQtMTYuMDYsMTIuMjgtMzAuOTcsMjQuNDYtNDAuNTgsMTMuOTEtMTAuOTksMjkuNjgtMTguMTMsNDcuMDktMjMuOGwuNTEtNy4yMmMtMTkuNzQsNi41MS0zNy45LDEzLjk1LTU0LjE1LDI3LjE3QzExLjk3LDE4MS42OS4wNCwxOTguMjQuMDUsMjE2LjdjMCwxMi43MSw4LjEzLDIyLjU1LDIwLjE2LDI1LjU3LDExLjIxLDIuODEsMjIuNjcsMS43MSwzMy42MS0yLjM4LDEzLjk0LTUuMjEsMjUuMTEtMTQuOTYsMzMuNDMtMjcuMzIsMTMuOS0yMC42OSwxOS4xMi00Ny4yMiwyMi4yNC03MS40OGwuNjYtNy44LDMuMTUtMzkuODhjMS4xNi0xNC43MywyLjk2LTM0LjA4LDYuODItNDkuMTMuMzEtMS4yMi42My0yLjM0LjYzLTIuMzQuMjktMS4wNS44Mi0yLjkzLDIuMzEtNy42MS44MS0yLjU2LDEuMjItMy44NCwxLjYxLTQuOTUuMjYtLjczLDEuMTgtMy4zNSwxLjk2LTUuMTQuMzYtLjgxLDIuMTEtNC42NCw1LjYxLTguNTYsMi4wOC0yLjM0LDcuMTktOC4wOCwxMi45My03Ljc0Ljc4LjA1LDIuNzUuMTcsNC4wMSwxLjYxLDEuNDIsMS42MiwxLjA5LDMuOTQsMSw0LjU5LS43LDQuOTgtNi41NSw4LjEtMTAuNjksMTAuMzItMi4yOSwxLjIyLTUuNTUsMi43MS05Ljc2LDMuODVsLS44MywyLjQ5Yy0uNTQsMS42MS0xLjA4LDMuMjYtMS41OSw0Ljg5LS4yNi44Mi0uNTIsMS42NS0uNzgsMi40OCwxMS43NS0zLjM0LDI2LjU4LTguMTQsMzEuNjYtMTguNjcsMy41NC03LjM0LjctMTUuNC03LjA4LTE4LjI1Wk02MC4wMSw0MS42MWMtMTYuNDQsMi41MS00MS4wMiw5Ljc0LTUyLjcyLDIyLjE4LTUuOTIsNi4yOS04LjY2LDE0Ljg2LTYuNjEsMjMuMywyLjMyLDkuNTUsMTIuNzUsMTcuMDcsMTQuNDQsMTQuNDYuMjgtLjQ0LjQzLTEuNjkuMjItMi4yMi03LjAxLTE3Ljc4LDguNTEtMzIuMiwyMy4zNy0zOS4yOCwxMi45Ni02LjE3LDI2LjQ0LTEwLjMzLDQwLjU5LTEzLjEybDE3LjIxLTMuMzksMi45LTcuOTMtMzkuMzksNi4wMVoiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPg==" alt="Dr J" /></div><div class="review-logo-sep"></div><div class="review-logo-circle"><img class="review-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDguNDQgMjAzLjAxIj4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjZmZmOwogICAgICAgIGZpbGwtcnVsZTogZXZlbm9kZDsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj4KICAgIDxnPgogICAgICA8dGV4dC8+CiAgICAgIDxnPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTUxLjQ5LDEzLjFjLjMyLjU2LjEzLDEuMjctLjQzLDEuNTlDMi4xMiw0My41OS0xNC41NiwxMDYuNTYsMTMuODcsMTU1Ljk1YzEyLjc1LDIyLjE2LDMyLjQ0LDM3Ljg0LDU0Ljc2LDQ1Ljg4LDEuMzIuNDcsMi4yMS0xLjMzLDEuMDQtMi4xLTQuNjYtMy4wOS05LjIxLTYuNy0xMy42MS0xMC44OS00Mi44MS0zOS42Ny0zNS4yOC0xMTAuMTYsMTQuNzctMTM5Ljg1LjU3LS4zNCwxLjMtLjE0LDEuNjMuNDNsNi41MiwxMS4zMWMuNDcuODEsMS42NC43OCwyLjA3LS4wNUwxMTAuMjgsNC41Yy40LS43Ni0uMTMtMS42OC0uOTktMS43Mkw0Ni4wMSwwYy0uOTMtLjA0LTEuNTQuOTYtMS4wNywxLjc3bDYuNTUsMTEuMzNaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTQxLjM4LDExNS4zNmMtMy45OC0xNC44Ny0xOS4yNy0yMy43LTM0LjE1LTE5LjcyLTE0Ljg3LDMuOTktMjMuNzEsMTkuMjgtMTkuNzIsMzQuMTUsMy45OSwxNC44OSwxOS4yOCwyMy43MSwzNC4xNSwxOS43MywxNC44OS0zLjk5LDIzLjcxLTE5LjI4LDE5LjcyLTM0LjE2aDBaTTc5Ljk2LDE2Mi41MWMtMTkuMzItOC43Mi0zMy41LTI1LjY5LTM4Ljc5LTQ1Ljk1LS4zMy0xLjI3LTIuMjEtMS4xMS0yLjMuMi0xLjY5LDIzLjg1LDcuMzIsNDcuMzksMjQuODMsNjQuMDUsNTMuMSw1MC41MywxMzAuMDUsNy43NCwxNDIuODQtNTcuNTEsNS43My0yOS4yNy0xLjY5LTU5LjE2LTE5LjU0LTgyLjEzLTEuNzItMi4yMi01LjIxLS4xMS00LDIuNDMsNy43OCwxNi40MiwxMC4zNCwzNS4wMyw2Ljk5LDUzLjI4LTguOSw0OC41MS02MS45Niw4Ny4zMi0xMTAuMDMsNjUuNjNoMFoiLz4KICAgICAgPC9nPgogICAgPC9nPgogIDwvZz4KPC9zdmc+" alt="The Change Hub" /></div></div>
+        <span class="review-name">Dr Jeanne Fredericks</span>
+        <span class="review-company">Dr J &amp; The Change Hub</span>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="review-title">PHENOMENAL!!</p>
+      <p class="review-body">Xander.. it looks absolutely PHENOMENAL!! Super happy with this 😊 Love the colours, logo, typography, iconography, photography... everything.. you've really executed this well! Soo happy with it.</p>
+      <div class="review-author">
+        <div class="review-logo-circle"><img class="review-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMTAuODYgMTcwLjY3Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjZmZmOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8ZyBpZD0iTGF5ZXJfMS0yIiBkYXRhLW5hbWU9IkxheWVyIDEiPgogICAgPGc+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTIxMC44Niw1Ni44OGwtMjIuNDQsNTcuNjgtMTIuNTcsMzIuMzFoMHMtOS4yNSwyMy43OS05LjI1LDIzLjc5aDBzLTEyNS42My4wMS0xMjUuNjMuMDFMMCwxMTMuNzhsMjIuMTMtNTYuODhjNi42Ny0xNy4xNiwxOC4yNy0zMS4zOCwzMi44LTQxLjMyQzY5LjQ2LDUuNjUsODYuOTIsMCwxMDUuMzIsMGg2NC41OGwtMjIuMTMsNTYuODh2LjAyaC02Mi41NGwtMjIuMTMsNTYuODZoNjIuNTRsMjIuMTItNTYuODZoLjAxdi0uMDJoNjMuMDlaIi8+CiAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIxNDcuNzcgNTYuODggMTQ3Ljc3IDU2LjkgMTQ3Ljc2IDU2LjkgMTQ3Ljc3IDU2Ljg4Ii8+CiAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIxNDcuNzcgNTYuODggMTQ3Ljc3IDU2LjkgMTQ3Ljc2IDU2LjkgMTQ3Ljc3IDU2Ljg4Ii8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4=" alt="AgntiQ" /></div>
+        <span class="review-name">Founder</span>
+        <span class="review-company">AgntiQ</span>
+      </div>
+    </div>
+
+    <div class="review-card review-card--wide">
+      <div class="review-stars">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="review-title">Very Professional, Fast, Seamless and Quality results</p>
+      <p class="review-body">We had the pleasure of working with Xander on the corporate identity design for the Premier Group project, and the result exceeded our expectations. He quickly understood our brand, our history, and the professional image we wanted to portray, and translated it into a clear, cohesive identity that feels strong, modern, and aligned with our values. Xander was professional, responsive, and great to work with throughout the process — we highly recommend him.</p>
+      <div class="review-author">
+        <div class="review-logo-circle"><img class="review-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMTc2LjQ1IDEzMjcuMzYiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuY2xzLTEgewogICAgICAgIGZpbGw6ICNmNWY1ZjU7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTEzOTcuOTUsMzcwLjU3Yy0xMDYuMy0xNS42MS0yMTAuNDMtNDUuMzctMzA5LjgtODguNDRsLTM2LjUyLDE1LjUzLTU3Ljk3LDIxLjU4LTQ3LjkxLDE0Ljk4Yy01MC40MiwxNS42OS0xMDMuNDIsMjcuMjUtMTY2Ljg2LDM2LjM1bC0zLjguNTQtLjA4LDQzNi4xYzAsNC40Mi0uMDQsOC44MS0uMDgsMTMuMTEtLjA4LDE1LjAyLS4yMSwyOS4xNywxLjI1LDQzLjA3LDQuMzgsNDEuOTksMjQuNjIsODguOTgsNTguNTEsMTM1LjkzLDE3LjQsMjQuMTcsMzQuMDEsNDQuMDcsNTIuMjksNjIuNjUsMjYuMTcsMjYuNzEsNTAuMTcsNDguMjksNzUuNSw2Ny45NSw0NC40MSwzNC41Miw4Mi4wOSw2MC4wNiwxMjUuNjcsODQuOTNsMzEuNjgtMTguNzRjNDEuOTUtMjQuODMsODMuMjItNTUuMTMsMTI2LjE3LTkyLjc0LDUzLjUxLTQ2Ljc5LDkyLjItOTIuMzYsMTIxLjctMTQzLjMyLDIxLjM3LTM2Ljk0LDM0LjY0LTc5Ljc2LDM0LjYtMTExLjY4bC0uMzctNDc3LjIxLTMuOTctLjU4Wk0xMzMzLjQ3LDk0MC4yMmMtMjcuMyw0Ny4xMi02My4zNiw4OS41Mi0xMTMuNTIsMTMzLjM5LTQxLjExLDM1LjkzLTgwLjQyLDY0Ljg2LTEyMC4yOCw4OC40OGwtMTEuNiw2Ljg5Yy0zMy42OC0yMC4zMy02NS4wMi00Mi4xMS0xMDEuMzMtNzAuMjgtMjMuODctMTguNTctNDYuNTgtMzkuMDctNzEuNTQtNjQuNDQtMTYuODItMTcuMTUtMzIuMjItMzUuNTYtNDguNDUtNTguMS0yOS44NC00MS4zNi00Ny41OC04MS43Ni01MS4yNS0xMTYuODYtMS4yMS0xMS43My0xLjA4LTI0LjE3LTEtMzguNjUsMC00LjQyLjA0LTguODkuMDQtMTMuNDRsLjA4LTQwMi4xMmM1Mi42Ny04LjY0LDk4LjY2LTE5LjM2LDE0Mi45NC0zMy4xNGw0OC44Ny0xNS4yNyw1OS44NS0yMi4yOSwyMS44My05LjIyYzg4LjQ0LDM2Ljk0LDE4MC41MSw2My42OSwyNzQuMjUsNzkuOGwuMzcsNDQzLjQ0YzAsMjUtMTEuNDgsNjEuMDYtMjkuMjYsOTEuODJaIi8+CiAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNjA0LjQ3LDI3Mi43NGMtMTguMzgtMTQuNS0zOC40NS0yNS4zOS02MC41Ni0zNC4zLTQxLjkxLTE2Ljg5LTgzLjczLTMwLjgtMTI2LjY0LTQ1LjE1bC04NS43NS0yOC42OC0xNC45NC00LjhjNS42NiwzOC42NCwyNSw3MC42Nyw1Mi44Nyw5Ni4yNCw2My42LDU4LjM5LDE2OC4wNSw3MS42MiwyMDEuMzgsMTQ2LjQxLDguMTQsMTguMjgsMTMuMTcsMzYuOTIsMTQuMzQsNTYuODlsMi44Myw0OC4yYzIuNjksNDUuODMsMTkuMDUsMTAyLjc4LDU4Ljg1LDEzMS43OWwuNjYtODYuMzMuMjktMTkwLjg5Yy4wMi0xOS40My02LjM2LTM2LjI2LTE0LjMtNTMuMTctNi44Ni0xNC41OC0xNi4yNy0yNi4xNi0yOS4wMy0zNi4yMloiLz4KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNTYuMzEsMjA1LjE4YzMzLjE0LDE3LjM2LDY2LjIyLDMyLjA3LDEwMS40MSw0NC41M2w1Ny45MiwyMC41YzE4LjQ0LDYuNTIsMzYuMzksMTIuNTQsNTUuMDEsMTYuODEtMTguNTgtMTQuNzEtMzMuMDgtMjguNTgtNDUtNDYuOTEtMTcuOTItMjMuMTctMzAuNjItNTkuNzQtMzIuOTktODkuNTRDMTkxLjYzLDExMy41NCw5My4zLDY5LjQsOS4xMSwwYzEuMyw5Ni4xNiw2Ny42NCwxNjMuNSwxNDcuMTksMjA1LjE4WiIvPgogIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTc4Ljk2LDI5OC4zMWM1NS4xMSw0MC43MywxMjAuMzQsNjEuNjYsMTg2LjQ3LDc4LjAzLDQxLjEsMTAuMTcsODEuNTMsMTguODksMTIzLjM5LDI2LjcyLTQxLjI1LTI4LjA5LTY2LjgtNTkuNDctODAuMDctMTA3LjQ3bC0xMjQuNTYtMzguOTFjLTMwLjgyLTkuNjQtNTkuNTMtMjAuODEtODkuMjQtMzNsLTM3Ljk3LTE4LjIyYy0xOS43OC05LjQ4LTM3Ljc3LTIwLjU2LTU2Ljk4LTMyLjYyLDkuMzQsNTAuOSwzNy44OSw5NS4xMSw3OC45NiwxMjUuNDdaIi8+CiAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTk4LjUsNDY5LjI5YzU1Ljg5LDEzLjI3LDEwNC44MiwxNS42MSwxNjEuMDcsMTkuNzVsMzkuNiwyLjkxYy0zNC43Ni0yMi4zMy00OS43LTM4Ljg2LTY4LjkxLTc1Ljk4bC0yMC44Mi00LTE0Ni40Ni0yNy42M2MtNDcuNjgtOC45OS05Mi4yOC0yNC44LTEzNi43Mi00NS4yMiwxOS42NCw0OC40LDU2Ljk0LDg0Ljk1LDEwMy4xLDEwNS43OCwyMi4zMywxMS4xOCw0NC43NywxOC44Niw2OS4xNCwyNC40WiIvPgogIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTMxMS44Myw1NzIuODhjMzAuODUtMS4wMiw2MC4zOC01Ljc1LDkwLjg4LTkuNjlsMjQuMDMtMy4xMmMtMjkuODQtMTIuNTItMzkuMTMtMjEuNzgtNTkuMDMtNDYuMzJsLTkyLjEyLTEuNTFjLTM2LjM2LS42LTcxLjMzLTIuNTgtMTA3LjE3LTcuODItMTQuOTYtMi4xOS0yOC40NC02LjUxLTQ0LjQxLTcuNzcsNDQuMjgsNjIuMjcsMTE2LjA3LDc4LjYxLDE4Ny44MSw3Ni4yMloiLz4KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik00NzkuNTEsMzQ5LjEyYy00Ny4wOC0xOC44MS05NC40LTMzLjY3LTE0NC44LTQ3LjAxLDEwLjcsNDYuNjgsNjMuMTQsODUuNjUsMTA1LjMzLDEwMS43N2w2MC4zOCwyMy4wOGMyMS4zMSw4LjE0LDQxLjMzLDE2LjI3LDYxLjc3LDI3LjIzLTIuMTMtMTEuOTEtNC4xMy0yMi40OC03LjQ3LTMzLjE0LTEwLjU1LTMzLjY5LTQzLjIyLTU5LjE1LTc1LjIyLTcxLjkzWiIvPgogIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTQ4OS41OSw2MjQuM2MtMjYuMDYtNy4zMS01MS43Mi0xOS43LTY5LjY0LTM5LjktMTQuMDgsMi4xOS0yNy41Myw0LjgzLTQxLjYxLDcuODEtNDQuOTcsOS41My0xMDEuNTEsMTguMzctMTQ4LjY3LDE2LjgzLDQyLjQ5LDM3LjgyLDkzLjc0LDQ4LjI4LDE0OC4yNiw0MS4zOCwzOC4yOS00Ljg1LDc0Ljg2LTEzLjM0LDExMS42Ni0yNi4xMloiLz4KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik01MTAuMzQsNDU0LjA0Yy0yNy4zMS05LjUtNTQuMzUtMTYuNi04Mi44NC0yMS43NWwtNjguODMtMTIuNDZjMTMuNTUsMjguOSwzNy44Miw0Ny4yMyw2NS4zMSw1OS45MSwyNi45Myw5Ljk2LDUzLjkzLDE1LjE1LDgyLjQzLDE4LjQ0LDIwLjM2LDIuMzcsMzkuMjEsNS45NCw1OS4zNiw5Ljc4bC0xLjczLTI2LjNjLTE2Ljg5LTExLjk4LTM0LjIzLTIwLjg2LTUzLjctMjcuNjNaIi8+CiAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNTA3LjcsNjQ0LjExYy00NS44OCwxOS42LTgzLjU0LDM2Ljk0LTEzMy45Miw0Ni42MiwyNi4yMywxNi45MSw1NS45NiwyNy41NCw4OC4zNSwyNS43Nyw0Ny4xOS01LjQsNzQuNjYtMTkuMjksMTE0LjY2LTQyLjAxLTMyLjIzLTUuMS00NC44NC0xMi4xOC02OS4wOS0zMC4zOVoiLz4KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik02MjkuNzMsNjcwLjFjLTIwLjA5LDkuODgtMzcuOTQsMjEuMTctNTYuMjgsMzMuODktMTYuMDYsMTEuMTMtMzEuNzgsMjEuMTgtNDguNDksMzEuMjEtMTEuNDYsNi44OC0yMy4wOCwxMS4yOC0zNi42OSwxNi45NCw1NS4xMSwyNC42NCwxMTYuMTksOC44MywxNTguNzctMzAuNDlsLS4xNi00OC40NWMtMy4zNS01LjcxLTExLjk2LTUuNjUtMTcuMTQtMy4xWiIvPgogIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTQ3NC45Niw1MTYuMzNsLTc3LjE3LTEuNjNjMjEuODIsMjMuMjcsNTcuMDQsMzMuODgsODcuMjQsMzQuMzYsMTkuODkuMzIsMzguODgtMi4zNiw1OC41OS0yLjgybDI3LjMyLS42NC00LjI1LTE2LjcxYy0zMC42MS02LjczLTYwLjI2LTExLjkxLTkxLjczLTEyLjU3WiIvPgogIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTQ0Ny42Miw1NzkuN2MzNi40OCwzMy42NCw5NywyNy43OSwxMzkuMDEsMTcuOTNsLTExLjk4LTMxLjY5Yy00MS42NC0xLjE4LTg1LjMzLDUuMzQtMTI3LjAzLDEzLjc3WiIvPgogIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTYyMi42NSw2NTAuMDNsLTI3LjE2LTM0LjEzLTYzLjc4LDE4LjljMjQuMjgsMTkuNDUsNjQuMTYsMjEuOTMsOTAuOTMsMTUuMjJaIi8+CiAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTU4OC40NSw1MDcuNTZsMi44My00OC4yYzEuMTctMTkuOTcsNi4yLTM4LjYxLDE0LjM0LTU2Ljg5LDMzLjMzLTc0Ljc5LDEzNy43OC04OC4wMiwyMDEuMzgtMTQ2LjQxLDI3Ljg3LTI1LjU3LDQ3LjIxLTU3LjYsNTIuODctOTYuMjRsLTE0Ljk0LDQuOC04NS43NSwyOC42OGMtNDIuOTIsMTQuMzUtODQuNzMsMjguMjUtMTI2LjY0LDQ1LjE1LTIyLjExLDguOTEtNDIuMTgsMTkuOC02MC41NiwzNC4zLTEyLjc2LDEwLjA2LTIyLjE3LDIxLjY1LTI5LjAzLDM2LjIyLTcuOTQsMTYuOTEtMTQuMzMsMzMuNzQtMTQuMyw1My4xN2wuMjksMTkwLjg5LjY2LDg2LjMzYzM5LjgtMjkuMDEsNTYuMTYtODUuOTYsNTguODUtMTMxLjc5WiIvPgogIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE4MDUuODIsMjg3LjAxYzE4LjYyLTQuMjYsMzYuNTctMTAuMjksNTUuMDEtMTYuODFsNTcuOTItMjAuNWMzNS4xOS0xMi40Niw2OC4yNi0yNy4xNywxMDEuNDEtNDQuNTMsNzkuNTUtNDEuNjgsMTQ1Ljg5LTEwOS4wMiwxNDcuMTktMjA1LjE4LTg0LjE5LDY5LjQtMTgyLjUyLDExMy41NC0yODMuNTQsMTUwLjU3LTIuMzcsMjkuOC0xNS4wNyw2Ni4zNy0zMi45OSw4OS41NC0xMS45MiwxOC4zMy0yNi40MiwzMi4xOS00NSw0Ni45MVoiLz4KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMDk3LjQ5LDI5OC4zMWM0MS4wNy0zMC4zNiw2OS42Mi03NC41Nyw3OC45Ni0xMjUuNDctMTkuMjEsMTIuMDYtMzcuMjEsMjMuMTQtNTYuOTgsMzIuNjJsLTM3Ljk3LDE4LjIyYy0yOS43MSwxMi4xOS01OC40MSwyMy4zNy04OS4yNCwzM2wtMTI0LjU2LDM4LjkxYy0xMy4yOCw0Ny45OS0zOC44Myw3OS4zNy04MC4wNywxMDcuNDcsNDEuODYtNy44Myw4Mi4yOS0xNi41NSwxMjMuMzktMjYuNzIsNjYuMTItMTYuMzcsMTMxLjM2LTM3LjI5LDE4Ni40Ny03OC4wM1oiLz4KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xODY3LjAyLDQxMS45NmwtMjAuODIsNGMtMTkuMjEsMzcuMTItMzQuMTUsNTMuNjUtNjguOTEsNzUuOThsMzkuNi0yLjkxYzU2LjI1LTQuMTQsMTA1LjE3LTYuNDgsMTYxLjA3LTE5Ljc1LDI0LjM2LTUuNTQsNDYuODEtMTMuMjIsNjkuMTQtMjQuNCw0Ni4xNi0yMC44Myw4My40Ni01Ny4zOCwxMDMuMS0xMDUuNzgtNDQuNDQsMjAuNDItODkuMDQsMzYuMjMtMTM2LjcyLDQ1LjIybC0xNDYuNDYsMjcuNjNaIi8+CiAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTkwMC44Niw1MTIuMjRsLTkyLjEyLDEuNTFjLTE5LjksMjQuNTQtMjkuMTksMzMuOC01OS4wMyw0Ni4zMmwyNC4wMywzLjEyYzMwLjUsMy45NCw2MC4wNCw4LjY3LDkwLjg4LDkuNjksNzEuNzQsMi4zOSwxNDMuNTQtMTMuOTUsMTg3LjgxLTc2LjIyLTE1Ljk3LDEuMjYtMjkuNDUsNS41Ny00NC40MSw3Ljc3LTM1LjgzLDUuMjQtNzAuODEsNy4yMi0xMDcuMTcsNy44MloiLz4KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNzM2LjQsNDAzLjg4YzQyLjE5LTE2LjEyLDk0LjYzLTU1LjA5LDEwNS4zMy0xMDEuNzctNTAuNCwxMy4zNC05Ny43MiwyOC4xOS0xNDQuOCw0Ny4wMS0zMi4wMSwxMi43OC02NC42NywzOC4yNC03NS4yMiw3MS45My0zLjM0LDEwLjY2LTUuMzQsMjEuMjMtNy40NywzMy4xNCwyMC40NC0xMC45Niw0MC40Ni0xOS4wOSw2MS43Ny0yNy4yM2w2MC4zOS0yMy4wOFoiLz4KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNzk4LjExLDU5Mi4yYy0xNC4wOC0yLjk4LTI3LjUzLTUuNjEtNDEuNjEtNy44MS0xNy45MiwyMC4yLTQzLjU4LDMyLjU5LTY5LjY0LDM5LjksMzYuNzksMTIuNzgsNzMuMzYsMjEuMjcsMTExLjY2LDI2LjEyLDU0LjUyLDYuOSwxMDUuNzctMy41NywxNDguMjYtNDEuMzgtNDcuMTcsMS41My0xMDMuNy03LjMxLTE0OC42Ny0xNi44M1oiLz4KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xODE3Ljc4LDQxOS44NGwtNjguODMsMTIuNDZjLTI4LjQ5LDUuMTUtNTUuNTMsMTIuMjQtODIuODQsMjEuNzUtMTkuNDcsNi43Ny0zNi44MSwxNS42NS01My43LDI3LjYzbC0xLjczLDI2LjNjMjAuMTUtMy44NCwzOS03LjQxLDU5LjM2LTkuNzgsMjguNS0zLjI5LDU1LjUtOC40OCw4Mi40My0xOC40NCwyNy40OS0xMi42OCw1MS43Ni0zMS4wMSw2NS4zMS01OS45MVoiLz4KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNTk5LjY2LDY3NC41YzQwLDIyLjcyLDY3LjQ3LDM2LjYxLDExNC42Niw0Mi4wMSwzMi4zOSwxLjc3LDYyLjEyLTguODcsODguMzUtMjUuNzctNTAuMzgtOS42OC04OC4wNC0yNy4wMi0xMzMuOTMtNDYuNjItMjQuMjUsMTguMi0zNi44NSwyNS4yOS02OS4wOSwzMC4zOVoiLz4KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNjAzLDcwMy45OGMtMTguMzQtMTIuNzItMzYuMTktMjQuMDEtNTYuMjgtMzMuODktNS4xOS0yLjU0LTEzLjc5LTIuNjEtMTcuMTQsMy4xbC0uMTYsNDguNDVjNDIuNTgsMzkuMzEsMTAzLjY2LDU1LjEyLDE1OC43OCwzMC40OS0xMy42Mi01LjY2LTI1LjI0LTEwLjA2LTM2LjY5LTE2Ljk0LTE2LjcxLTEwLjAyLTMyLjQzLTIwLjA3LTQ4LjQ5LTMxLjIxWiIvPgogIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE3MDEuNDksNTE2LjMzYy0zMS40Ny42Ni02MS4xMiw1Ljg0LTkxLjczLDEyLjU3bC00LjI1LDE2LjcxLDI3LjMyLjY0YzE5LjcxLjQ2LDM4LjcsMy4xNCw1OC41OSwyLjgyLDMwLjItLjQ5LDY1LjQyLTExLjEsODcuMjQtMzQuMzZsLTc3LjE3LDEuNjNaIi8+CiAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTcyOC44Myw1NzkuN2MtNDEuNjktOC40My04NS4zOC0xNC45NS0xMjcuMDMtMTMuNzdsLTExLjk4LDMxLjY5YzQyLjAxLDkuODYsMTAyLjUzLDE1LjcxLDEzOS4wMS0xNy45M1oiLz4KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNTUzLjgsNjUwLjAzYzI2Ljc3LDYuNzEsNjYuNjYsNC4yMyw5MC45My0xNS4yMmwtNjMuNzgtMTguOS0yNy4xNiwzNC4xM1oiLz4KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMTcyLjA0LDIxMC4zNWMtMjguOC0xMC42LTU2LjA1LTIyLjM3LTgzLjYtMzUuOThsLTQ5LjQ2LDIyLjc5Yy00MC4wMywxNi41My04MC4xMywzMC4yNi0xMjEuNzksNDIuNzQtNzguNDIsMjMuMTYtMTU3Ljg0LDM2Ljk4LTIzOS45OCw0Mi45NWwuMjksNTY5LjRjMCwzNC41Miw4Ljg5LDY4LjI0LDIwLjc4LDk5Ljg3LDI2LjM0LDcwLjE2LDc1LjQyLDEzMy43MiwxMjcuNSwxODYuNzcsMzAuMjYsMjkuNzIsNjEuMTgsNTcuNTUsOTUuMDMsODMuMTgsNTMsNDAuMTEsMTA4Ljg5LDc0Ljk2LDE2OC4xNSwxMDUuMyw0MC4zNi0yMi4wOCw3OS45Ni00My4wNywxMTcuMjgtNjkuODJsNTEuMjEtMzYuNjhjMjUtMTkuNzgsNDguODctMzkuNDQsNzIuMDgtNjEuNDMsNjguNDUtNjQuOTQsMTI4LjUtMTM5LjA2LDE1Ny41MS0yMzAuMjEsNy44MS0yNC41NCwxMS40OC00OC41LDEyLjk4LTc0LjV2LTIyNC40MWwtLjI5LTM0Ny4yOGMtMTE0LjI3LTkuMTgtMjIwLjkxLTMyLjMtMzI3LjcxLTcyLjY2Wk0xNDAxLjkyLDk3OS44N2MtMzQuNiw1OS43Mi03OC4wNSwxMDcuOTMtMTI5Ljg4LDE1My4zLTQxLjQ0LDM2LjIzLTg0Ljc3LDY4Ljk5LTEzMi4wNSw5Ni45OWwtNTEuMjUsMzAuMzRjLTU2LjA5LTMwLjY4LTEwMC4zOC02MC4zOS0xNTAuNS05OS4zMy0yOC41MS0yMi4xMi01NC4yNi00NS43OC03OS41MS03MS40NS0yMC43OS0yMS4yLTM4LjgyLTQzLjItNTYuMTQtNjcuMjQtMzIuNTUtNDUuMTItNTkuOTMtOTkuMDQtNjUuNzgtMTU0Ljk3LTIuMTMtMjAuMzctMS4zOC0zOS40NC0xLjM4LTYwLjMxbC4wOC00NzAuNCwzNy43Ny01LjQzYzU0LjcxLTcuOCwxMDcuOTMtMTguNDksMTYwLjY4LTM0Ljk3bDQ2Ljg3LTE0LjYxLDU2LjE0LTIwLjkxLDUxLjQ2LTIxLjgzYzEwMC43NSw0NS4zMiwyMDYuNDMsNzYuMzgsMzE1LjI3LDkyLjRsMzcuNjksNS41NS40Niw1MTEuMzVjLjA0LDQzLjk1LTE4LjQxLDk0LjI4LTM5Ljk0LDEzMS41MVoiLz4KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMjY0Ljg1LDU0NC40OGMtMjguODgtMTguNjEtNjguNDUtMjcuOTItMTE4LjgyLTI3LjkyaC0yNzYuOTJ2MTQuMTVjMTkuNDEsMCwyOS4wOSw0LjcyLDI5LjA5LDE0LjE1djI4Ny41NmMwLDkuNDMtOS42OCwxNC4xNS0yOS4wOSwxNC4xNXYxNC4xNWgxNDMuOTl2LTE0LjE1Yy0xNi44MiwwLTI1LjIxLTQuNzItMjUuMjEtMTQuMTV2LTcwLjQxaDE1OC4xNGM1MC4zNywwLDg5Ljk0LTkuMzEsMTE4LjgyLTI3LjkyLDI4Ljg0LTE4LjYxLDQzLjI0LTUwLjIxLDQzLjI0LTk0Ljgycy0xNC40LTc2LjE3LTQzLjI0LTk0Ljc4Wk0xMTk5LjkyLDY3OS40MmMtMTIuMzEsNi44LTI3LjEzLDEwLjIzLTQ0LjQ1LDEwLjIzaC0xNjcuNTd2LTEwMC43MWgxNjcuNTdjMTcuMzIsMCwzMi4xNCwzLjQyLDQ0LjQ1LDEwLjIzLDEyLjM1LDYuOCwxOC40OSwyMC4yLDE4LjQ5LDQwLjExcy02LjEzLDMzLjM1LTE4LjQ5LDQwLjE1WiIvPgo8L3N2Zz4=" alt="Premier Group" /></div>
+        <span class="review-name">Development Officer</span>
+        <span class="review-company">Premier Group</span>
+      </div>
+    </div>
 
   </div>
 </section>
