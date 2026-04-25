@@ -34,9 +34,7 @@ body {
   font-weight: 300;
   line-height: 1.6;
   overflow-x: hidden;
-  cursor: none;
 }
-iframe { cursor: auto; }
 
 /* NAV */
 nav {
@@ -3346,98 +3344,6 @@ function closeMobileNav() {
   }
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll();
-})();
-</script>
-
-<!-- ── CUSTOM CURSOR ──────────────────────────────────────────────────────── -->
-<script>
-(function () {
-  // Skip touch devices and reduced-motion users
-  if (window.matchMedia('(hover: none)').matches) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  // --- DOT (snaps to cursor instantly) ---
-  var dot = document.createElement('div');
-  Object.assign(dot.style, {
-    position: 'fixed',
-    top: '0', left: '0',
-    width: '7px', height: '7px',
-    borderRadius: '50%',
-    background: '#b4000d',
-    pointerEvents: 'none',
-    zIndex: '99999',
-    transform: 'translate(-50%, -50%)',
-    opacity: '0',
-    willChange: 'transform',
-    transition: 'width .2s ease, height .2s ease, opacity .3s ease'
-  });
-  document.body.appendChild(dot);
-
-  // --- RING (lags behind the cursor) ---
-  var ring = document.createElement('div');
-  Object.assign(ring.style, {
-    position: 'fixed',
-    top: '0', left: '0',
-    width: '28px', height: '28px',
-    borderRadius: '50%',
-    border: '1px solid rgba(180,0,13,.5)',
-    pointerEvents: 'none',
-    zIndex: '99998',
-    transform: 'translate(-50%, -50%)',
-    opacity: '0',
-    willChange: 'transform',
-    transition: 'width .25s ease, height .25s ease, opacity .3s ease, border-color .2s ease'
-  });
-  document.body.appendChild(ring);
-
-  var mx=0, my=0, rx=0, ry=0, visible=false;
-
-  // Move dot instantly on mouse move
-  document.addEventListener('mousemove', function(e) {
-    mx = e.clientX; my = e.clientY;
-    dot.style.left = mx + 'px';
-    dot.style.top  = my + 'px';
-    if (!visible) {
-      visible = true;
-      dot.style.opacity  = '1';
-      ring.style.opacity = '1';
-    }
-  });
-
-  // Hide when cursor leaves the window
-  document.addEventListener('mouseleave', function() {
-    visible = false;
-    dot.style.opacity  = '0';
-    ring.style.opacity = '0';
-  });
-
-  // Ring follows with lerp (0.12 = lag amount, lower = more lag)
-  (function loop() {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    ring.style.left = rx + 'px';
-    ring.style.top  = ry + 'px';
-    requestAnimationFrame(loop);
-  })();
-
-  // Expand ring + shrink dot on interactive elements
-  var hoverables = 'a, button, [role="button"]';
-  document.querySelectorAll(hoverables).forEach(function(el) {
-    el.addEventListener('mouseenter', function() {
-      ring.style.width  = '46px';
-      ring.style.height = '46px';
-      ring.style.borderColor = 'rgba(180,0,13,.9)';
-      dot.style.width  = '4px';
-      dot.style.height = '4px';
-    });
-    el.addEventListener('mouseleave', function() {
-      ring.style.width  = '28px';
-      ring.style.height = '28px';
-      ring.style.borderColor = 'rgba(180,0,13,.5)';
-      dot.style.width  = '7px';
-      dot.style.height = '7px';
-    });
-  });
 })();
 </script>
 </body>
