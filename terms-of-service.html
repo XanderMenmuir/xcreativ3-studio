@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — xcreativ3™</title>
+<meta name="description" content="Terms of Service for xcreativ3 brand identity studio. Read our standard terms covering payment, ownership, copyright, revisions, and cancellation.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --black: #0a0a0a;
+  --off-black: #111111;
+  --card-dark: #181818;
+  --border-dark: rgba(255,255,255,0.07);
+  --white: #ffffff;
+  --grey: #dfdfe0;
+  --red: #b4000d;
+  --red-dark: #8c000a;
+  --muted-dark: rgba(223,223,224,0.52);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 5%;
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-dark);
+}
+.nav-logo img { height: 26px; display: block; }
+.nav-back {
+  font-size: 0.72rem; letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--muted-dark); text-decoration: none; transition: color 0.3s;
+  font-weight: 400; font-family: 'DM Sans', sans-serif;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.nav-back:hover { color: var(--white); }
+.nav-back svg { transition: transform 0.3s; }
+.nav-back:hover svg { transform: translateX(-3px); }
+
+/* PAGE HERO */
+.tos-hero {
+  padding: 10rem 5% 4rem;
+  border-bottom: 1px solid var(--border-dark);
+}
+.tos-label {
+  font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--red); font-weight: 500; margin-bottom: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+}
+.tos-hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 700; letter-spacing: -0.02em;
+  line-height: 1.1; color: var(--white);
+  margin-bottom: 1.5rem;
+}
+.tos-hero p {
+  font-size: 1rem; color: var(--muted-dark);
+  max-width: 560px; line-height: 1.8;
+}
+
+/* CONTENT */
+.tos-content {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 5rem 5% 7rem;
+}
+
+.tos-section {
+  margin-bottom: 3.5rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid var(--border-dark);
+}
+.tos-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.tos-section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--red); font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.tos-section p {
+  font-size: 0.95rem;
+  color: rgba(223,223,224,0.75);
+  line-height: 1.85;
+  margin-bottom: 1.1rem;
+}
+.tos-section p:last-child { margin-bottom: 0; }
+
+.tos-note {
+  background: var(--card-dark);
+  border-left: 3px solid var(--red);
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+  font-size: 0.88rem;
+  color: rgba(223,223,224,0.6);
+  line-height: 1.8;
+}
+.tos-note strong {
+  color: var(--white);
+  font-weight: 500;
+}
+
+/* FOOTER */
+footer {
+  background: var(--off-black);
+  border-top: 1px solid var(--border-dark);
+  padding: 4rem 5% 2rem;
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--border-dark);
+}
+.footer-brand img { height: 22px; display: block; margin-bottom: 1rem; }
+.footer-brand p { font-size: 0.82rem; color: var(--muted-dark); max-width: 240px; line-height: 1.7; }
+.footer-col h5 {
+  font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(223,223,224,0.3); font-family: 'Montserrat', sans-serif;
+  font-weight: 600; margin-bottom: 1.2rem;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.65rem; }
+.footer-col ul li a {
+  font-size: 0.85rem; color: var(--muted-dark);
+  text-decoration: none; transition: color 0.3s;
+}
+.footer-col ul li a:hover { color: var(--white); }
+.footer-bottom {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.footer-bottom p { font-size: 0.7rem; color: rgba(223,223,224,0.2); }
+.footer-logo-mark { height: 30px; opacity: 0.2; }
+
+@media (max-width: 768px) {
+  .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .tos-hero h1 { font-size: 2rem; }
+  .footer-bottom { flex-direction: column; gap: 1rem; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4NDguOTkgMTQ4LjM2Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjZGZkZmUwOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8ZyBpZD0iTGF5ZXJfMS0yIiBkYXRhLW5hbWU9IkxheWVyIDEiPgogICAgPGc+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTU5OC4xOCwwYy0zLjYzLDAtNi42NCwxLjE2LTkuMDQsMy41LTIuNCwyLjMzLTMuNiw1LjI1LTMuNiw4Ljc1czEuMTksNi4yMiwzLjYsOC41NmMyLjQsMi4zMyw1LjQxLDMuNSw5LjA0LDMuNXM2LjgxLTEuMiw5LjE0LTMuNmMyLjMzLTIuNCwzLjUtNS4zNSwzLjUtOC44NXMtMS4yLTYuMTktMy42LTguNDZjLTIuNC0yLjI3LTUuNDEtMy40LTkuMDQtMy40WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNDMuNTgsNjMuOTdjNS4zMS0yLjk4LDExLjM0LTQuNDcsMTguMDgtNC40Nyw1LjU3LDAsMTAuNzksMS4yLDE1LjY1LDMuNiw0Ljg2LDIuNCw4Ljk3LDYuMTIsMTIuMzUsMTEuMThsMTQuMTktOS4xNGMtNC4wMi03LjI2LTkuNjktMTIuNzQtMTcuMDEtMTYuNDMtNy4zMy0zLjctMTUuNjUtNS41NC0yNC45OS01LjU0LTEwLjUsMC0xOS44NiwyLjI0LTI4LjEsNi43MS04LjIzLDQuNDctMTQuNjgsMTAuNjYtMTkuMzQsMTguNTctNC42Nyw3LjkxLTcsMTYuOTgtNywyNy4yMnMyLjM0LDE5LjMxLDcsMjcuMjJjNC42Niw3LjkxLDExLjExLDE0LjEzLDE5LjM0LDE4LjY2LDguMjMsNC41NCwxNy42LDYuODEsMjguMSw2LjgxLDkuMzMsMCwxNy42Ni0xLjkxLDI0Ljk5LTUuNzQsNy4zMi0zLjgyLDEyLjk5LTkuMywxNy4wMS0xNi40M2wtMTQuMTktOC45NGMtMy4zNyw1LjA2LTcuNDksOC43OS0xMi4zNSwxMS4xOC00Ljg2LDIuNC0xMC4wOCwzLjYtMTUuNjUsMy42LTYuNzQsMC0xMi43Ny0xLjQ5LTE4LjA4LTQuNDctNS4zMi0yLjk4LTkuNTMtNy4xOS0xMi42NC0xMi42NC0zLjExLTUuNDQtNC42Ny0xMS44Ni00LjY3LTE5LjI1czEuNTYtMTMuNzcsNC42Ny0xOS4xNWMzLjExLTUuMzgsNy4zMi05LjU2LDEyLjY0LTEyLjU0WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMzYuODIsNjEuNjJ2LTE3LjQ4aC0xNy44OXYxMDMuMDZoMTguNjd2LTUxLjMzYzAtMTEuMjgsMi45Mi0xOS45LDguNzUtMjUuODYsNS44My01Ljk2LDEzLjc0LTguOTQsMjMuNzItOC45NGgyLjA0Yy43MSwwLDEuNDYuMDcsMi4yNC4xOXYtMTguMDhjLTkuODUsMC0xOC4xNSwxLjg4LTI0Ljg5LDUuNjQtNS41NiwzLjEtOS43Myw3LjQyLTEyLjY0LDEyLjgyWiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zNjIuNyw0OS43OGMtNy42NS00LjQtMTYuNDctNi42MS0yNi40NS02LjYxcy0xOC43LDIuMjQtMjYuNTQsNi43MWMtNy44NCw0LjQ3LTE0LDEwLjY2LTE4LjQ3LDE4LjU3LTQuNDcsNy45MS02LjcxLDE2Ljk4LTYuNzEsMjcuMjJzMi4zLDE5LjMxLDYuOSwyNy4yMmM0LjYsNy45MSwxMS4wOCwxNC4xMywxOS40NSwxOC42Niw4LjM2LDQuNTQsMTguMDUsNi44MSwyOS4wNyw2LjgxLDguNTYsMCwxNi4zLTEuNDMsMjMuMjQtNC4yOCw2LjkzLTIuODUsMTIuNzQtNywxNy40LTEyLjQ0bC0xMC4zMS0xMi4wNmMtMy43Niw0LjE1LTguMTQsNy4yNi0xMy4xMiw5LjMzLTQuOTksMi4wOC0xMC41NCwzLjExLTE2LjYyLDMuMTEtNy4zOSwwLTEzLjk0LTEuNDktMTkuNjQtNC40Ny01LjcxLTIuOTgtMTAuMTQtNy4xNi0xMy4zMi0xMi41NC0yLjM0LTMuOTYtMy44MS04LjM0LTQuNDItMTMuMTJoODMuNjZjLjEzLS45MS4yMi0xLjg4LjI5LTIuOTIuMDctMS4wMy4xLTEuOTQuMS0yLjcyLDAtMTAuNjMtMi4xNy0xOS45My02LjUxLTI3LjktNC4zNC03Ljk3LTEwLjM0LTE0LjE2LTE3Ljk5LTE4LjU3Wk0zMTguOTUsNjMuMjljNS4wNi0yLjkyLDEwLjgyLTQuMzcsMTcuMzEtNC4zN3MxMi40MSwxLjQ2LDE3LjQsNC4zN2M0Ljk5LDIuOTIsOC45MSw2Ljk3LDExLjc2LDEyLjE1LDIuMTYsMy45MywzLjQ2LDguMjgsMy45MSwxMy4wM2gtNjYuMjNjLjU0LTQuNzIsMS44Ny05LjAzLDMuOTktMTIuOTMsMi44NS01LjI1LDYuODEtOS4zMywxMS44Ni0xMi4yNVoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNDQ3LjY3LDQzLjE3Yy04LjE3LDAtMTUuOTgsMS4xMy0yMy40MywzLjQtNy40NiwyLjI3LTEzLjg0LDUuNTQtMTkuMTUsOS44Mmw3Ljc4LDE0YzQuMDItMy4zNyw4Ljk0LTYuMDYsMTQuNzgtOC4wNyw1LjgzLTIuMDEsMTEuNzktMy4wMiwxNy44OS0zLjAyLDkuMiwwLDE2LjEsMi4xNywyMC43MSw2LjUyLDQuNiw0LjM0LDYuOSwxMC40Nyw2LjksMTguMzd2My42OWgtMjkuNTVjLTEwLjI0LDAtMTguMzcsMS4zNi0yNC40LDQuMDgtNi4wMywyLjcyLTEwLjM3LDYuMzUtMTMuMDMsMTAuODktMi42Niw0LjU0LTMuOTksOS41OS0zLjk5LDE1LjE3czEuNTYsMTEuMDUsNC42NywxNS42NWMzLjExLDQuNiw3LjU1LDguMiwxMy4zMiwxMC43OSw1Ljc3LDIuNTksMTIuNDcsMy44OSwyMC4xMiwzLjg5LDkuNDYsMCwxNy4zMS0xLjc4LDIzLjUzLTUuMzUsNC4zOS0yLjUxLDcuNzktNS42OSwxMC4zMS05LjQ2djEzLjY0aDE3Ljd2LTYyLjIyYzAtMTQuMTMtMy44My0yNC42My0xMS40Ny0zMS41LTcuNjUtNi44Ny0xOC41NC0xMC4zMS0zMi42Ny0xMC4zMVpNNDYxLjc3LDEyOS4zYy01LjI1LDMuMTEtMTEuMzcsNC42Ny0xOC4zNyw0LjY3cy0xMi43MS0xLjUyLTE2LjcyLTQuNTdjLTQuMDItMy4wNS02LjAzLTcuMS02LjAzLTEyLjE1LDAtNC40LDEuNjItOC4xNyw0Ljg2LTExLjI4LDMuMjQtMy4xMSw5LjUzLTQuNjcsMTguODYtNC42N2gyOC43OHYxNC4zOWMtMi4zMyw1Ljk3LTYuMTIsMTAuNS0xMS4zNywxMy42MVoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNTQyLjE2LDIxLjU4aC0xOC42NnYyMi41NWgtMTcuNXYxNS4zN2gxNy41djU2LjU4YzAsMTAuMzcsMi44NCwxOC4zNCw4LjU2LDIzLjkxLDUuNyw1LjU3LDEzLjczLDguMzYsMjQuMTEsOC4zNiw0LjI4LDAsOC4zOS0uNTcsMTIuMzQtMS43NSwxLjEyLS4zMywyLjE5LS43MSwzLjIyLTEuMTR2LTE2LjgyYy0zLjY3LDIuNjQtOC4xNSwzLjk2LTEzLjQzLDMuOTZzLTkuMTctMS40OC0xMS45Ni00LjQ3Yy0yLjc5LTIuOTgtNC4xOC03LjI1LTQuMTgtMTIuODN2LTU1LjhoMjkuNTZ2LTE1LjM3aC0yOS41NnYtMjIuNTVaIi8+CiAgICAgIDxyZWN0IGNsYXNzPSJjbHMtMSIgeD0iNTg4Ljg1IiB5PSI0NC4xNCIgd2lkdGg9IjE4LjY3IiBoZWlnaHQ9IjEwMy4wNiIvPgogICAgICA8cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iNjc2LjUxIDEyNi43IDY0MS4wNyA0NC4xNCA2MjEuNjMgNDQuMTQgNjY2Ljc0IDE0Ny4xOSA2ODUuNzkgMTQ3LjE5IDczMC45MSA0NC4xNCA3MTIuNjMgNDQuMTQgNjc2LjUxIDEyNi43Ii8+CiAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSI5OS43NSA0NC4xNCA3OS4zMyA0NC4xNCA1MS4wNCA4MS4yOSAyMi43NSA0NC4xNCAxLjk1IDQ0LjE0IDQwLjU4IDk0LjUyIDAgMTQ3LjE5IDIwLjgxIDE0Ny4xOSA1MC44OCAxMDcuNjcgODAuNyAxNDcuMTkgMTAxLjg5IDE0Ny4xOSA2MC45MSA5NC40NSA5OS43NSA0NC4xNCIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik04MDkuODIsOTMuNTdjLTQuMzYtMy45LTEwLjE5LTYuNS0xNy4zOC03Ljc1bDIzLjIxLTI4LjZ2LTEzLjA5aC02OS44NHYxNy40NWg0NC4xMWwtMjEuNjEsMjYuNnYxMy4zNmgxMC40N2M3LjcyLDAsMTMuMzQsMS4zOCwxNi43MSw0LjEsMy4yNSwyLjYxLDQuODMsNS45OSw0LjgzLDEwLjMxcy0xLjY1LDcuOTMtNS4wNSwxMC41NWMtMy41NiwyLjc0LTguNzMsNC4xMy0xNS4zNyw0LjEzLTUuNjIsMC0xMC45NS0uOTMtMTUuODMtMi43Ni00Ljg1LTEuODItOC44My00LjE3LTExLjgzLTYuOTlsLTIuNDItMi4yOC05LjIsMTUuNzksMS42MywxLjQ0YzQuMzYsMy44NSwxMCw2Ljk1LDE2Ljc4LDkuMTksNi43MywyLjIyLDEzLjc2LDMuMzUsMjAuODgsMy4zNSw4Ljc1LDAsMTYuMTItMS40MywyMS45Mi00LjI2LDUuOS0yLjg3LDEwLjM4LTYuODYsMTMuMzQtMTEuODYsMi45My00Ljk3LDQuNDItMTAuNSw0LjQyLTE2LjQ0LDAtOC45NC0zLjI4LTE2LjQyLTkuNzUtMjIuMjNaIi8+CiAgICAgIDxnPgogICAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSI4MTUuOTMgMTguMDEgODIxLjQ3IDE4LjAxIDgyMS40NyAzMi4xNSA4MjMuNzUgMzIuMTUgODIzLjc1IDE4LjAxIDgyOS4yOSAxOC4wMSA4MjkuMjkgMTYgODE1LjkzIDE2IDgxNS45MyAxOC4wMSIvPgogICAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSI4NDguOTkgMzIuMTUgODQ4Ljk3IDE2IDg0Ny4wOCAxNiA4NDAuNDMgMjcuMzQgODMzLjcgMTYgODMxLjggMTYgODMxLjggMzIuMTUgODM0LjAyIDMyLjE1IDgzNC4wMiAyMC40NCA4MzkuODYgMzAuMTkgODQwLjkyIDMwLjE5IDg0Ni43NiAyMC4zNyA4NDYuNzggMzIuMTUgODQ4Ljk5IDMyLjE1Ii8+CiAgICAgIDwvZz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPg==" alt="xcreativ3 Brand Identity Studio" width="180" height="32" />
+  </a>
+  <a href="index.html" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back to site
+  </a>
+</nav>
+
+<div class="tos-hero">
+  <p class="tos-label">Legal</p>
+  <h1>Terms of Service</h1>
+  <p>These are the standard terms of service for any design project with xcreativ3. Please read through carefully before commencing work. If anything raises a concern, get in touch before the project begins.</p>
+</div>
+
+<div class="tos-content">
+
+  <div class="tos-section">
+    <h2>Payment</h2>
+    <p>A 50% deposit may be requested prior to starting work on your project. An invoice will be issued via email and payment is expected within 30 days of issue. By remitting deposit funds, you are accepting these Terms of Service and entering a contract with Xander Menmuir (xcreativ3).</p>
+    <p>The remaining balance will be invoiced prior to the release of any logo files or final exports. Delivery will be withheld until payment has been received in full.</p>
+    <p>If you have been uncontactable or unresponsive for more than 30 days, an invoice may be issued ahead of the originally anticipated time. You may request a payment plan, which will be considered at discretion. All payment plans must be agreed upon by both parties in writing.</p>
+    <p>All payments are due within 30 days of invoice. Any fees incurred through collection or recovery processes for accounts unpaid beyond 30 days will be charged to the client.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2>Revisions &amp; Refinement</h2>
+    <p>Each package includes a set number of revision rounds as specified in your quote. A revision is defined as a minor adjustment, tweak, or correction to an existing concept — such as colour, typography, or layout shifts — to better align with the original brief. It does not cover a completely new design direction or a change in project scope.</p>
+    <p>Any additional revisions requested outside the original scope or after the allocated rounds will be billed at an ad-hoc rate of R800 per hour.</p>
+    <div class="tos-note">
+      <strong>Note:</strong> Services outside of logo and identity design typically exclude formal revision rounds. Small, reasonable adjustments may be applied at the discretion of the designer; however, these are not guaranteed and do not constitute a full round of feedback.
+    </div>
+  </div>
+
+  <div class="tos-section">
+    <h2>Typefaces</h2>
+    <p>Any fonts or typefaces purchased for a final design are subject to commercial licensing laws. A font licence gives only the owner full rights to use it as necessary.</p>
+    <p>During the initial concept presentation, information on typefaces used will be provided along with where they can be acquired. It is the client's responsibility to obtain any necessary font licences. It is against the law to provide any client a copy of a personally purchased font or typeface.</p>
+    <p>If a font used in a logo is converted to vector artwork, it typically does not require a separate licence as it can no longer be edited. However, if you require a font for use in editable artwork — such as on a website or presentation — you will need your own desktop licence.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2>Restrictions</h2>
+    <p>These terms do not grant rights to use, modify, alter, replicate, or borrow any ideas, concepts, sketches, or visuals presented during the project. All original preparation materials, sketches, and unused ideas remain the property of Xander Menmuir (xcreativ3), and may be repurposed for future work.</p>
+    <p>Unless otherwise agreed, the right is reserved to showcase the finished logo and associated designs in portfolio and promotional materials — including online galleries, printed literature, and awards — now and in the future.</p>
+    <p>You are free to change, modify, and adapt the finished logo design as you see fit, but you do so at your own risk.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2>Ownership &amp; Copyright</h2>
+    <p>All preparation materials, sketches, visuals, and electronic files used to create the project remain the property of Xander Menmuir (xcreativ3). The final artwork and digital files become your property only upon receipt of final payment in full.</p>
+    <p>If final payment is not received, all designs and concepts remain the property of Xander Menmuir (xcreativ3). Should a client attempt to use, modify, alter, replicate, or appropriate any ideas without completing agreed payment, immediate legal counsel will be sought.</p>
+    <p>xcreativ3 reserves the right to show any artwork, ideas, or sketches created for a project in portfolio as examples of client work. If you have specific secrecy, stealth-mode, or NDA requirements, please raise these before agreeing to the proposal.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2>Trademark &amp; Copyright</h2>
+    <p>Due to the lengthy and often costly procedures involved in initiating trademark or copyright searches, no practical assistance with this process can be provided. If you require the logo to be registered as a trademark, you must seek independent legal advice.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2>Brand Naming</h2>
+    <p>You take full responsibility for ensuring your company, product, or name is legally free and available before work begins. Should any legal issue arise with the naming after the project has been completed, no refunds are possible and no legal responsibility is assumed.</p>
+    <p>If a name change is required mid-project after significant logo exploration has already been presented, the total project cost will be recalculated to account for the additional work involved. Please ensure the name you are using has been appropriately checked and does not infringe on any registered trademark or business name.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2>Cancellation</h2>
+    <p>If you choose to cancel the project midway through, where ideas and proposals have already been submitted, refund of previous payment is not possible. Depending on the work completed and the overall budget, a portion of funds may be returned at discretion.</p>
+    <p>If work cannot be completed due to illness or unforeseen circumstances, a portion of the overall budget will be returned — in most cases the full amount. If any work completed can be picked up by another designer, a percentage will be refunded based on work completed.</p>
+
+    <p><strong style="color: var(--white); font-weight: 500;">Project Suspension</strong></p>
+    <p>The right is reserved to suspend any project in cases of excessive micromanagement, a continued inability to move forward after a reasonable number of unique concepts have been presented, or reluctance in meeting final payment obligations. Fair notice will be given with an opportunity to remedy the situation. Any suspension or termination will not result in refunds, and all work developed remains the full property of Xander Menmuir (xcreativ3).</p>
+
+    <p><strong style="color: var(--white); font-weight: 500;">Force Majeure</strong></p>
+    <p>Failure to perform any obligation due to circumstances beyond reasonable control — including acts of God, government action, terrorism, riot, war, accident, or deficiency in materials or transportation — shall not constitute a breach of these terms, provided notification is given and performance resumes promptly upon conclusion of the relevant event.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2>Limitation of Liability</h2>
+    <p>Xander Menmuir (xcreativ3) is not legally responsible for any loss or damage suffered in connection with the use of any services provided, whether from amendments, errors, or omissions in documents, designs, or information. Your use of or reliance on any information or materials produced is entirely at your own risk.</p>
+    <p>All designs presented will be original and will not, to the best of knowledge, infringe any existing work. Limited checks — including reverse image searches — will be performed. However, no legal responsibility is assumed for any issues regarding originality. You agree to perform your own due diligence regarding plagiarism and originality prior to using any delivered work.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4NDguOTkgMTQ4LjM2Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjZGZkZmUwOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8ZyBpZD0iTGF5ZXJfMS0yIiBkYXRhLW5hbWU9IkxheWVyIDEiPgogICAgPGc+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTU5OC4xOCwwYy0zLjYzLDAtNi42NCwxLjE2LTkuMDQsMy41LTIuNCwyLjMzLTMuNiw1LjI1LTMuNiw4Ljc1czEuMTksNi4yMiwzLjYsOC41NmMyLjQsMi4zMyw1LjQxLDMuNSw5LjA0LDMuNXM2LjgxLTEuMiw5LjE0LTMuNmMyLjMzLTIuNCwzLjUtNS4zNSwzLjUtOC44NXMtMS4yLTYuMTktMy42LTguNDZjLTIuNC0yLjI3LTUuNDEtMy40LTkuMDQtMy40WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNDMuNTgsNjMuOTdjNS4zMS0yLjk4LDExLjM0LTQuNDcsMTguMDgtNC40Nyw1LjU3LDAsMTAuNzksMS4yLDE1LjY1LDMuNiw0Ljg2LDIuNCw4Ljk3LDYuMTIsMTIuMzUsMTEuMThsMTQuMTktOS4xNGMtNC4wMi03LjI2LTkuNjktMTIuNzQtMTcuMDEtMTYuNDMtNy4zMy0zLjctMTUuNjUtNS41NC0yNC45OS01LjU0LTEwLjUsMC0xOS44NiwyLjI0LTI4LjEsNi43MS04LjIzLDQuNDctMTQuNjgsMTAuNjYtMTkuMzQsMTguNTctNC42Nyw3LjkxLTcsMTYuOTgtNywyNy4yMnMyLjM0LDE5LjMxLDcsMjcuMjJjNC42Niw3LjkxLDExLjExLDE0LjEzLDE5LjM0LDE4LjY2LDguMjMsNC41NCwxNy42LDYuODEsMjguMSw2LjgxLDkuMzMsMCwxNy42Ni0xLjkxLDI0Ljk5LTUuNzQsNy4zMi0zLjgyLDEyLjk5LTkuMywxNy4wMS0xNi40M2wtMTQuMTktOC45NGMtMy4zNyw1LjA2LTcuNDksOC43OS0xMi4zNSwxMS4xOC00Ljg2LDIuNC0xMC4wOCwzLjYtMTUuNjUsMy42LTYuNzQsMC0xMi43Ny0xLjQ5LTE4LjA4LTQuNDctNS4zMi0yLjk4LTkuNTMtNy4xOS0xMi42NC0xMi42NC0zLjExLTUuNDQtNC42Ny0xMS44Ni00LjY3LTE5LjI1czEuNTYtMTMuNzcsNC42Ny0xOS4xNWMzLjExLTUuMzgsNy4zMi05LjU2LDEyLjY0LTEyLjU0WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMzYuODIsNjEuNjJ2LTE3LjQ4aC0xNy44OXYxMDMuMDZoMTguNjd2LTUxLjMzYzAtMTEuMjgsMi45Mi0xOS45LDguNzUtMjUuODYsNS44My01Ljk2LDEzLjc0LTguOTQsMjMuNzItOC45NGgyLjA0Yy43MSwwLDEuNDYuMDcsMi4yNC4xOXYtMTguMDhjLTkuODUsMC0xOC4xNSwxLjg4LTI0Ljg5LDUuNjQtNS41NiwzLjEtOS43Myw3LjQyLTEyLjY0LDEyLjgyWiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zNjIuNyw0OS43OGMtNy42NS00LjQtMTYuNDctNi42MS0yNi40NS02LjYxcy0xOC43LDIuMjQtMjYuNTQsNi43MWMtNy44NCw0LjQ3LTE0LDEwLjY2LTE4LjQ3LDE4LjU3LTQuNDcsNy45MS02LjcxLDE2Ljk4LTYuNzEsMjcuMjJzMi4zLDE5LjMxLDYuOSwyNy4yMmM0LjYsNy45MSwxMS4wOCwxNC4xMywxOS40NSwxOC42Niw4LjM2LDQuNTQsMTguMDUsNi44MSwyOS4wNyw2LjgxLDguNTYsMCwxNi4zLTEuNDMsMjMuMjQtNC4yOCw2LjkzLTIuODUsMTIuNzQtNywxNy40LTEyLjQ0bC0xMC4zMS0xMi4wNmMtMy43Niw0LjE1LTguMTQsNy4yNi0xMy4xMiw5LjMzLTQuOTksMi4wOC0xMC41NCwzLjExLTE2LjYyLDMuMTEtNy4zOSwwLTEzLjk0LTEuNDktMTkuNjQtNC40Ny01LjcxLTIuOTgtMTAuMTQtNy4xNi0xMy4zMi0xMi41NC0yLjM0LTMuOTYtMy44MS04LjM0LTQuNDItMTMuMTJoODMuNjZjLjEzLS45MS4yMi0xLjg4LjI5LTIuOTIuMDctMS4wMy4xLTEuOTQuMS0yLjcyLDAtMTAuNjMtMi4xNy0xOS45My02LjUxLTI3LjktNC4zNC03Ljk3LTEwLjM0LTE0LjE2LTE3Ljk5LTE4LjU3Wk0zMTguOTUsNjMuMjljNS4wNi0yLjkyLDEwLjgyLTQuMzcsMTcuMzEtNC4zN3MxMi40MSwxLjQ2LDE3LjQsNC4zN2M0Ljk5LDIuOTIsOC45MSw2Ljk3LDExLjc2LDEyLjE1LDIuMTYsMy45MywzLjQ2LDguMjgsMy45MSwxMy4wM2gtNjYuMjNjLjU0LTQuNzIsMS44Ny05LjAzLDMuOTktMTIuOTMsMi44NS01LjI1LDYuODEtOS4zMywxMS44Ni0xMi4yNVoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNDQ3LjY3LDQzLjE3Yy04LjE3LDAtMTUuOTgsMS4xMy0yMy40MywzLjQtNy40NiwyLjI3LTEzLjg0LDUuNTQtMTkuMTUsOS44Mmw3Ljc4LDE0YzQuMDItMy4zNyw4Ljk0LTYuMDYsMTQuNzgtOC4wNyw1LjgzLTIuMDEsMTEuNzktMy4wMiwxNy44OS0zLjAyLDkuMiwwLDE2LjEsMi4xNywyMC43MSw2LjUyLDQuNiw0LjM0LDYuOSwxMC40Nyw2LjksMTguMzd2My42OWgtMjkuNTVjLTEwLjI0LDAtMTguMzcsMS4zNi0yNC40LDQuMDgtNi4wMywyLjcyLTEwLjM3LDYuMzUtMTMuMDMsMTAuODktMi42Niw0LjU0LTMuOTksOS41OS0zLjk5LDE1LjE3czEuNTYsMTEuMDUsNC42NywxNS42NWMzLjExLDQuNiw3LjU1LDguMiwxMy4zMiwxMC43OSw1Ljc3LDIuNTksMTIuNDcsMy44OSwyMC4xMiwzLjg5LDkuNDYsMCwxNy4zMS0xLjc4LDIzLjUzLTUuMzUsNC4zOS0yLjUxLDcuNzktNS42OSwxMC4zMS05LjQ2djEzLjY0aDE3Ljd2LTYyLjIyYzAtMTQuMTMtMy44My0yNC42My0xMS40Ny0zMS41LTcuNjUtNi44Ny0xOC41NC0xMC4zMS0zMi42Ny0xMC4zMVpNNDYxLjc3LDEyOS4zYy01LjI1LDMuMTEtMTEuMzcsNC42Ny0xOC4zNyw0LjY3cy0xMi43MS0xLjUyLTE2LjcyLTQuNTdjLTQuMDItMy4wNS02LjAzLTcuMS02LjAzLTEyLjE1LDAtNC40LDEuNjItOC4xNyw0Ljg2LTExLjI4LDMuMjQtMy4xMSw5LjUzLTQuNjcsMTguODYtNC42N2gyOC43OHYxNC4zOWMtMi4zMyw1Ljk3LTYuMTIsMTAuNS0xMS4zNywxMy42MVoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNTQyLjE2LDIxLjU4aC0xOC42NnYyMi41NWgtMTcuNXYxNS4zN2gxNy41djU2LjU4YzAsMTAuMzcsMi44NCwxOC4zNCw4LjU2LDIzLjkxLDUuNyw1LjU3LDEzLjczLDguMzYsMjQuMTEsOC4zNiw0LjI4LDAsOC4zOS0uNTcsMTIuMzQtMS43NSwxLjEyLS4zMywyLjE5LS43MSwzLjIyLTEuMTR2LTE2LjgyYy0zLjY3LDIuNjQtOC4xNSwzLjk2LTEzLjQzLDMuOTZzLTkuMTctMS40OC0xMS45Ni00LjQ3Yy0yLjc5LTIuOTgtNC4xOC03LjI1LTQuMTgtMTIuODN2LTU1LjhoMjkuNTZ2LTE1LjM3aC0yOS41NnYtMjIuNTVaIi8+CiAgICAgIDxyZWN0IGNsYXNzPSJjbHMtMSIgeD0iNTg4Ljg1IiB5PSI0NC4xNCIgd2lkdGg9IjE4LjY3IiBoZWlnaHQ9IjEwMy4wNiIvPgogICAgICA8cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iNjc2LjUxIDEyNi43IDY0MS4wNyA0NC4xNCA2MjEuNjMgNDQuMTQgNjY2Ljc0IDE0Ny4xOSA2ODUuNzkgMTQ3LjE5IDczMC45MSA0NC4xNCA3MTIuNjMgNDQuMTQgNjc2LjUxIDEyNi43Ii8+CiAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSI5OS43NSA0NC4xNCA3OS4zMyA0NC4xNCA1MS4wNCA4MS4yOSAyMi43NSA0NC4xNCAxLjk1IDQ0LjE0IDQwLjU4IDk0LjUyIDAgMTQ3LjE5IDIwLjgxIDE0Ny4xOSA1MC44OCAxMDcuNjcgODAuNyAxNDcuMTkgMTAxLjg5IDE0Ny4xOSA2MC45MSA5NC40NSA5OS43NSA0NC4xNCIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik04MDkuODIsOTMuNTdjLTQuMzYtMy45LTEwLjE5LTYuNS0xNy4zOC03Ljc1bDIzLjIxLTI4LjZ2LTEzLjA5aC02OS44NHYxNy40NWg0NC4xMWwtMjEuNjEsMjYuNnYxMy4zNmgxMC40N2M3LjcyLDAsMTMuMzQsMS4zOCwxNi43MSw0LjEsMy4yNSwyLjYxLDQuODMsNS45OSw0LjgzLDEwLjMxcy0xLjY1LDcuOTMtNS4wNSwxMC41NWMtMy41NiwyLjc0LTguNzMsNC4xMy0xNS4zNyw0LjEzLTUuNjIsMC0xMC45NS0uOTMtMTUuODMtMi43Ni00Ljg1LTEuODItOC44My00LjE3LTExLjgzLTYuOTlsLTIuNDItMi4yOC05LjIsMTUuNzksMS42MywxLjQ0YzQuMzYsMy44NSwxMCw2Ljk1LDE2Ljc4LDkuMTksNi43MywyLjIyLDEzLjc2LDMuMzUsMjAuODgsMy4zNSw4Ljc1LDAsMTYuMTItMS40MywyMS45Mi00LjI2LDUuOS0yLjg3LDEwLjM4LTYuODYsMTMuMzQtMTEuODYsMi45My00Ljk3LDQuNDItMTAuNSw0LjQyLTE2LjQ0LDAtOC45NC0zLjI4LTE2LjQyLTkuNzUtMjIuMjNaIi8+CiAgICAgIDxnPgogICAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSI4MTUuOTMgMTguMDEgODIxLjQ3IDE4LjAxIDgyMS40NyAzMi4xNSA4MjMuNzUgMzIuMTUgODIzLjc1IDE4LjAxIDgyOS4yOSAxOC4wMSA4MjkuMjkgMTYgODE1LjkzIDE2IDgxNS45MyAxOC4wMSIvPgogICAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSI4NDguOTkgMzIuMTUgODQ4Ljk3IDE2IDg0Ny4wOCAxNiA4NDAuNDMgMjcuMzQgODMzLjcgMTYgODMxLjggMTYgODMxLjggMzIuMTUgODM0LjAyIDMyLjE1IDgzNC4wMiAyMC40NCA4MzkuODYgMzAuMTkgODQwLjkyIDMwLjE5IDg0Ni43NiAyMC4zNyA4NDYuNzggMzIuMTUgODQ4Ljk5IDMyLjE1Ii8+CiAgICAgIDwvZz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPg==" alt="xcreativ3 Brand Identity Studio" width="180" height="32" />
+      <p>A brand identity studio crafting logos and identities that lead markets and outlast trends.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="index.html#packages">Logo Design</a></li>
+        <li><a href="index.html#packages">Brand Identity</a></li>
+        <li><a href="index.html#services">Social Media</a></li>
+        <li><a href="index.html#services">Adhoc Design</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:xcreativ3@gmail.com">xcreativ3@gmail.com</a></li>
+        <li><a href="index.html#contact">Start a Project</a></li>
+        <li><a href="terms-of-service.html" aria-current="page">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 xcreativ3&#8482;. All rights reserved.</p>
+    <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMjEuODkgMzIxLjg5Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjZGZkZmUwOwogICAgICB9CgogICAgICAuY2xzLTIgewogICAgICAgIGZpbGw6ICNiNDAwMGQ7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxnIGlkPSJMYXllcl8xLTIiIGRhdGEtbmFtZT0iTGF5ZXIgMSI+CiAgICA8ZyBpZD0iTGF5ZXJfMS0zIiBkYXRhLW5hbWU9IkxheWVyIDEiPgogICAgICA8Zz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik05NC44MSw2Ni4xMmw4LjAyLDguMDIsMy4zMywzLjMzLDI3LjM5LDI3LjM5aC4wMXM4LjAyLDguMDMsOC4wMiw4LjAzbDUuNjgsNS42OCwxMy43LDEzLjdoMHM4LjAyLTguMDMsOC4wMi04LjAzbDUuNjgtNS42Nyw1LjY3LTUuNjgsOC4wMy04LjAyaC0uMDFzLjAxLS4wMS4wMS0uMDFsMjcuMzktMjcuMzksMy4zMy0zLjMzLDguMDItOC4wMiwyLjM2LTIuMzUsOC45OS05VjBsLTI3LjM4LDI3LjM4LTguOTksOS4wMS0yLjM2LDIuMzUtOC4wMiw4LjAyLTMuMzMsMy4zMy0yNy4zOSwyNy4zOWgwcy0xMS4zNS0xMS4zNC0xMS4zNS0xMS4zNGwtMTYuMDQtMTYuMDQtMy4zMy0zLjMzLTguMDItOC4wMi0yLjM1LTIuMzUtOS4wMS05LjAxTDgzLjQ2LDB2NTQuNzhsOC45OSw5LDIuMzUsMi4zNWgwWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTIyNy4wNywyNTUuNzZsLTguMDItOC4wMi0zLjMzLTMuMzMtMjcuMzktMjcuMzloLS4wMS4wMXMtOC4wMy04LjAzLTguMDMtOC4wM2wtNS42Ny01LjY4LTUuNjgtNS42Ny04LjAyLTguMDJoMHMtMTMuNywxMy42OC0xMy43LDEzLjY4bC01LjY4LDUuNjgtOC4wMiw4LjAyaDBzLS4wMS4wMS0uMDEuMDFsLTI3LjM5LDI3LjM5LTMuMzMsMy4zMy04LjAyLDguMDItMi4zNSwyLjM1LTguOTksOXY1NC43OGwyNy4zOC0yNy4zOCw5LjAxLTkuMDEsMi4zNS0yLjM1LDguMDItOC4wMiwzLjMzLTMuMzMsMTYuMDQtMTYuMDQsMTEuMzUtMTEuMzVoMHMyNy4zOSwyNy40LDI3LjM5LDI3LjRsMy4zMywzLjMzLDguMDIsOC4wMiwyLjM2LDIuMzUsOC45OSw5LjAxLDI3LjM4LDI3LjM4di01NC43OGwtOC45OS05LTIuMzYtMi4zNWgwWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTEwNC44NiwxODguMzNoLjAxczguMDItOC4wMSw4LjAyLTguMDFsNS42OC01LjY3LDUuNjctNS42OCw4LjAyLTguMDJoLjAxbC0xMy43LTEzLjctNS42OC01LjY4LTguMDItOC4wMmgtLjAxcy0yNy4zOS0yNy40LTI3LjM5LTI3LjRsLTMuMzMtMy4zMy04LjAyLTguMDItMi4zNS0yLjM1LTktOC45OUgwbDI3LjM4LDI3LjM4LDkuMDEsOS4wMSwyLjM1LDIuMzUsOC4wMiw4LjAyLDMuMzMsMy4zMywxNi4wNCwxNi4wNCwxMS4zNSwxMS4zNWgtLjAxbC0yNy4zOSwyNy4zOS0zLjMzLDMuMzMtOC4wMiw4LjAyLTIuMzUsMi4zNi05LjAxLDguOTlMMCwyMzguNDJoNTQuNzhsOS04Ljk5LDIuMzUtMi4zNiw4LjAyLTguMDIsMy4zMy0zLjMzLDI3LjM5LTI3LjM5aDBzMCwwLDAsMFoiLz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0yODUuNSwyMDIuMDNsLTIuMzUtMi4zNS04LjAyLTguMDItMy4zMy0zLjMzLTE2LjA0LTE2LjA0LTExLjM1LTExLjM1aC4wMWwyNy4zOS0yNy4zOSwzLjMzLTMuMzMsOC4wMi04LjAyLDIuMzUtMi4zNiw5LjAxLTguOTksMjcuMzgtMjcuMzhoLTU0Ljc4bC05LDguOTktMi4zNSwyLjM2LTguMDIsOC4wMi0zLjMzLDMuMzMtMjcuMzksMjcuMzloMHMtLjAxLDAtLjAxLDBsLTguMDIsOC4wMy01LjY4LDUuNjctNS42Nyw1LjY4LTguMDIsOC4wMmgtLjAxbDEzLjcsMTMuNyw1LjY4LDUuNjgsOC4wMiw4LjAyaC4wMXMyNy4zOSwyNy40LDI3LjM5LDI3LjRsMy4zMywzLjMzLDguMDIsOC4wMiwyLjM1LDIuMzUsOSw4Ljk5aDU0Ljc4bC0yNy4zOC0yNy4zOC05LjAxLTkuMDFoMFoiLz4KICAgICAgPC9nPgogICAgPC9nPgogIDwvZz4KPC9zdmc+" alt="" class="footer-logo-mark" />
+  </div>
+</footer>
+
+</body>
+</html>
