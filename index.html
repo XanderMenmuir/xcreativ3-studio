@@ -117,9 +117,10 @@ nav {
 /* HERO */
 .hero {
   min-height: 100vh;
-  display: flex; flex-direction: column; justify-content: flex-end;
+  display: flex; flex-direction: column; justify-content: flex-end; align-items: center;
   padding: 0 5% 7rem;
   position: relative; overflow: hidden;
+  text-align: center;
 }
 @media (max-width: 768px) {
   .hero {
@@ -163,10 +164,10 @@ nav {
   position: relative;
   font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--red); margin-bottom: 2.2rem;
-  display: flex; align-items: center; gap: 1rem; font-weight: 500;
+  display: flex; align-items: center; justify-content: center; gap: 1rem; font-weight: 500;
 }
 .hero-tag::before {
-  content: ''; display: block; width: 2.5rem; height: 1px; background: var(--red);
+  content: none;
 }
 .hero-headline {
   position: relative;
@@ -177,16 +178,18 @@ nav {
   letter-spacing: -0.02em;
   max-width: 800px;
   margin-bottom: 2.2rem;
+  text-align: center;
 }
 .hero-headline .accent { color: var(--red); }
 .hero-sub {
   position: relative;
   max-width: 440px; font-size: 0.95rem;
   color: rgba(223,223,224,0.68); line-height: 1.8; margin-bottom: 3rem;
+  text-align: center;
 }
 .hero-actions {
   position: relative;
-  display: flex; gap: 1.4rem; align-items: center; flex-wrap: wrap;
+  display: flex; gap: 1.4rem; align-items: center; flex-wrap: wrap; justify-content: center;
 }
 .btn-primary {
   padding: 0.95rem 2.4rem;
@@ -260,6 +263,10 @@ section { padding: 7rem 5%; }
 .section-label::before {
   content: ''; display: block; width: 1.8rem; height: 1px; background: var(--red);
 }
+.section-label[style*="justify-content:center"]::before,
+.section-label[style*="justify-content: center"]::before {
+  display: none;
+}
 .section-title {
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(2.2rem, 4.6vw, 3.6rem);
@@ -301,8 +308,9 @@ section { padding: 7rem 5%; }
   padding: 7rem 5%;
 }
 .packages-header {
-  display: flex; justify-content: space-between; align-items: flex-end;
+  display: flex; justify-content: center; align-items: flex-end;
   flex-wrap: wrap; gap: 2rem; margin-bottom: 3.4rem;
+  text-align: center;
 }
 .packages .section-label { color: var(--red); }
 .packages .section-label::before { background: var(--red); }
@@ -456,21 +464,26 @@ section { padding: 7rem 5%; }
 }
 .services-strip-head {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 0;
   margin-bottom: 3rem;
+  text-align: center;
 }
 .services-strip-head .section-title {
   color: var(--light-text);
   max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 .services-strip-head .section-label {
   color: var(--red);
 }
 .services-strip-head .section-label::before {
-  background: var(--red);
+  display: none;
 }
 .services-strip-inner {
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -810,7 +823,7 @@ nav.scrolled {
 }
 
 /* PROCESS */
-.process-section { background: var(--off-black); padding: 7rem 5% 4rem; position: relative; overflow: hidden; }
+.process-section { background: var(--off-black); padding: 8rem 5% 6rem; position: relative; overflow: hidden; min-height: 100vh; }
 .process-section .section-label { color: var(--red); }
 .process-section .section-label::before { background: var(--red); }
 .process-section .section-title { color: var(--white); }
@@ -958,8 +971,9 @@ nav.scrolled {
   border-top: 1px solid var(--border-dark);
 }
 .about-header {
-  display: flex; align-items: flex-start; gap: 3rem;
+  display: flex; align-items: center; flex-direction: column; gap: 1.2rem;
   margin-bottom: 2.5rem;
+  text-align: center;
 }
 .about-photo {
   width: 150px; height: 150px; border-radius: 50%;
@@ -967,7 +981,7 @@ nav.scrolled {
   flex-shrink: 0;
   background: #1a0000;
 }
-.about-header-text { display: flex; flex-direction: column; justify-content: center; }
+.about-header-text { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
 .about-name {
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(2rem, 5vw, 3.6rem);
@@ -987,10 +1001,11 @@ nav.scrolled {
 .about-body p {
   font-size: 1.05rem; color: rgba(223,223,224,0.72);
   line-height: 1.85; margin-bottom: 1.5rem; max-width: 880px;
+  text-align: center; margin-left: auto; margin-right: auto;
 }
 .about-body p:last-child { margin-bottom: 0; }
 .about-tags {
-  display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2.5rem;
+  display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2.5rem; justify-content: center;
 }
 .about-tag {
   font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
@@ -1027,7 +1042,7 @@ nav.scrolled {
 
 
 .about-social-btns {
-  display: flex; gap: 0.75rem; margin-top: 1rem;
+  display: flex; gap: 0.75rem; margin-top: 1rem; justify-content: center;
 }
 .about-social-btn {
   display: inline-flex; align-items: center; gap: 0.5rem;
@@ -1194,6 +1209,7 @@ nav.scrolled {
 }
 .reviews-header {
   margin-bottom: 4rem;
+  text-align: center;
 }
 .reviews-grid {
   display: grid;
@@ -1469,6 +1485,9 @@ nav.scrolled {
   <a href="#reviews" onclick="closeMobileNav()">Reviews</a>
 </div>
 
+<!-- MAIN PAGE -->
+<div id="main-page">
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg">
@@ -1515,7 +1534,7 @@ nav.scrolled {
 </div>
 
 <section class="about-section" id="about">
-  <p class="section-label reveal">About</p>
+  <p class="section-label reveal" style="justify-content:center;">About</p>
   <div class="about-header">
     <img
       class="about-photo"
@@ -1622,14 +1641,10 @@ nav.scrolled {
 
 <!-- PACKAGES -->
 <section class="packages" id="packages">
-  <div class="packages-header" style="align-items:flex-start;">
-    <div style="max-width:720px;">
-      <p class="section-label reveal">Logo &amp; Identity Pricing</p>
-      <h2 class="section-title reveal reveal-delay-1" style="color:var(--light-text); margin-bottom:1.2rem;">Choose your<br><span class="accent">package.</span></h2>
-      <p style="font-size:0.92rem; color:var(--light-muted); line-height:1.85; margin-bottom:1rem;">A logo alone is only one part of your brand. While it acts as a visual identifier, it doesn't define how your business communicates, appears across platforms, or is perceived by your audience.</p>
-      <p style="font-size:0.92rem; color:var(--light-muted); line-height:1.85;">A brand identity system builds everything around the logo, giving your business structure, clarity, and consistency. It ensures your visuals, messaging, and overall presence work together as one cohesive system, helping you build trust, recognition, and long-term credibility, so your brand looks consistent everywhere it exists.</p>
-    </div>
-    <div style="max-width:520px; padding-top:0.5rem;">
+  <div class="packages-header" style="align-items:center; flex-direction:column;">
+    <div style="max-width:720px; text-align:center;">
+      <p class="section-label reveal" style="justify-content:center;">Choose your package</p>
+      <h2 class="section-title reveal reveal-delay-1" style="color:var(--light-text); margin-bottom:1.2rem;">Brand Identity<br><span class="accent">Packages</span></h2>
     </div>
   </div>
   <div class="packages-grid">
@@ -1772,9 +1787,9 @@ nav.scrolled {
 <!-- SERVICES -->
 <div class="services-strip" id="services">
   <div class="services-strip-head">
-    <div>
-      <p class="section-label reveal">Services</p>
-      <h2 class="section-title reveal reveal-delay-1" style="color:var(--light-text); margin-bottom:1.2rem;">Choose your<br><span class="accent">service.</span></h2>
+    <div style="text-align:center; width:100%;">
+      <p class="section-label reveal" style="justify-content:center; display:flex; align-items:center;">Choose your service</p>
+      <h2 class="section-title reveal reveal-delay-1" style="color:var(--light-text); margin-bottom:1.2rem; text-align:center;">Other <span class="accent">Services</span></h2>
     </div>
   </div>
   <div class="services-strip-inner">
@@ -1805,21 +1820,20 @@ nav.scrolled {
   </div>
 </div>
 
-<!-- PROCESS -->
+</div><!-- /#main-page -->
+
+<!-- PROCESS PAGE -->
+<div id="process-page" style="display:none;">
 <section class="process-section" id="process">
   <video class="process-video-bg" autoplay muted loop playsinline preload="none" aria-hidden="true">
     <source src="https://github.com/XanderMenmuir/xcreativ3-assets/raw/main/4k-black-background-loop-5-2026-01-28-04-27-23-utc.mp4" type="video/mp4">
   </video>
-  <p class="section-label reveal">How It Works</p>
-  <h2 class="section-title reveal reveal-delay-1">The <span class="accent">process.</span></h2>
-  <p class="process-intro reveal reveal-delay-2">A clear, structured approach from first conversation to final delivery, so you always know where we are and what comes next.</p>
+  <p class="section-label">How It Works</p>
+  <h2 class="section-title">The <span class="accent">process.</span></h2>
+  <p class="process-intro">A clear, structured approach from first conversation to final delivery, so you always know where we are and what comes next.</p>
   <p style="font-size:0.78rem; color:var(--red); font-style:italic; margin-top:1.5rem; margin-bottom:2rem; opacity:0.8;">Please note: the process may vary slightly depending on your chosen package.</p>
-  <button class="process-reveal-btn" onclick="toggleProcessSteps(this)">
-    View the process
-    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-  </button>
 
-  <div class="process-steps-wrapper collapsed">
+  <div class="process-steps-wrapper expanded">
   <div class="process-steps" style="margin-top:3rem;">
 
     <!-- STEP 1 -->
@@ -1837,7 +1851,7 @@ nav.scrolled {
         View image
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="process-img-drawer">
+            <div class="process-img-drawer">
         <div class="process-step-img-wrap"><img class="process-step-img" src="https://lh3.googleusercontent.com/d/1SUfyPf-jGNuu5sPdn1LHP0_sNXJ-ufES" alt="Questionnaire & Onboarding" width="600" height="450" loading="lazy" /></div>
       </div>
       </div>
@@ -1856,7 +1870,7 @@ nav.scrolled {
         View image
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="process-img-drawer">
+            <div class="process-img-drawer">
         <div class="process-step-img-wrap"><img class="process-step-img" src="https://lh3.googleusercontent.com/d/1qCxciEaAhRkWYzQ9FtEZ7I6DLlxNvwEJ" alt="Moodboard & Concepts" width="600" height="450" loading="lazy" /></div>
       </div>
       </div>
@@ -1875,7 +1889,7 @@ nav.scrolled {
         View image
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="process-img-drawer">
+            <div class="process-img-drawer">
         <div class="process-step-img-wrap"><img class="process-step-img" src="https://lh3.googleusercontent.com/d/1SZLvHCiWnNCoY4NA7ZU6uHlt4JiOOgaH" alt="Final Logo" width="600" height="450" loading="lazy" /></div>
       </div>
       </div>
@@ -1895,7 +1909,7 @@ nav.scrolled {
         View image
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="process-img-drawer">
+            <div class="process-img-drawer">
         <div class="process-step-img-wrap"><img class="process-step-img" src="https://lh3.googleusercontent.com/d/1RbTVYARYRdp65Dm_jeVMSb_2cwhF8VKq" alt="Brand Identity" width="600" height="450" loading="lazy" /></div>
       </div>
       </div>
@@ -1914,7 +1928,7 @@ nav.scrolled {
         View image
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="process-img-drawer">
+            <div class="process-img-drawer">
         <div class="process-step-img-wrap"><img class="process-step-img" src="https://lh3.googleusercontent.com/d/1XREgk25tALmFXPgxa7-vVpXmUl5jt-nn" alt="Collateral" width="600" height="450" loading="lazy" /></div>
       </div>
       </div>
@@ -1935,7 +1949,7 @@ nav.scrolled {
         View image
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="process-img-drawer">
+            <div class="process-img-drawer">
         <div class="process-step-img-wrap">
           <img class="process-step-img" src="https://lh3.googleusercontent.com/d/1g7UKMX0A5MFoSfX54xXl2Q7HjHyWpHFR" alt="Final Deliverables" width="600" height="450" loading="lazy" />
         </div>
@@ -1946,18 +1960,15 @@ nav.scrolled {
 
   </div>
 </section>
+</div><!-- /#process-page -->
 
 <!-- CASE STUDIES -->
 <section class="case-studies" id="case-studies">
-  <div class="case-studies-header">
+  <div class="case-studies-header" style="justify-content:center; text-align:center; flex-direction:column; align-items:center;">
     <div>
-      <p class="section-label reveal">Featured Work</p>
+      <p class="section-label reveal" style="justify-content:center;">Featured Work</p>
       <h2 class="section-title reveal reveal-delay-1">Selected <span class="accent">projects.</span></h2>
     </div>
-    <a href="https://www.behance.net/xandermenmuir" target="_blank" rel="noopener noreferrer" class="btn-ghost-light reveal reveal-delay-2">
-      View all on Behance
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
   </div>
 
   <div class="cs-grid" id="csGrid">
@@ -1970,12 +1981,6 @@ nav.scrolled {
       <div class="cs-card-body">
         <p class="cs-tag">Multi-Discipline</p>
         <h3 class="cs-card-name">Portfolio 2024</h3>
-        <p class="cs-card-excerpt">A cross-discipline showcase spanning logos, brand rollouts, social media, print, web/UI, post production, motion graphics, and more.</p>
-        <p class="cs-card-tagline">Versatile. Intentional. Built across every medium.</p>
-        <span class="cs-card-link">
-          View on Behance
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </span>
       </div>
     </a>
 
@@ -1987,12 +1992,6 @@ nav.scrolled {
       <div class="cs-card-body">
         <p class="cs-tag">Logo &amp; Identity</p>
         <h3 class="cs-card-name">xcreativ3</h3>
-        <p class="cs-card-excerpt">A refined geometric identity built around a custom X mark, representing structure, clarity, and intentional forward movement.</p>
-        <p class="cs-card-tagline">Simple. Strategic. Built to perform.</p>
-        <span class="cs-card-link">
-          View on Behance
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </span>
       </div>
     </a>
 
@@ -2004,12 +2003,6 @@ nav.scrolled {
       <div class="cs-card-body">
         <p class="cs-tag">Logo &amp; Branding</p>
         <h3 class="cs-card-name">Big Moo's</h3>
-        <p class="cs-card-excerpt">A brand identity for a Cape Town smash-burger joint with a South African twist.</p>
-        <p class="cs-card-tagline">Real Flavour. No Filler. Mother City Born. Freshly Smashed. 100% Pure Beef. Zero Shortcuts.</p>
-        <span class="cs-card-link">
-          View on Behance
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </span>
       </div>
     </a>
 
@@ -2021,12 +2014,6 @@ nav.scrolled {
       <div class="cs-card-body">
         <p class="cs-tag">Logo &amp; Identity</p>
         <h3 class="cs-card-name">Dr J</h3>
-        <p class="cs-card-excerpt">A fluid, custom script identity for Dr Jeanne Fredericks: personal, transformative, and anchored in expert-led authority.</p>
-        <p class="cs-card-tagline">Sophisticated. Adaptive. Designed for transformation.</p>
-        <span class="cs-card-link">
-          View on Behance
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </span>
       </div>
     </a>
 
@@ -2038,12 +2025,6 @@ nav.scrolled {
       <div class="cs-card-body">
         <p class="cs-tag">Logo &amp; Identity</p>
         <h3 class="cs-card-name">Jet Coffee</h3>
-        <p class="cs-card-excerpt">A high-contrast, high-energy visual system engineered for London's urban movers, with barista-level quality in under 60 seconds.</p>
-        <p class="cs-card-tagline">Fast. Sustainable. Engineered for speed.</p>
-        <span class="cs-card-link">
-          View on Behance
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </span>
       </div>
     </a>
 
@@ -2055,19 +2036,18 @@ nav.scrolled {
       <div class="cs-card-body">
         <p class="cs-tag">Logo &amp; Identity</p>
         <h3 class="cs-card-name">The Change Hub</h3>
-        <p class="cs-card-excerpt">A dynamic visual identity for a strategic change-management partner, balancing professional structure with the fluid nature of organisational evolution.</p>
-        <p class="cs-card-tagline">Strategic. Collaborative. Engineered for impact.</p>
-        <span class="cs-card-link">
-          View on Behance
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </span>
       </div>
     </a>
 
   </div>
-</section>
 
-<!-- STATS -->
+  <div style="text-align:center; margin-top:3rem;">
+    <a href="https://www.behance.net/xandermenmuir" target="_blank" rel="noopener noreferrer" class="btn-ghost-light reveal" style="display:inline-flex; justify-content:center;">
+      View all on Behance
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
 <section class="stats-section" id="stats">
   <div class="stats-header">
     <p class="section-label reveal" style="justify-content:center;">By The Numbers</p>
@@ -2097,7 +2077,7 @@ nav.scrolled {
 <!-- REVIEWS -->
 <section class="reviews-section" id="reviews">
   <div class="reviews-header">
-    <p class="section-label reveal">Client Reviews</p>
+    <p class="section-label reveal" style="justify-content:center;">Client Reviews</p>
     <h2 class="section-title reveal reveal-delay-1" style="color:var(--white);">What clients <span class="accent">say</span></h2>
   </div>
   <div class="reviews-grid">
@@ -2257,12 +2237,8 @@ nav.scrolled {
   <p class="cta-body reveal reveal-delay-2">
     Tell us where you are and where you want to go.<br>We'll build an identity that gets you there.
   </p>
-  <div class="cta-actions">
+  <div class="cta-actions" style="justify-content:center;">
     <a href="mailto:xcreativ3@gmail.com?subject=New%20Project%20Enquiry" class="btn-primary">Start a Project</a>
-    <a href="mailto:xcreativ3@gmail.com" class="btn-ghost-light">
-      xcreativ3@gmail.com
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
   </div>
   </div>
 </section>
@@ -2523,6 +2499,88 @@ function toggleProcessSteps(btn) {
     btn.childNodes[0].textContent = 'Hide the process ';
   }
 }
+
+// ── PROCESS PAGE TOGGLE ───────────────────────────────────────────────────────
+(function() {
+  var mainPage    = document.getElementById('main-page');
+  var processPage = document.getElementById('process-page');
+
+  function showProcess() {
+    mainPage.style.display    = 'none';
+    processPage.style.display = 'block';
+    window.scrollTo({ top: 0 });
+    history.pushState(null, '', '#process');
+  }
+
+  function showMain(hash) {
+    processPage.style.display = 'none';
+    mainPage.style.display    = 'block';
+    if (hash && hash !== '#process') {
+      var target = document.querySelector(hash);
+      if (target) setTimeout(function() { target.scrollIntoView({ behavior: 'smooth' }); }, 10);
+    } else {
+      window.scrollTo({ top: 0 });
+    }
+  }
+
+  // Intercept all navbar / mobile nav links
+  document.querySelectorAll('a[href="#process"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      showProcess();
+    });
+  });
+
+  // Clicking the logo goes back to main
+  document.querySelectorAll('a.nav-logo, a[href="#"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      if (processPage.style.display !== 'none') {
+        e.preventDefault();
+        history.pushState(null, '', location.pathname);
+        showMain(null);
+      }
+    });
+  });
+
+  // All other nav links should close process page and go to their section
+  document.querySelectorAll('.nav-links a:not([href="#process"]), .mobile-nav-drawer a:not([href="#process"])').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      if (processPage.style.display !== 'none') {
+        e.preventDefault();
+        var hash = link.getAttribute('href');
+        history.pushState(null, '', hash);
+        showMain(hash);
+      }
+    });
+  });
+
+  // Get Started button
+  var navCta = document.querySelector('.nav-cta');
+  if (navCta) {
+    navCta.addEventListener('click', function() {
+      if (processPage.style.display !== 'none') {
+        processPage.style.display = 'none';
+        mainPage.style.display    = 'block';
+        setTimeout(function() {
+          var contact = document.getElementById('contact');
+          if (contact) contact.scrollIntoView({ behavior: 'smooth' });
+        }, 10);
+      }
+    });
+  }
+
+  // Handle browser back/forward
+  window.addEventListener('popstate', function() {
+    if (window.location.hash === '#process') {
+      showProcess();
+    } else {
+      showMain(window.location.hash || null);
+    }
+  });
+
+  // On load, if hash is #process show it
+  if (window.location.hash === '#process') showProcess();
+})();
 
 function toggleMobileNav(btn) {
   btn.classList.toggle('open');
