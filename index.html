@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>xcreativ3™ | Brand Identity Studio</title>
+<title>xcreativ3™ | Branding &amp; Design Studio</title>
 <meta name="description" content="xcreativ3 is a brand identity studio crafting logos and visual identities for founders, startups, and ambitious companies. Packages from R12,000. Book a consultation today.">
 <link rel="canonical" href="https://xandermenmuir.github.io/xcreativ3-studio/">
-<meta property="og:title" content="xcreativ3™ | Brand Identity Studio">
+<meta property="og:title" content="xcreativ3™ | Branding &amp; Design Studio">
 <meta property="og:description" content="xcreativ3 is a brand identity studio crafting logos and visual identities for founders, startups, and ambitious companies. Packages from R12,000.">
 <meta property="og:image" content="https://lh3.googleusercontent.com/d/1QpDmyRWQ4TVOuPcc7fTYh03GicaIOhqJ">
 <meta property="og:url" content="https://xandermenmuir.github.io/xcreativ3-studio/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="xcreativ3™">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="xcreativ3™ | Brand Identity Studio">
+<meta name="twitter:title" content="xcreativ3™ | Branding &amp; Design Studio">
 <meta name="twitter:description" content="xcreativ3 is a brand identity studio crafting logos and visual identities for founders, startups, and ambitious companies.">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1QpDmyRWQ4TVOuPcc7fTYh03GicaIOhqJ">
 <script type="application/ld+json">
@@ -89,11 +89,22 @@ body {
   50% { opacity: 1; transform: scale(1); }
 }
 
+/* LAYOUT CONTAINER */
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 clamp(1.5rem, 5%, 4rem);
+}
+nav .inner {
+  padding: 0 clamp(1.5rem, 5%, 4rem);
+}
+
 /* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 1.2rem 5%;
+  display: flex; align-items: center; justify-content: center;
+  padding: 1.2rem 0;
   background: rgba(10,10,10,0.92);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-dark);
@@ -118,17 +129,17 @@ nav {
 .hero {
   min-height: 100vh;
   display: flex; flex-direction: column; justify-content: flex-end; align-items: center;
-  padding: 0 5% 7rem;
+  padding: 0 0 7rem;
   position: relative; overflow: hidden;
   text-align: center;
 }
 @media (max-width: 768px) {
   .hero {
     min-height: 100svh;
-    padding: 0 5% 4rem;
+    padding: 0 0 4rem;
   }
   .hero-headline {
-    font-size: clamp(2.2rem, 10vw, 3.2rem);
+    font-size: clamp(2rem, 8vw, 2.8rem);
     margin-bottom: 1.4rem;
   }
   .hero-sub {
@@ -172,7 +183,7 @@ nav {
 .hero-headline {
   position: relative;
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(2.6rem, 6.5vw, 6.2rem);
+  font-size: clamp(2.2rem, 5.8vw, 4.5rem);
   font-weight: 600;
   line-height: 1.0;
   letter-spacing: -0.02em;
@@ -181,6 +192,31 @@ nav {
   text-align: center;
 }
 .hero-headline .accent { color: var(--red); }
+
+/* ROTATING WORD */
+.rotating-word-wrap {
+  display: inline-block;
+  position: relative;
+  vertical-align: bottom;
+}
+.rotating-word {
+  display: inline-block;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.rotating-word.exit {
+  opacity: 0;
+  transform: translateY(-60%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.rotating-word.enter {
+  opacity: 0;
+  transform: translateY(60%);
+  transition: none;
+}
+
+
 .hero-sub {
   position: relative;
   max-width: 440px; font-size: 0.95rem;
@@ -216,7 +252,7 @@ nav {
 }
 .btn-ghost-dark:hover { color: var(--light-text); }
 .hero-scroll {
-  position: absolute; right: 5%; bottom: 2.5rem;
+  position: absolute; right: 0; bottom: 2.5rem;
   writing-mode: vertical-rl; font-size: 0.62rem; letter-spacing: 0.2em;
   text-transform: uppercase; color: var(--muted-dark);
   display: flex; align-items: center; gap: 0.8rem;
@@ -233,6 +269,8 @@ nav {
   border-top: 1px solid var(--border-dark);
   border-bottom: 1px solid var(--border-dark);
   padding: 0.9rem 0; overflow: hidden; background: var(--off-black);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 .marquee-track {
   display: flex; gap: 3.5rem;
@@ -254,7 +292,7 @@ nav {
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* SECTION COMMONS */
-section { padding: 7rem 5%; }
+section { padding: 7rem 0; width: 100%; }
 .section-label {
   font-size: 0.63rem; letter-spacing: 0.24em; text-transform: uppercase;
   color: var(--red); margin-bottom: 1.1rem;
@@ -282,7 +320,7 @@ section { padding: 7rem 5%; }
   background: #0f0000;
   border-top: 1px solid rgba(180,0,13,0.22);
   border-bottom: 1px solid rgba(180,0,13,0.22);
-  padding: 2.2rem 5%;
+  padding: 2.2rem 0;
   display: flex; align-items: center; justify-content: space-between;
   flex-wrap: wrap; gap: 1.5rem;
 }
@@ -305,7 +343,8 @@ section { padding: 7rem 5%; }
 /* PACKAGES */
 .packages {
   background: var(--light-bg);
-  padding: 7rem 5%;
+  padding: 7rem 0;
+  width: 100%;
 }
 .packages-header {
   display: flex; justify-content: center; align-items: flex-end;
@@ -330,6 +369,7 @@ section { padding: 7rem 5%; }
   border: 1px solid rgba(0,0,0,0.08);
   border-radius: 32px;
   box-shadow: 0 18px 38px rgba(10,10,10,0.04);
+  text-align: left;
 }
 .pkg-card::before {
   content: '';
@@ -376,7 +416,7 @@ section { padding: 7rem 5%; }
 }
 .pkg-tagline {
   font-size: 0.8rem; color: var(--light-muted); font-weight: 500;
-  margin-bottom: 1.4rem; line-height: 1.6;
+  margin-bottom: 1.4rem; line-height: 1.6; text-align: left;
 }
 .pkg-divider {
   height: 1px; background: var(--light-border);
@@ -384,7 +424,7 @@ section { padding: 7rem 5%; }
 }
 .pkg-desc {
   font-size: 0.82rem; color: var(--light-muted);
-  line-height: 1.75; margin-bottom: 1.6rem;
+  line-height: 1.75; margin-bottom: 1.6rem; text-align: left;
 }
 .pkg-includes-toggle {
   display: flex; align-items: center; gap: 0.5rem;
@@ -409,7 +449,7 @@ section { padding: 7rem 5%; }
   font-size: 0.82rem; color: var(--light-muted);
   padding: 0.4rem 0;
   border-bottom: 1px solid rgba(0,0,0,0.04);
-  display: flex; align-items: flex-start; gap: 0.7rem; line-height: 1.5;
+  display: flex; align-items: flex-start; gap: 0.7rem; line-height: 1.5; text-align: left;
 }
 .pkg-includes ul li::before {
   content: ''; display: block; width: 5px; height: 5px;
@@ -433,34 +473,30 @@ section { padding: 7rem 5%; }
 
 /* STONE BREAK */
 .stone-break {
-  position: relative; height: 320px; overflow: hidden;
+  position: relative;
+  height: 320px;
+  background: var(--black);
   display: flex; align-items: center; justify-content: center;
 }
-.stone-break-bg {
-  position: absolute; inset: 0;
-  overflow: hidden;
-}
-.stone-break-bg video {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: center;
-  filter: brightness(0.38);
-}
 .stone-break-content {
-  position: relative; text-align: center; padding: 0 5%;
+  text-align: center;
 }
 .stone-break-content p {
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(2.2rem, 4.6vw, 3.6rem);
   font-weight: 600; letter-spacing: -0.02em;
-  line-height: 1; color: var(--white);
+  line-height: 1.15; color: var(--white);
+  display: inline-block;
+  white-space: pre-line;
+  text-align: center;
 }
 .stone-break-content p .accent { color: var(--red); }
 
 /* SERVICES */
 .services-strip {
   background: var(--light-bg);
-  padding: 7rem 5%;
+  padding: 7rem 0;
+  width: 100%;
 }
 .services-strip-head {
   display: flex;
@@ -516,6 +552,7 @@ section { padding: 7rem 5%; }
 .service-tile:hover::before { transform: scaleX(1); }
 .service-tile h3, .service-tile .rate, .service-tile p,
 .service-tile .process-step-note, .service-tile .tile-note { position: relative; z-index: 1; }
+.service-tile { text-align: left; }
 .service-tile h3 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.4rem; font-weight: 600;
@@ -525,7 +562,7 @@ section { padding: 7rem 5%; }
   font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--red); font-weight: 700; margin-bottom: 1.15rem;
 }
-.service-tile p { font-size: 0.88rem; color: var(--light-muted); line-height: 1.78; }
+.service-tile p { font-size: 0.88rem; color: var(--light-muted); line-height: 1.78; text-align: left; }
 .service-tile .process-step-note {
   margin-top: 1rem;
   font-size: 0.75rem;
@@ -542,7 +579,7 @@ section { padding: 7rem 5%; }
 }
 
 /* CASE STUDIES */
-.case-studies { background: var(--black); padding: 7rem 5%; }
+.case-studies { background: var(--black); padding: 7rem 0; }
 .case-studies .section-label { color: var(--red); }
 .case-studies .section-label::before { background: var(--red); }
 .case-studies .section-title { color: var(--white); }
@@ -627,7 +664,7 @@ section { padding: 7rem 5%; }
   display: none;
   background: var(--off-black);
   grid-column: 1 / -1;
-  padding: 4rem 5%;
+  padding: 4rem 0;
   border-top: 1px solid var(--border-dark);
   animation: fadeDown 0.4s ease;
 }
@@ -688,7 +725,7 @@ section { padding: 7rem 5%; }
 /* CTA */
 .cta-section {
   background: var(--black);
-  text-align: center; padding: 8rem 5%;
+  text-align: center; padding: 8rem 0;
   position: relative; overflow: hidden;
   border-top: 1px solid var(--border-dark);
 }
@@ -730,7 +767,7 @@ section { padding: 7rem 5%; }
 footer {
   background: var(--off-black);
   border-top: 1px solid var(--border-dark);
-  padding: 4rem 5% 2rem;
+  padding: 4rem 0 2rem;
 }
 .footer-top {
   display: flex; justify-content: space-between; align-items: flex-start;
@@ -771,7 +808,7 @@ footer {
 @media (max-width: 600px) {
   .packages-grid { grid-template-columns: 1fr; }
   .pkg-header { flex-direction: column; gap: 0.3rem; }
-  .hero { padding: 0 5% 5rem; }
+  .hero { padding: 0 0 5rem; }
   .hero-scroll { display: none; }
   .footer-top { flex-direction: column; }
 }
@@ -823,7 +860,7 @@ nav.scrolled {
 }
 
 /* PROCESS */
-.process-section { background: var(--off-black); padding: 8rem 5% 6rem; position: relative; overflow: hidden; min-height: 100vh; }
+.process-section { background: var(--off-black); padding: 8rem 0 6rem; position: relative; overflow: hidden; min-height: 100vh; }
 .process-section .section-label { color: var(--red); }
 .process-section .section-label::before { background: var(--red); }
 .process-section .section-title { color: var(--white); }
@@ -919,6 +956,8 @@ nav.scrolled {
   user-select: none;
   -webkit-user-select: none;
   touch-action: pan-y;
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 .img-marquee-track {
   display: flex;
@@ -967,7 +1006,7 @@ nav.scrolled {
 /* ABOUT SECTION */
 .about-section {
   background: var(--black);
-  padding: 7rem 5%;
+  padding: 7rem 0;
   border-top: 1px solid var(--border-dark);
 }
 .about-header {
@@ -984,8 +1023,8 @@ nav.scrolled {
 .about-header-text { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
 .about-name {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(2rem, 5vw, 3.6rem);
-  font-weight: 700;
+  font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+  font-weight: 600;
   line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--white);
@@ -1122,7 +1161,7 @@ nav.scrolled {
 /* STATS SECTION */
 .stats-section {
   background: var(--off-black);
-  padding: 6rem 5%;
+  padding: 6rem 0;
   border-top: 1px solid var(--border-dark);
   border-bottom: 1px solid var(--border-dark);
   position: relative;
@@ -1204,7 +1243,7 @@ nav.scrolled {
 /* REVIEWS SECTION */
 .reviews-section {
   background: var(--black);
-  padding: 7rem 5%;
+  padding: 7rem 0;
   border-top: 1px solid var(--border-dark);
 }
 .reviews-header {
@@ -1458,6 +1497,7 @@ nav.scrolled {
 
 <!-- NAV -->
 <nav>
+<div class="inner" style="display:flex;align-items:center;justify-content:space-between;width:100%;">
   <a href="#" class="nav-logo">
     <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4NDguOTkgMTQ4LjM2Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjZGZkZmUwOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8ZyBpZD0iTGF5ZXJfMS0yIiBkYXRhLW5hbWU9IkxheWVyIDEiPgogICAgPGc+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTU5OC4xOCwwYy0zLjYzLDAtNi42NCwxLjE2LTkuMDQsMy41LTIuNCwyLjMzLTMuNiw1LjI1LTMuNiw4Ljc1czEuMTksNi4yMiwzLjYsOC41NmMyLjQsMi4zMyw1LjQxLDMuNSw5LjA0LDMuNXM2LjgxLTEuMiw5LjE0LTMuNmMyLjMzLTIuNCwzLjUtNS4zNSwzLjUtOC44NXMtMS4yLTYuMTktMy42LTguNDZjLTIuNC0yLjI3LTUuNDEtMy40LTkuMDQtMy40WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNDMuNTgsNjMuOTdjNS4zMS0yLjk4LDExLjM0LTQuNDcsMTguMDgtNC40Nyw1LjU3LDAsMTAuNzksMS4yLDE1LjY1LDMuNiw0Ljg2LDIuNCw4Ljk3LDYuMTIsMTIuMzUsMTEuMThsMTQuMTktOS4xNGMtNC4wMi03LjI2LTkuNjktMTIuNzQtMTcuMDEtMTYuNDMtNy4zMy0zLjctMTUuNjUtNS41NC0yNC45OS01LjU0LTEwLjUsMC0xOS44NiwyLjI0LTI4LjEsNi43MS04LjIzLDQuNDctMTQuNjgsMTAuNjYtMTkuMzQsMTguNTctNC42Nyw3LjkxLTcsMTYuOTgtNywyNy4yMnMyLjM0LDE5LjMxLDcsMjcuMjJjNC42Niw3LjkxLDExLjExLDE0LjEzLDE5LjM0LDE4LjY2LDguMjMsNC41NCwxNy42LDYuODEsMjguMSw2LjgxLDkuMzMsMCwxNy42Ni0xLjkxLDI0Ljk5LTUuNzQsNy4zMi0zLjgyLDEyLjk5LTkuMywxNy4wMS0xNi40M2wtMTQuMTktOC45NGMtMy4zNyw1LjA2LTcuNDksOC43OS0xMi4zNSwxMS4xOC00Ljg2LDIuNC0xMC4wOCwzLjYtMTUuNjUsMy42LTYuNzQsMC0xMi43Ny0xLjQ5LTE4LjA4LTQuNDctNS4zMi0yLjk4LTkuNTMtNy4xOS0xMi42NC0xMi42NC0zLjExLTUuNDQtNC42Ny0xMS44Ni00LjY3LTE5LjI1czEuNTYtMTMuNzcsNC42Ny0xOS4xNWMzLjExLTUuMzgsNy4zMi05LjU2LDEyLjY0LTEyLjU0WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMzYuODIsNjEuNjJ2LTE3LjQ4aC0xNy44OXYxMDMuMDZoMTguNjd2LTUxLjMzYzAtMTEuMjgsMi45Mi0xOS45LDguNzUtMjUuODYsNS44My01Ljk2LDEzLjc0LTguOTQsMjMuNzItOC45NGgyLjA0Yy43MSwwLDEuNDYuMDcsMi4yNC4xOXYtMTguMDhjLTkuODUsMC0xOC4xNSwxLjg4LTI0Ljg5LDUuNjQtNS41NiwzLjEtOS43Myw3LjQyLTEyLjY0LDEyLjgyWiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zNjIuNyw0OS43OGMtNy42NS00LjQtMTYuNDctNi42MS0yNi40NS02LjYxcy0xOC43LDIuMjQtMjYuNTQsNi43MWMtNy44NCw0LjQ3LTE0LDEwLjY2LTE4LjQ3LDE4LjU3LTQuNDcsNy45MS02LjcxLDE2Ljk4LTYuNzEsMjcuMjJzMi4zLDE5LjMxLDYuOSwyNy4yMmM0LjYsNy45MSwxMS4wOCwxNC4xMywxOS40NSwxOC42Niw4LjM2LDQuNTQsMTguMDUsNi44MSwyOS4wNyw2LjgxLDguNTYsMCwxNi4zLTEuNDMsMjMuMjQtNC4yOCw2LjkzLTIuODUsMTIuNzQtNywxNy40LTEyLjQ0bC0xMC4zMS0xMi4wNmMtMy43Niw0LjE1LTguMTQsNy4yNi0xMy4xMiw5LjMzLTQuOTksMi4wOC0xMC41NCwzLjExLTE2LjYyLDMuMTEtNy4zOSwwLTEzLjk0LTEuNDktMTkuNjQtNC40Ny01LjcxLTIuOTgtMTAuMTQtNy4xNi0xMy4zMi0xMi41NC0yLjM0LTMuOTYtMy44MS04LjM0LTQuNDItMTMuMTJoODMuNjZjLjEzLS45MS4yMi0xLjg4LjI5LTIuOTIuMDctMS4wMy4xLTEuOTQuMS0yLjcyLDAtMTAuNjMtMi4xNy0xOS45My02LjUxLTI3LjktNC4zNC03Ljk3LTEwLjM0LTE0LjE2LTE3Ljk5LTE4LjU3Wk0zMTguOTUsNjMuMjljNS4wNi0yLjkyLDEwLjgyLTQuMzcsMTcuMzEtNC4zN3MxMi40MSwxLjQ2LDE3LjQsNC4zN2M0Ljk5LDIuOTIsOC45MSw2Ljk3LDExLjc2LDEyLjE1LDIuMTYsMy45MywzLjQ2LDguMjgsMy45MSwxMy4wM2gtNjYuMjNjLjU0LTQuNzIsMS44Ny05LjAzLDMuOTktMTIuOTMsMi44NS01LjI1LDYuODEtOS4zMywxMS44Ni0xMi4yNVoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNDQ3LjY3LDQzLjE3Yy04LjE3LDAtMTUuOTgsMS4xMy0yMy40MywzLjQtNy40NiwyLjI3LTEzLjg0LDUuNTQtMTkuMTUsOS44Mmw3Ljc4LDE0YzQuMDItMy4zNyw4Ljk0LTYuMDYsMTQuNzgtOC4wNyw1LjgzLTIuMDEsMTEuNzktMy4wMiwxNy44OS0zLjAyLDkuMiwwLDE2LjEsMi4xNywyMC43MSw2LjUyLDQuNiw0LjM0LDYuOSwxMC40Nyw2LjksMTguMzd2My42OWgtMjkuNTVjLTEwLjI0LDAtMTguMzcsMS4zNi0yNC40LDQuMDgtNi4wMywyLjcyLTEwLjM3LDYuMzUtMTMuMDMsMTAuODktMi42Niw0LjU0LTMuOTksOS41OS0zLjk5LDE1LjE3czEuNTYsMTEuMDUsNC42NywxNS42NWMzLjExLDQuNiw3LjU1LDguMiwxMy4zMiwxMC43OSw1Ljc3LDIuNTksMTIuNDcsMy44OSwyMC4xMiwzLjg5LDkuNDYsMCwxNy4zMS0xLjc4LDIzLjUzLTUuMzUsNC4zOS0yLjUxLDcuNzktNS42OSwxMC4zMS05LjQ2djEzLjY0aDE3Ljd2LTYyLjIyYzAtMTQuMTMtMy44My0yNC42My0xMS40Ny0zMS41LTcuNjUtNi44Ny0xOC41NC0xMC4zMS0zMi42Ny0xMC4zMVpNNDYxLjc3LDEyOS4zYy01LjI1LDMuMTEtMTEuMzcsNC42Ny0xOC4zNyw0LjY3cy0xMi43MS0xLjUyLTE2LjcyLTQuNTdjLTQuMDItMy4wNS02LjAzLTcuMS02LjAzLTEyLjE1LDAtNC40LDEuNjItOC4xNyw0Ljg2LTExLjI4LDMuMjQtMy4xMSw5LjUzLTQuNjcsMTguODYtNC42N2gyOC43OHYxNC4zOWMtMi4zMyw1Ljk3LTYuMTIsMTAuNS0xMS4zNywxMy42MVoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNTQyLjE2LDIxLjU4aC0xOC42NnYyMi41NWgtMTcuNXYxNS4zN2gxNy41djU2LjU4YzAsMTAuMzcsMi44NCwxOC4zNCw4LjU2LDIzLjkxLDUuNyw1LjU3LDEzLjczLDguMzYsMjQuMTEsOC4zNiw0LjI4LDAsOC4zOS0uNTcsMTIuMzQtMS43NSwxLjEyLS4zMywyLjE5LS43MSwzLjIyLTEuMTR2LTE2LjgyYy0zLjY3LDIuNjQtOC4xNSwzLjk2LTEzLjQzLDMuOTZzLTkuMTctMS40OC0xMS45Ni00LjQ3Yy0yLjc5LTIuOTgtNC4xOC03LjI1LTQuMTgtMTIuODN2LTU1LjhoMjkuNTZ2LTE1LjM3aC0yOS41NnYtMjIuNTVaIi8+CiAgICAgIDxyZWN0IGNsYXNzPSJjbHMtMSIgeD0iNTg4Ljg1IiB5PSI0NC4xNCIgd2lkdGg9IjE4LjY3IiBoZWlnaHQ9IjEwMy4wNiIvPgogICAgICA8cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iNjc2LjUxIDEyNi43IDY0MS4wNyA0NC4xNCA2MjEuNjMgNDQuMTQgNjY2Ljc0IDE0Ny4xOSA2ODUuNzkgMTQ3LjE5IDczMC45MSA0NC4xNCA3MTIuNjMgNDQuMTQgNjc2LjUxIDEyNi43Ii8+CiAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSI5OS43NSA0NC4xNCA3OS4zMyA0NC4xNCA1MS4wNCA4MS4yOSAyMi43NSA0NC4xNCAxLjk1IDQ0LjE0IDQwLjU4IDk0LjUyIDAgMTQ3LjE5IDIwLjgxIDE0Ny4xOSA1MC44OCAxMDcuNjcgODAuNyAxNDcuMTkgMTAxLjg5IDE0Ny4xOSA2MC45MSA5NC40NSA5OS43NSA0NC4xNCIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik04MDkuODIsOTMuNTdjLTQuMzYtMy45LTEwLjE5LTYuNS0xNy4zOC03Ljc1bDIzLjIxLTI4LjZ2LTEzLjA5aC02OS44NHYxNy40NWg0NC4xMWwtMjEuNjEsMjYuNnYxMy4zNmgxMC40N2M3LjcyLDAsMTMuMzQsMS4zOCwxNi43MSw0LjEsMy4yNSwyLjYxLDQuODMsNS45OSw0LjgzLDEwLjMxcy0xLjY1LDcuOTMtNS4wNSwxMC41NWMtMy41NiwyLjc0LTguNzMsNC4xMy0xNS4zNyw0LjEzLTUuNjIsMC0xMC45NS0uOTMtMTUuODMtMi43Ni00Ljg1LTEuODItOC44My00LjE3LTExLjgzLTYuOTlsLTIuNDItMi4yOC05LjIsMTUuNzksMS42MywxLjQ0YzQuMzYsMy44NSwxMCw2Ljk1LDE2Ljc4LDkuMTksNi43MywyLjIyLDEzLjc2LDMuMzUsMjAuODgsMy4zNSw4Ljc1LDAsMTYuMTItMS40MywyMS45Mi00LjI2LDUuOS0yLjg3LDEwLjM4LTYuODYsMTMuMzQtMTEuODYsMi45My00Ljk3LDQuNDItMTAuNSw0LjQyLTE2LjQ0LDAtOC45NC0zLjI4LTE2LjQyLTkuNzUtMjIuMjNaIi8+CiAgICAgIDxnPgogICAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSI4MTUuOTMgMTguMDEgODIxLjQ3IDE4LjAxIDgyMS40NyAzMi4xNSA4MjMuNzUgMzIuMTUgODIzLjc1IDE4LjAxIDgyOS4yOSAxOC4wMSA4MjkuMjkgMTYgODE1LjkzIDE2IDgxNS45MyAxOC4wMSIvPgogICAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSI4NDguOTkgMzIuMTUgODQ4Ljk3IDE2IDg0Ny4wOCAxNiA4NDAuNDMgMjcuMzQgODMzLjcgMTYgODMxLjggMTYgODMxLjggMzIuMTUgODM0LjAyIDMyLjE1IDgzNC4wMiAyMC40NCA4MzkuODYgMzAuMTkgODQwLjkyIDMwLjE5IDg0Ni43NiAyMC4zNyA4NDYuNzggMzIuMTUgODQ4Ljk5IDMyLjE1Ii8+CiAgICAgIDwvZz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPg==" alt="Xcreativ" />
   </a>
@@ -1465,7 +1505,6 @@ nav.scrolled {
     <li><a href="#about">About</a></li>
     <li><a href="#packages">Packages</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#process">Process</a></li>
     <li><a href="#case-studies">Work</a></li>
     <li><a href="#reviews">Reviews</a></li>
   </ul>
@@ -1475,12 +1514,12 @@ nav.scrolled {
       <span></span><span></span><span></span>
     </button>
   </div>
+</div><!-- /.inner -->
 </nav>
 <div class="mobile-nav-drawer" id="mobileNavDrawer">
   <a href="#about" onclick="closeMobileNav()">About</a>
   <a href="#packages" onclick="closeMobileNav()">Packages</a>
   <a href="#services" onclick="closeMobileNav()">Services</a>
-  <a href="#process" onclick="closeMobileNav()">Process</a>
   <a href="#case-studies" onclick="closeMobileNav()">Work</a>
   <a href="#reviews" onclick="closeMobileNav()">Reviews</a>
 </div>
@@ -1496,12 +1535,12 @@ nav.scrolled {
     </video>
   </div>
   <div class="hero-bg-overlay"></div>
-  <p class="hero-tag">Brand Identity Studio</p>
+  <p class="hero-tag">Branding &amp; Design Studio</p>
   <h1 class="hero-headline">
-    Build a brand<br>that <span class="accent">commands<br>attention.</span>
+    Building <span class="rotating-word-wrap"><span class="rotating-word accent" id="rotatingWord">logos</span></span><br>that break through<br>and <span class="accent">drive growth.</span>
   </h1>
   <p class="hero-sub">
-    Logos and brand identities crafted for founders, startups, and ambitious companies ready to dominate their market.
+    A branding &amp; design studio crafting logos, identities, and creative solutions for founders, startups, and modern brands.
   </p>
   <div class="hero-actions">
     <a href="#packages" class="btn-primary">View Packages</a>
@@ -1534,6 +1573,7 @@ nav.scrolled {
 </div>
 
 <section class="about-section" id="about">
+<div class="inner">
   <p class="section-label reveal" style="justify-content:center;">About</p>
   <div class="about-header">
     <img
@@ -1559,17 +1599,20 @@ nav.scrolled {
   </div>
   <div class="about-divider"></div>
   <div class="about-body reveal reveal-delay-2">
-    <p>I'm Xander, a brand identity designer and the founder of xcreativ3. Since 2019, I have helped founders and businesses bridge the gap between their current look and their true potential.</p>
-    <p style="margin-top:1.2rem;">I specialise in building scalable visual languages built to perform by providing you with a system that ensures your brand looks as professional on a billboard as it does on a smartphone. My focus is taking your vision and distilling it into a precise, crystal-clear identity that commands attention.</p>
-    <p style="margin-top:1.2rem;">You have built the foundation. I am here to ensure your branding elevates you.</p>
+    <p>I'm Xander, a brand designer and founder of xcreativ3. Since 2019, I've helped founders and businesses bridge the gap between where they are and where their brand needs to be.</p>
+    <p style="margin-top:1.2rem;">I specialise in building scalable logos, brand identities, and creative solutions that work across every touchpoint. My focus is turning vision into clear, intentional design that helps you grow your business.</p>
   </div>
   <div class="about-tags">
     <span class="about-tag">Logos</span>
-    <span class="about-tag">Branding</span>
+    <span class="about-tag">Brand Identity</span>
     <span class="about-tag">Brand Strategy</span>
+    <span class="about-tag">Campaign Design</span>
     <span class="about-tag">Graphic Design</span>
+    <span class="about-tag">Motion Graphics</span>
+    <span class="about-tag">Video Editing</span>
     <span class="about-tag">Videography</span>
   </div>
+</div><!-- /.inner -->
 </section>
 
 <!-- IMAGE MARQUEE -->
@@ -1623,25 +1666,27 @@ nav.scrolled {
 </div>
 
 <!-- PORTFOLIO DISCLAIMER -->
-<div style="background:var(--off-black);border-top:1px solid var(--border-dark);border-bottom:1px solid var(--border-dark);padding:1.1rem 5%;text-align:center;">
-  <p style="font-size:0.68rem;letter-spacing:0.06em;color:var(--muted-dark);line-height:1.7;">This portfolio features a selection of personal freelance projects and work created during engagements with Woww Digital, Admakers International, and Bullshark Digital. All work is displayed for portfolio purposes only. Intellectual property rights remain with the respective clients and agencies.</p>
+<div style="background:var(--off-black);border-top:1px solid var(--border-dark);border-bottom:1px solid var(--border-dark);padding:1.1rem 0;text-align:center;width:100%;">
+  <div class="inner"><p style="font-size:0.68rem;letter-spacing:0.06em;color:var(--muted-dark);line-height:1.7;">This portfolio features a selection of personal freelance projects and work created during engagements with Woww Digital, Admakers International, and Bullshark Digital. All work is displayed for portfolio purposes only. Intellectual property rights remain with the respective clients and agencies.</p></div>
 </div>
 <!-- SLOTS BANNER -->
 <div class="slots-banner" style="flex-direction:column; align-items:center; text-align:center; gap:1.4rem;">
+  <div class="inner" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.4rem;">
   <div class="slots-text reveal reveal-delay-1">
     <h3>Limited Slots Available</h3>
     <p>We take on a select number of clients each month to maintain exceptional quality.</p>
   </div>
   <a href="#contact" class="btn-primary">Secure Your Slot</a>
-</div>
+</div><!-- /.inner -->
 
 
 <!-- PACKAGES -->
 <section class="packages" id="packages">
+<div class="inner">
   <div class="packages-header" style="align-items:center; flex-direction:column;">
     <div style="max-width:720px; text-align:center;">
       <p class="section-label reveal" style="justify-content:center;">Choose your package</p>
-      <h2 class="section-title reveal reveal-delay-1" style="color:var(--light-text); margin-bottom:1.2rem;">Brand Identity<br><span class="accent">Packages</span></h2>
+      <h2 class="section-title reveal reveal-delay-1" style="color:var(--light-text); margin-bottom:1.2rem;">Logo and Brand<br>Identity <span class="accent">Packages</span></h2>
     </div>
   </div>
   <div class="packages-grid">
@@ -1650,11 +1695,32 @@ nav.scrolled {
     <div class="pkg-card reveal">
       <div class="pkg-header">
         <p class="pkg-name">Kickstart</p>
-        <p class="pkg-price">R12,000</p>
       </div>
-      <p class="pkg-tagline">Built for early-stage founders who need a clear, professional brand to launch with confidence.</p>
+      <p class="pkg-tagline">Best suited for startups and small businesses looking for a strong, professional logo without the need for a full identity system.</p>
       <div class="pkg-divider"></div>
-      <p class="pkg-desc">Get everything you need to look credible and consistent from day one. This package gives you a complete logo system, defined colours and typography, and a simple brand guide so you can apply your identity correctly across digital platforms without second-guessing.</p>
+      <button class="pkg-includes-toggle" onclick="toggleIncludes(this)">
+        What's included
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="pkg-includes">
+        <ul>
+          <li>A primary logo</li>
+          <li>Logo colour palette</li>
+          <li>Logo font</li>
+        </ul>
+      </div>
+      <div class="pkg-actions">
+        <a href="mailto:xcreativ3@gmail.com?subject=Kickstart%20Enquiry" class="pkg-cta">Book a Consultation</a>
+      </div>
+    </div>
+
+    <!-- BUILD (formerly Kickstart) -->
+    <div class="pkg-card reveal reveal-delay-1">
+      <div class="pkg-header">
+        <p class="pkg-name">Build</p>
+      </div>
+      <p class="pkg-tagline">Best suited for growing businesses that need a complete visual identity to launch confidently and maintain consistency across every platform.</p>
+      <div class="pkg-divider"></div>
       <button class="pkg-includes-toggle" onclick="toggleIncludes(this)">
         What's included
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
@@ -1670,37 +1736,7 @@ nav.scrolled {
         </ul>
       </div>
       <div class="pkg-actions">
-        <a href="mailto:xcreativ3@gmail.com?subject=Kickstart%20Package%20Enquiry" class="pkg-cta">Get Started</a>
-      </div>
-    </div>
-
-    <!-- BUILD -->
-    <div class="pkg-card reveal reveal-delay-1">
-      <div class="pkg-header">
-        <p class="pkg-name">Build</p>
-        <p class="pkg-price">R20,000</p>
-      </div>
-      <p class="pkg-tagline">Designed for growing businesses ready to elevate their brand with more depth, flexibility, and real-world application.</p>
-      <div class="pkg-divider"></div>
-      <p class="pkg-desc">Move beyond the basics with a more refined and versatile identity system. Greater control over how your brand shows up across platforms, with expanded typography, colour variations, and supporting visual elements that create a more distinctive and cohesive look.</p>
-      <button class="pkg-includes-toggle" onclick="toggleIncludes(this)">
-        What's included
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-      <div class="pkg-includes">
-        <ul>
-          <li>Comprehensive digital brand guide</li>
-          <li>Complete logo system</li>
-          <li>Extended colour palette with tints and shades</li>
-          <li>Full typography system</li>
-          <li>Defined Iconography Set</li>
-          <li>Photography direction</li>
-          <li>Custom visual elements</li>
-          <li>Choice of two essential branded assets (business cards, social media, or email)</li>
-        </ul>
-      </div>
-      <div class="pkg-actions">
-        <a href="mailto:xcreativ3@gmail.com?subject=Build%20Package%20Enquiry" class="pkg-cta">Get Started</a>
+        <a href="mailto:xcreativ3@gmail.com?subject=Build%20Package%20Enquiry" class="pkg-cta">Book a Consultation</a>
       </div>
     </div>
 
@@ -1709,11 +1745,9 @@ nav.scrolled {
       <span class="pkg-badge">Most Popular</span>
       <div class="pkg-header">
         <p class="pkg-name">Scale</p>
-        <p class="pkg-price">R30,000</p>
       </div>
-      <p class="pkg-tagline">Built for established brands that need a fully developed, scalable identity system with consistency across every touchpoint.</p>
+      <p class="pkg-tagline">Best suited for established brands that require a refined and scalable identity system across multiple touchpoints.</p>
       <div class="pkg-divider"></div>
-      <p class="pkg-desc">Designed to give your brand depth, structure, and complete clarity. With detailed guidelines, expanded visual systems, and real application across multiple assets, with everything needed to maintain a strong, consistent presence as your brand grows.</p>
       <button class="pkg-includes-toggle" onclick="toggleIncludes(this)">
         What's included
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
@@ -1731,7 +1765,7 @@ nav.scrolled {
         </ul>
       </div>
       <div class="pkg-actions">
-        <a href="mailto:xcreativ3@gmail.com?subject=Scale%20Package%20Enquiry" class="pkg-cta">Get Started</a>
+        <a href="mailto:xcreativ3@gmail.com?subject=Scale%20Package%20Enquiry" class="pkg-cta">Book a Consultation</a>
       </div>
     </div>
 
@@ -1739,11 +1773,9 @@ nav.scrolled {
     <div class="pkg-card reveal reveal-delay-3">
       <div class="pkg-header">
         <p class="pkg-name">Dominate</p>
-        <p class="pkg-price">R50,000</p>
       </div>
-      <p class="pkg-tagline">Built for brands that want to lead their space with a fully realised, strategic identity designed for long-term growth and impact.</p>
+      <p class="pkg-tagline">Best suited for ambitious brands seeking a fully strategic identity built for long term growth, authority, and market presence.</p>
       <div class="pkg-divider"></div>
-      <p class="pkg-desc">A complete brand system that goes beyond visuals. It defines not just how your brand looks, but what it stands for and how it communicates, giving you clarity, consistency, and authority across every touchpoint.</p>
       <button class="pkg-includes-toggle" onclick="toggleIncludes(this)">
         What's included
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
@@ -1762,18 +1794,20 @@ nav.scrolled {
         </ul>
       </div>
       <div class="pkg-actions">
-        <a href="mailto:xcreativ3@gmail.com?subject=Dominate Package Enquiry" class="pkg-cta">Get Started</a>
+        <a href="mailto:xcreativ3@gmail.com?subject=Dominate%20Package%20Enquiry" class="pkg-cta">Book a Consultation</a>
       </div>
     </div>
+
   </div>
+</div><!-- /.inner -->
 </section>
 
 
 <!-- STONE BREAK -->
 <div class="stone-break">
-  <div class="stone-break-bg"><video autoplay muted loop playsinline preload="none" aria-hidden="true"><source src="https://github.com/XanderMenmuir/xcreativ3-assets/raw/main/Background%20video.mp4" type="video/mp4"></video></div>
   <div class="stone-break-content reveal">
-    <p>Identities built to<br><span class="accent">outlast trends.</span></p>
+    <p>Identities built to
+<span class="accent">outlast trends.</span></p>
   </div>
 </div>
 
@@ -1783,6 +1817,7 @@ nav.scrolled {
 
 <!-- SERVICES -->
 <div class="services-strip" id="services">
+<div class="inner">
   <div class="services-strip-head">
     <div style="text-align:center; width:100%;">
       <p class="section-label reveal" style="justify-content:center; display:flex; align-items:center;">Choose your service</p>
@@ -1791,14 +1826,15 @@ nav.scrolled {
   </div>
   <div class="services-strip-inner">
     <div class="service-tile reveal">
-      <h3>Logo Design</h3>
-      <p class="rate">R7,000</p>
-      <p>A focused logo design service for businesses that need a strong, professional mark without a full identity system. You'll receive a logo, logo colours, and a logo font.</p>
-      <p class="process-step-note" style="margin-top:1rem;">Without a brand guide, it's difficult to maintain a consistent look and feel for your brand across different platforms.</p>
+      <h3>Agency Support</h3>
+      <p>Reliable, white-label freelance support for agencies needing extra capacity, specialist skills or fast turnaround.</p>
+      <div class="tile-note">
+        <div class="dot-sm"></div>
+        Limited slots available
+      </div>
     </div>
     <div class="service-tile reveal reveal-delay-1">
       <h3>Adhoc Design</h3>
-      <p class="rate">R5,000 | 5 Hours <span style="font-weight:400;color:var(--light-muted);letter-spacing:0;">(Valid for 1 Month)</span></p>
       <p>Flexible design support for general or additional tasks outside your main project. Hours are booked in advance (5-hour minimum) and used within 1 month.</p>
       <div class="tile-note">
         <div class="dot-sm"></div>
@@ -1806,8 +1842,7 @@ nav.scrolled {
       </div>
     </div>
     <div class="service-tile reveal reveal-delay-2">
-      <h3>Social Media Management</h3>
-      <p class="rate">Limited Slots</p>
+      <h3>Social Media</h3>
       <p>Regular content creation, design and scheduling of posts via a monthly social media calendar, freeing up your time so you can focus on your business.</p>
       <div class="tile-note">
         <div class="dot-sm"></div>
@@ -1815,152 +1850,16 @@ nav.scrolled {
       </div>
     </div>
   </div>
+</div><!-- /.inner -->
 </div>
 
 </div><!-- /#main-page -->
 
-<!-- PROCESS PAGE -->
-<div id="process-page" style="display:none;">
-<section class="process-section" id="process">
-  <video class="process-video-bg" autoplay muted loop playsinline preload="none" aria-hidden="true">
-    <source src="https://github.com/XanderMenmuir/xcreativ3-assets/raw/main/4k-black-background-loop-5-2026-01-28-04-27-23-utc.mp4" type="video/mp4">
-  </video>
-  <p class="section-label">How It Works</p>
-  <h2 class="section-title">The <span class="accent">process.</span></h2>
-  <p class="process-intro">A clear, structured approach from first conversation to final delivery, so you always know where we are and what comes next.</p>
-  <p style="font-size:0.78rem; color:var(--red); font-style:italic; margin-top:1.5rem; margin-bottom:2rem; opacity:0.8;">Please note: the process may vary slightly depending on your chosen package.</p>
 
-  <div class="process-steps-wrapper expanded">
-  <div class="process-steps" style="margin-top:3rem;">
-
-    <!-- STEP 1 -->
-    <div class="process-step">
-      <p class="process-step-num">01</p>
-      <div class="process-step-left">
-        <p class="process-step-subtitle">Getting to know you and your brand</p>
-        <h3 class="process-step-title">Questionnaire &amp; Onboarding</h3>
-        <div class="process-step-body">
-          <p>The process begins with an online meet and greet where we'll discuss your goals, expectations, and overall vision for the brand. You'll complete a structured brand questionnaire that helps define your audience, positioning, and visual direction.</p>
-          <p style="margin-top:0.8rem;">This step ensures clarity from the start and sets a strong foundation for a focused and efficient design process.</p>
-          <div class="process-step-note">Work begins once the 50% deposit invoice has been settled.</div>
-        </div>
-      <button class="process-img-toggle" onclick="toggleProcImg(this)">
-        View image
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-            <div class="process-img-drawer">
-        <div class="process-step-img-wrap"><img class="process-step-img" src="https://lh3.googleusercontent.com/d/1SUfyPf-jGNuu5sPdn1LHP0_sNXJ-ufES" alt="Questionnaire & Onboarding" width="600" height="450" loading="lazy" /></div>
-      </div>
-      </div>
-    </div>
-
-    <!-- STEP 2 -->
-    <div class="process-step">
-      <p class="process-step-num">02</p>
-      <div class="process-step-left">
-        <p class="process-step-subtitle">Defining the visual direction</p>
-        <h3 class="process-step-title">Moodboards</h3>
-        <div class="process-step-body">
-          <p>Using your responses and insights from our initial discussion and questionnaire, I'll develop curated moodboards that define the creative direction for your logo and brand.</p>
-        </div>
-      <button class="process-img-toggle" onclick="toggleProcImg(this)">
-        View image
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-            <div class="process-img-drawer">
-        <div class="process-step-img-wrap"><img class="process-step-img" src="https://lh3.googleusercontent.com/d/1qCxciEaAhRkWYzQ9FtEZ7I6DLlxNvwEJ" alt="Moodboard & Concepts" width="600" height="450" loading="lazy" /></div>
-      </div>
-      </div>
-    </div>
-
-    <!-- STEP 3 -->
-    <div class="process-step">
-      <p class="process-step-num">03</p>
-      <div class="process-step-left">
-        <p class="process-step-subtitle">From ideas to identity</p>
-        <h3 class="process-step-title">Concepts &amp; Final Logo</h3>
-        <div class="process-step-body">
-          <p>Once the direction is approved, I'll develop a range of custom logo concepts for you to review and ultimately select your brand's final logo.</p>
-        </div>
-      <button class="process-img-toggle" onclick="toggleProcImg(this)">
-        View image
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-            <div class="process-img-drawer">
-        <div class="process-step-img-wrap"><img class="process-step-img" src="https://lh3.googleusercontent.com/d/1SZLvHCiWnNCoY4NA7ZU6uHlt4JiOOgaH" alt="Final Logo" width="600" height="450" loading="lazy" /></div>
-      </div>
-      </div>
-    </div>
-
-    <!-- STEP 4 -->
-    <div class="process-step">
-      <p class="process-step-num">04</p>
-      <div class="process-step-left">
-        <p class="process-step-subtitle">Building your visual system</p>
-        <h3 class="process-step-title">Brand Identity</h3>
-        <div class="process-step-body">
-          <p>Once your logo is finalised, I'll develop a complete brand identity system that ensures consistency across all platforms.</p>
-          <p style="margin-top:0.8rem;">This includes logo usage rules, colour palette, typography system, layout guidance, and supporting visual direction to maintain a cohesive and professional brand presence.</p>
-        </div>
-      <button class="process-img-toggle" onclick="toggleProcImg(this)">
-        View image
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-            <div class="process-img-drawer">
-        <div class="process-step-img-wrap"><img class="process-step-img" src="https://lh3.googleusercontent.com/d/1RbTVYARYRdp65Dm_jeVMSb_2cwhF8VKq" alt="Brand Identity" width="600" height="450" loading="lazy" /></div>
-      </div>
-      </div>
-    </div>
-
-    <!-- STEP 5 -->
-    <div class="process-step">
-      <p class="process-step-num">05</p>
-      <div class="process-step-left">
-        <p class="process-step-subtitle">Bringing your brand to life</p>
-        <h3 class="process-step-title">Collateral</h3>
-        <div class="process-step-body">
-          <p>This stage focuses on real-world application of your identity. I'll design branded assets based on your needs, which may include business cards, letterheads, packaging, social media templates, email signatures, or other key touchpoints that help your brand show up consistently and professionally.</p>
-        </div>
-      <button class="process-img-toggle" onclick="toggleProcImg(this)">
-        View image
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-            <div class="process-img-drawer">
-        <div class="process-step-img-wrap"><img class="process-step-img" src="https://lh3.googleusercontent.com/d/1XREgk25tALmFXPgxa7-vVpXmUl5jt-nn" alt="Collateral" width="600" height="450" loading="lazy" /></div>
-      </div>
-      </div>
-    </div>
-
-    <!-- STEP 6 -->
-    <div class="process-step">
-      <p class="process-step-num">06</p>
-      <div class="process-step-left">
-        <p class="process-step-subtitle">Your brand, ready for the world</p>
-        <h3 class="process-step-title">Final Deliverables</h3>
-        <div class="process-step-body">
-          <p>All approved assets are exported in industry-standard formats including PDF, PNG, JPG, SVG and EPS, and delivered in organised folders for both print and digital use.</p>
-          <p style="margin-top:0.8rem;">Everything is structured to ensure your brand is easy to apply, scalable, and ready for immediate implementation across any platform.</p>
-          <div class="process-step-note">Final files are released once the remaining 50% balance has been settled.</div>
-        </div>
-      <button class="process-img-toggle" onclick="toggleProcImg(this)">
-        View image
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-            <div class="process-img-drawer">
-        <div class="process-step-img-wrap">
-          <img class="process-step-img" src="https://lh3.googleusercontent.com/d/1g7UKMX0A5MFoSfX54xXl2Q7HjHyWpHFR" alt="Final Deliverables" width="600" height="450" loading="lazy" />
-        </div>
-      </div>
-      </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-</div><!-- /#process-page -->
 
 <!-- CASE STUDIES -->
 <section class="case-studies" id="case-studies">
+<div class="inner">
   <div class="case-studies-header" style="justify-content:center; text-align:center; flex-direction:column; align-items:center;">
     <div>
       <p class="section-label reveal" style="justify-content:center;">Featured Work</p>
@@ -1981,13 +1880,25 @@ nav.scrolled {
       </div>
     </a>
 
+
+    <!-- PORTFOLIO 2025 -->
+    <a class="cs-card" href="https://www.behance.net/gallery/219726215/Portfolio-2025" target="_blank" rel="noopener noreferrer">
+      <div class="cs-card-img">
+        <img src="https://lh3.googleusercontent.com/d/1MK0kNjHlmY6Mo1qxQodXfTX4FYYA9ag8" alt="Portfolio 2025" width="400" height="300" loading="lazy" />
+      </div>
+      <div class="cs-card-body">
+        <p class="cs-tag">Multi-Discipline</p>
+        <h3 class="cs-card-name">Portfolio 2025</h3>
+      </div>
+    </a>
+
     <!-- XCREATIV3 -->
     <a class="cs-card" href="https://www.behance.net/gallery/245335877/xcreativ3-Logo-Visual-Identity" target="_blank" rel="noopener noreferrer">
       <div class="cs-card-img">
-        <img src="https://lh3.googleusercontent.com/d/1QpDmyRWQ4TVOuPcc7fTYh03GicaIOhqJ" alt="xcreativ3 | Logo &amp; Identity" width="400" height="300" loading="lazy" />
+        <img src="https://lh3.googleusercontent.com/d/1QpDmyRWQ4TVOuPcc7fTYh03GicaIOhqJ" alt="xcreativ3 | Logo &amp; Brand Identity" width="400" height="300" loading="lazy" />
       </div>
       <div class="cs-card-body">
-        <p class="cs-tag">Logo &amp; Identity</p>
+        <p class="cs-tag">Logo &amp; Brand Identity</p>
         <h3 class="cs-card-name">xcreativ3</h3>
       </div>
     </a>
@@ -1995,10 +1906,10 @@ nav.scrolled {
     <!-- BIG MOO'S -->
     <a class="cs-card" href="https://www.behance.net/gallery/248588111/Big-Moos-Logo-Branding" target="_blank" rel="noopener noreferrer">
       <div class="cs-card-img">
-        <img src="https://lh3.googleusercontent.com/d/1341vIrBT6XByemyOepkTY5y5CzAEfQIU" alt="Big Moo's | Logo &amp; Branding" width="400" height="300" loading="lazy" />
+        <img src="https://lh3.googleusercontent.com/d/1341vIrBT6XByemyOepkTY5y5CzAEfQIU" alt="Big Moo's | Logo &amp; Brand Identity" width="400" height="300" loading="lazy" />
       </div>
       <div class="cs-card-body">
-        <p class="cs-tag">Logo &amp; Branding</p>
+        <p class="cs-tag">Logo &amp; Brand Identity</p>
         <h3 class="cs-card-name">Big Moo's</h3>
       </div>
     </a>
@@ -2006,10 +1917,10 @@ nav.scrolled {
     <!-- DR J -->
     <a class="cs-card" href="https://www.behance.net/gallery/245377331/Dr-J-Logo-Identity" target="_blank" rel="noopener noreferrer">
       <div class="cs-card-img">
-        <img src="https://lh3.googleusercontent.com/d/1Pp2YtJHyHwhp7bBBS0Q4Akem-OQ2vqE_" alt="Dr J | Logo &amp; Identity" width="400" height="300" loading="lazy" />
+        <img src="https://lh3.googleusercontent.com/d/1Pp2YtJHyHwhp7bBBS0Q4Akem-OQ2vqE_" alt="Dr J | Logo &amp; Brand Identity" width="400" height="300" loading="lazy" />
       </div>
       <div class="cs-card-body">
-        <p class="cs-tag">Logo &amp; Identity</p>
+        <p class="cs-tag">Logo &amp; Brand Identity</p>
         <h3 class="cs-card-name">Dr J</h3>
       </div>
     </a>
@@ -2017,10 +1928,10 @@ nav.scrolled {
     <!-- JET COFFEE -->
     <a class="cs-card" href="https://www.behance.net/gallery/220578107/Jet-Coffee-Logo-Visual-Identity" target="_blank" rel="noopener noreferrer">
       <div class="cs-card-img">
-        <img src="https://lh3.googleusercontent.com/d/1XREgk25tALmFXPgxa7-vVpXmUl5jt-nn" alt="Jet Coffee | Logo &amp; Identity" width="400" height="300" loading="lazy" />
+        <img src="https://lh3.googleusercontent.com/d/1XREgk25tALmFXPgxa7-vVpXmUl5jt-nn" alt="Jet Coffee | Logo &amp; Brand Identity" width="400" height="300" loading="lazy" />
       </div>
       <div class="cs-card-body">
-        <p class="cs-tag">Logo &amp; Identity</p>
+        <p class="cs-tag">Logo &amp; Brand Identity</p>
         <h3 class="cs-card-name">Jet Coffee</h3>
       </div>
     </a>
@@ -2028,11 +1939,32 @@ nav.scrolled {
     <!-- THE CHANGE HUB -->
     <a class="cs-card" href="https://www.behance.net/gallery/236758523/The-Change-Hub-Logo-Visual-Identity" target="_blank" rel="noopener noreferrer">
       <div class="cs-card-img">
-        <img src="https://lh3.googleusercontent.com/d/1VqWTl6wPDvBGQZg9sPHz1CgTRa5u5sjU" alt="The Change Hub | Logo &amp; Identity" width="400" height="300" loading="lazy" />
+        <img src="https://lh3.googleusercontent.com/d/1VqWTl6wPDvBGQZg9sPHz1CgTRa5u5sjU" alt="The Change Hub | Logo &amp; Brand Identity" width="400" height="300" loading="lazy" />
       </div>
       <div class="cs-card-body">
-        <p class="cs-tag">Logo &amp; Identity</p>
+        <p class="cs-tag">Logo &amp; Brand Identity</p>
         <h3 class="cs-card-name">The Change Hub</h3>
+      </div>
+
+    <!-- BRANDAXIS -->
+    <a class="cs-card" href="https://www.behance.net/gallery/248851371/BrandAxis-Logo-Brand-Identity" target="_blank" rel="noopener noreferrer">
+      <div class="cs-card-img">
+        <img src="https://lh3.googleusercontent.com/d/1b3YlpHse61ulaiqNNVIcExOWiyfpGO6K" alt="BrandAxis" width="400" height="300" loading="lazy" />
+      </div>
+      <div class="cs-card-body">
+        <p class="cs-tag">Logo &amp; Brand Identity</p>
+        <h3 class="cs-card-name">BrandAxis</h3>
+      </div>
+    </a>
+
+    <!-- AGNTIQ -->
+    <a class="cs-card" href="https://www.behance.net/gallery/248857613/AgntiQ-Logo-and-Branding" target="_blank" rel="noopener noreferrer">
+      <div class="cs-card-img">
+        <img src="https://lh3.googleusercontent.com/d/1Vw0TqYYw5TKtnCJDfBn5abVba8kVn4c5" alt="AgntiQ" width="400" height="300" loading="lazy" />
+      </div>
+      <div class="cs-card-body">
+        <p class="cs-tag">Logo &amp; Brand Identity</p>
+        <h3 class="cs-card-name">AgntiQ</h3>
       </div>
     </a>
 
@@ -2044,8 +1976,10 @@ nav.scrolled {
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
   </div>
+</div><!-- /.inner -->
 </section>
 <section class="stats-section" id="stats">
+<div class="inner">
   <div class="stats-header">
     <p class="section-label reveal" style="justify-content:center;">By The Numbers</p>
     <h2 class="section-title reveal reveal-delay-1" style="color:var(--white);text-align:center;">Creating since <span class="accent">2019</span></h2>
@@ -2057,7 +1991,7 @@ nav.scrolled {
     </div>
     <div class="stats-divider"></div>
     <div class="stat-item reveal reveal-delay-2">
-      <span class="stat-number"><span class="stat-accent stat-count" data-target="400" data-suffix="+">0</span></span>
+      <span class="stat-number"><span class="stat-accent stat-count" data-target="500" data-suffix="+">0</span></span>
       <span class="stat-label">Projects Completed</span>
     </div>
     <div class="stats-divider"></div>
@@ -2073,6 +2007,7 @@ nav.scrolled {
 
 <!-- REVIEWS -->
 <section class="reviews-section" id="reviews">
+<div class="inner">
   <div class="reviews-header">
     <p class="section-label reveal" style="justify-content:center;">Client Reviews</p>
     <h2 class="section-title reveal reveal-delay-1" style="color:var(--white);">What clients <span class="accent">say</span></h2>
@@ -2105,7 +2040,7 @@ nav.scrolled {
         <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
       </div>
       <p class="review-title">We fell in love with the brand</p>
-      <p class="review-body">We worked with Xander who was amazing and really helped guide us through the process and ideation. We were quite skeptical at first as this was all new to us, but we're super pleased with the eventual outcome! We're looking forward to the next stage of designing the website and marketing it as we grow our SaaS brand.</p>
+      <p class="review-body">We worked with Xander who was amazing and really helped guide us through the process and ideation. We were quite skeptical at first as this was all new to us, but we're super pleased with the eventual outcome!</p>
       <div class="review-author">
         <div class="review-logo-circle"><img class="review-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMzguMTYgMjM4LjE2Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjZmZmOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8ZyBpZD0iTGF5ZXJfMS0yIiBkYXRhLW5hbWU9IkxheWVyIDEiPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjIyLjk0LDEyNC43NGMtMjEuOTcsOS4yOS00MS43MSwyMi42LTU4LjY1LDM5LjU0LTE2Ljk1LDE2Ljk1LTMwLjI1LDM2LjY4LTM5LjU1LDU4LjY2LTIuMTIsNS4wMS00LjAxLDEwLjA4LTUuNjYsMTUuMjJ2LTExOS4wOEgwYzUuMTQtMS42NiwxMC4yMS0zLjU0LDE1LjIyLTUuNjYsMjEuOTctOS4yOSw0MS43MS0yMi42LDU4LjY2LTM5LjU1LDE2Ljk1LTE2Ljk1LDMwLjI1LTM2LjY4LDM5LjU0LTU4LjY1LDIuMTItNS4wMSw0LTEwLjA4LDUuNjYtMTUuMjF2MTE5LjA4aDExOS4wOGMtNS4xMywxLjY2LTEwLjIxLDMuNTQtMTUuMjIsNS42NloiLz4KICA8L2c+Cjwvc3ZnPg==" alt="BrandAxis" /></div>
         <span class="review-name">Co-Founder</span>
@@ -2187,6 +2122,7 @@ nav.scrolled {
 
 <!-- BRANDS -->
 <section class="brands-section">
+<div class="inner">
   <div class="brands-header reveal">
     <p class="section-label reveal" style="justify-content:center;">Brands</p>
     <h2 class="section-title reveal reveal-delay-1" style="color:var(--white);text-align:center;">Brands I've <span class="accent">worked with</span></h2>
@@ -2228,24 +2164,25 @@ nav.scrolled {
   <video class="cta-video-bg" autoplay muted loop playsinline preload="none" aria-hidden="true">
     <source src="https://github.com/XanderMenmuir/xcreativ3-assets/raw/main/red-glassy-cubes-rotating-on-black-background-2026-01-28-05-19-44-utc.mp4" type="video/mp4">
   </video>
-  <div style="position:relative;z-index:2;">
-  <p class="section-label reveal">Let's Work Together</p>
-  <h2 class="cta-title reveal reveal-delay-1">Ready to build<br>something <span class="accent">iconic?</span></h2>
-  <p class="cta-body reveal reveal-delay-2">
-    Tell us where you are and where you want to go.<br>We'll build an identity that gets you there.
-  </p>
-  <div class="cta-actions" style="justify-content:center;">
-    <a href="mailto:xcreativ3@gmail.com?subject=New%20Project%20Enquiry" class="btn-primary">Start a Project</a>
-  </div>
+  <div class="inner" style="position:relative;z-index:2;text-align:center;">
+    <p class="section-label reveal">Let's Work Together</p>
+    <h2 class="cta-title reveal reveal-delay-1">Ready to build<br>something <span class="accent">iconic?</span></h2>
+    <p class="cta-body reveal reveal-delay-2">
+      Tell us where you are and where you want to go.<br>We'll build an identity that gets you there.
+    </p>
+    <div class="cta-actions" style="justify-content:center;">
+      <a href="mailto:xcreativ3@gmail.com?subject=New%20Project%20Enquiry" class="btn-primary">Start a Project</a>
+    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
+<div class="inner">
   <div class="footer-top">
     <div class="footer-brand">
       <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4NDguOTkgMTQ4LjM2Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjZGZkZmUwOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8ZyBpZD0iTGF5ZXJfMS0yIiBkYXRhLW5hbWU9IkxheWVyIDEiPgogICAgPGc+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTU5OC4xOCwwYy0zLjYzLDAtNi42NCwxLjE2LTkuMDQsMy41LTIuNCwyLjMzLTMuNiw1LjI1LTMuNiw4Ljc1czEuMTksNi4yMiwzLjYsOC41NmMyLjQsMi4zMyw1LjQxLDMuNSw5LjA0LDMuNXM2LjgxLTEuMiw5LjE0LTMuNmMyLjMzLTIuNCwzLjUtNS4zNSwzLjUtOC44NXMtMS4yLTYuMTktMy42LTguNDZjLTIuNC0yLjI3LTUuNDEtMy40LTkuMDQtMy40WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNDMuNTgsNjMuOTdjNS4zMS0yLjk4LDExLjM0LTQuNDcsMTguMDgtNC40Nyw1LjU3LDAsMTAuNzksMS4yLDE1LjY1LDMuNiw0Ljg2LDIuNCw4Ljk3LDYuMTIsMTIuMzUsMTEuMThsMTQuMTktOS4xNGMtNC4wMi03LjI2LTkuNjktMTIuNzQtMTcuMDEtMTYuNDMtNy4zMy0zLjctMTUuNjUtNS41NC0yNC45OS01LjU0LTEwLjUsMC0xOS44NiwyLjI0LTI4LjEsNi43MS04LjIzLDQuNDctMTQuNjgsMTAuNjYtMTkuMzQsMTguNTctNC42Nyw3LjkxLTcsMTYuOTgtNywyNy4yMnMyLjM0LDE5LjMxLDcsMjcuMjJjNC42Niw3LjkxLDExLjExLDE0LjEzLDE5LjM0LDE4LjY2LDguMjMsNC41NCwxNy42LDYuODEsMjguMSw2LjgxLDkuMzMsMCwxNy42Ni0xLjkxLDI0Ljk5LTUuNzQsNy4zMi0zLjgyLDEyLjk5LTkuMywxNy4wMS0xNi40M2wtMTQuMTktOC45NGMtMy4zNyw1LjA2LTcuNDksOC43OS0xMi4zNSwxMS4xOC00Ljg2LDIuNC0xMC4wOCwzLjYtMTUuNjUsMy42LTYuNzQsMC0xMi43Ny0xLjQ5LTE4LjA4LTQuNDctNS4zMi0yLjk4LTkuNTMtNy4xOS0xMi42NC0xMi42NC0zLjExLTUuNDQtNC42Ny0xMS44Ni00LjY3LTE5LjI1czEuNTYtMTMuNzcsNC42Ny0xOS4xNWMzLjExLTUuMzgsNy4zMi05LjU2LDEyLjY0LTEyLjU0WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMzYuODIsNjEuNjJ2LTE3LjQ4aC0xNy44OXYxMDMuMDZoMTguNjd2LTUxLjMzYzAtMTEuMjgsMi45Mi0xOS45LDguNzUtMjUuODYsNS44My01Ljk2LDEzLjc0LTguOTQsMjMuNzItOC45NGgyLjA0Yy43MSwwLDEuNDYuMDcsMi4yNC4xOXYtMTguMDhjLTkuODUsMC0xOC4xNSwxLjg4LTI0Ljg5LDUuNjQtNS41NiwzLjEtOS43Myw3LjQyLTEyLjY0LDEyLjgyWiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zNjIuNyw0OS43OGMtNy42NS00LjQtMTYuNDctNi42MS0yNi40NS02LjYxcy0xOC43LDIuMjQtMjYuNTQsNi43MWMtNy44NCw0LjQ3LTE0LDEwLjY2LTE4LjQ3LDE4LjU3LTQuNDcsNy45MS02LjcxLDE2Ljk4LTYuNzEsMjcuMjJzMi4zLDE5LjMxLDYuOSwyNy4yMmM0LjYsNy45MSwxMS4wOCwxNC4xMywxOS40NSwxOC42Niw4LjM2LDQuNTQsMTguMDUsNi44MSwyOS4wNyw2LjgxLDguNTYsMCwxNi4zLTEuNDMsMjMuMjQtNC4yOCw2LjkzLTIuODUsMTIuNzQtNywxNy40LTEyLjQ0bC0xMC4zMS0xMi4wNmMtMy43Niw0LjE1LTguMTQsNy4yNi0xMy4xMiw5LjMzLTQuOTksMi4wOC0xMC41NCwzLjExLTE2LjYyLDMuMTEtNy4zOSwwLTEzLjk0LTEuNDktMTkuNjQtNC40Ny01LjcxLTIuOTgtMTAuMTQtNy4xNi0xMy4zMi0xMi41NC0yLjM0LTMuOTYtMy44MS04LjM0LTQuNDItMTMuMTJoODMuNjZjLjEzLS45MS4yMi0xLjg4LjI5LTIuOTIuMDctMS4wMy4xLTEuOTQuMS0yLjcyLDAtMTAuNjMtMi4xNy0xOS45My02LjUxLTI3LjktNC4zNC03Ljk3LTEwLjM0LTE0LjE2LTE3Ljk5LTE4LjU3Wk0zMTguOTUsNjMuMjljNS4wNi0yLjkyLDEwLjgyLTQuMzcsMTcuMzEtNC4zN3MxMi40MSwxLjQ2LDE3LjQsNC4zN2M0Ljk5LDIuOTIsOC45MSw2Ljk3LDExLjc2LDEyLjE1LDIuMTYsMy45MywzLjQ2LDguMjgsMy45MSwxMy4wM2gtNjYuMjNjLjU0LTQuNzIsMS44Ny05LjAzLDMuOTktMTIuOTMsMi44NS01LjI1LDYuODEtOS4zMywxMS44Ni0xMi4yNVoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNDQ3LjY3LDQzLjE3Yy04LjE3LDAtMTUuOTgsMS4xMy0yMy40MywzLjQtNy40NiwyLjI3LTEzLjg0LDUuNTQtMTkuMTUsOS44Mmw3Ljc4LDE0YzQuMDItMy4zNyw4Ljk0LTYuMDYsMTQuNzgtOC4wNyw1LjgzLTIuMDEsMTEuNzktMy4wMiwxNy44OS0zLjAyLDkuMiwwLDE2LjEsMi4xNywyMC43MSw2LjUyLDQuNiw0LjM0LDYuOSwxMC40Nyw2LjksMTguMzd2My42OWgtMjkuNTVjLTEwLjI0LDAtMTguMzcsMS4zNi0yNC40LDQuMDgtNi4wMywyLjcyLTEwLjM3LDYuMzUtMTMuMDMsMTAuODktMi42Niw0LjU0LTMuOTksOS41OS0zLjk5LDE1LjE3czEuNTYsMTEuMDUsNC42NywxNS42NWMzLjExLDQuNiw3LjU1LDguMiwxMy4zMiwxMC43OSw1Ljc3LDIuNTksMTIuNDcsMy44OSwyMC4xMiwzLjg5LDkuNDYsMCwxNy4zMS0xLjc4LDIzLjUzLTUuMzUsNC4zOS0yLjUxLDcuNzktNS42OSwxMC4zMS05LjQ2djEzLjY0aDE3Ljd2LTYyLjIyYzAtMTQuMTMtMy44My0yNC42My0xMS40Ny0zMS41LTcuNjUtNi44Ny0xOC41NC0xMC4zMS0zMi42Ny0xMC4zMVpNNDYxLjc3LDEyOS4zYy01LjI1LDMuMTEtMTEuMzcsNC42Ny0xOC4zNyw0LjY3cy0xMi43MS0xLjUyLTE2LjcyLTQuNTdjLTQuMDItMy4wNS02LjAzLTcuMS02LjAzLTEyLjE1LDAtNC40LDEuNjItOC4xNyw0Ljg2LTExLjI4LDMuMjQtMy4xMSw5LjUzLTQuNjcsMTguODYtNC42N2gyOC43OHYxNC4zOWMtMi4zMyw1Ljk3LTYuMTIsMTAuNS0xMS4zNywxMy42MVoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNTQyLjE2LDIxLjU4aC0xOC42NnYyMi41NWgtMTcuNXYxNS4zN2gxNy41djU2LjU4YzAsMTAuMzcsMi44NCwxOC4zNCw4LjU2LDIzLjkxLDUuNyw1LjU3LDEzLjczLDguMzYsMjQuMTEsOC4zNiw0LjI4LDAsOC4zOS0uNTcsMTIuMzQtMS43NSwxLjEyLS4zMywyLjE5LS43MSwzLjIyLTEuMTR2LTE2LjgyYy0zLjY3LDIuNjQtOC4xNSwzLjk2LTEzLjQzLDMuOTZzLTkuMTctMS40OC0xMS45Ni00LjQ3Yy0yLjc5LTIuOTgtNC4xOC03LjI1LTQuMTgtMTIuODN2LTU1LjhoMjkuNTZ2LTE1LjM3aC0yOS41NnYtMjIuNTVaIi8+CiAgICAgIDxyZWN0IGNsYXNzPSJjbHMtMSIgeD0iNTg4Ljg1IiB5PSI0NC4xNCIgd2lkdGg9IjE4LjY3IiBoZWlnaHQ9IjEwMy4wNiIvPgogICAgICA8cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iNjc2LjUxIDEyNi43IDY0MS4wNyA0NC4xNCA2MjEuNjMgNDQuMTQgNjY2Ljc0IDE0Ny4xOSA2ODUuNzkgMTQ3LjE5IDczMC45MSA0NC4xNCA3MTIuNjMgNDQuMTQgNjc2LjUxIDEyNi43Ii8+CiAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSI5OS43NSA0NC4xNCA3OS4zMyA0NC4xNCA1MS4wNCA4MS4yOSAyMi43NSA0NC4xNCAxLjk1IDQ0LjE0IDQwLjU4IDk0LjUyIDAgMTQ3LjE5IDIwLjgxIDE0Ny4xOSA1MC44OCAxMDcuNjcgODAuNyAxNDcuMTkgMTAxLjg5IDE0Ny4xOSA2MC45MSA5NC40NSA5OS43NSA0NC4xNCIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik04MDkuODIsOTMuNTdjLTQuMzYtMy45LTEwLjE5LTYuNS0xNy4zOC03Ljc1bDIzLjIxLTI4LjZ2LTEzLjA5aC02OS44NHYxNy40NWg0NC4xMWwtMjEuNjEsMjYuNnYxMy4zNmgxMC40N2M3LjcyLDAsMTMuMzQsMS4zOCwxNi43MSw0LjEsMy4yNSwyLjYxLDQuODMsNS45OSw0LjgzLDEwLjMxcy0xLjY1LDcuOTMtNS4wNSwxMC41NWMtMy41NiwyLjc0LTguNzMsNC4xMy0xNS4zNyw0LjEzLTUuNjIsMC0xMC45NS0uOTMtMTUuODMtMi43Ni00Ljg1LTEuODItOC44My00LjE3LTExLjgzLTYuOTlsLTIuNDItMi4yOC05LjIsMTUuNzksMS42MywxLjQ0YzQuMzYsMy44NSwxMCw2Ljk1LDE2Ljc4LDkuMTksNi43MywyLjIyLDEzLjc2LDMuMzUsMjAuODgsMy4zNSw4Ljc1LDAsMTYuMTItMS40MywyMS45Mi00LjI2LDUuOS0yLjg3LDEwLjM4LTYuODYsMTMuMzQtMTEuODYsMi45My00Ljk3LDQuNDItMTAuNSw0LjQyLTE2LjQ0LDAtOC45NC0zLjI4LTE2LjQyLTkuNzUtMjIuMjNaIi8+CiAgICAgIDxnPgogICAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSI4MTUuOTMgMTguMDEgODIxLjQ3IDE4LjAxIDgyMS40NyAzMi4xNSA4MjMuNzUgMzIuMTUgODIzLjc1IDE4LjAxIDgyOS4yOSAxOC4wMSA4MjkuMjkgMTYgODE1LjkzIDE2IDgxNS45MyAxOC4wMSIvPgogICAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSI4NDguOTkgMzIuMTUgODQ4Ljk3IDE2IDg0Ny4wOCAxNiA4NDAuNDMgMjcuMzQgODMzLjcgMTYgODMxLjggMTYgODMxLjggMzIuMTUgODM0LjAyIDMyLjE1IDgzNC4wMiAyMC40NCA4MzkuODYgMzAuMTkgODQwLjkyIDMwLjE5IDg0Ni43NiAyMC4zNyA4NDYuNzggMzIuMTUgODQ4Ljk5IDMyLjE1Ii8+CiAgICAgIDwvZz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPg==" alt="Xcreativ" />
-      <p>A brand identity studio crafting logos and identities that lead markets and outlast trends.</p>
+      <p>A branding &amp; design studio crafting logos, identities, and creative solutions with purpose.</p>
     </div>
 
     <div class="footer-col">
@@ -2255,6 +2192,7 @@ nav.scrolled {
         <li><a href="#packages">Brand Identity</a></li>
         <li><a href="#services">Social Media</a></li>
         <li><a href="#services">Adhoc Design</a></li>
+        <li><a href="#services">Agency Support</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -2270,6 +2208,7 @@ nav.scrolled {
     <p>&copy; 2026 xcreativ3&#8482;. All rights reserved.</p>
     <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMjEuODkgMzIxLjg5Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjZGZkZmUwOwogICAgICB9CgogICAgICAuY2xzLTIgewogICAgICAgIGZpbGw6ICNiNDAwMGQ7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxnIGlkPSJMYXllcl8xLTIiIGRhdGEtbmFtZT0iTGF5ZXIgMSI+CiAgICA8ZyBpZD0iTGF5ZXJfMS0zIiBkYXRhLW5hbWU9IkxheWVyIDEiPgogICAgICA8Zz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik05NC44MSw2Ni4xMmw4LjAyLDguMDIsMy4zMywzLjMzLDI3LjM5LDI3LjM5aC4wMXM4LjAyLDguMDMsOC4wMiw4LjAzbDUuNjgsNS42OCwxMy43LDEzLjdoMHM4LjAyLTguMDMsOC4wMi04LjAzbDUuNjgtNS42Nyw1LjY3LTUuNjgsOC4wMy04LjAyaC0uMDFzLjAxLS4wMS4wMS0uMDFsMjcuMzktMjcuMzksMy4zMy0zLjMzLDguMDItOC4wMiwyLjM2LTIuMzUsOC45OS05VjBsLTI3LjM4LDI3LjM4LTguOTksOS4wMS0yLjM2LDIuMzUtOC4wMiw4LjAyLTMuMzMsMy4zMy0yNy4zOSwyNy4zOWgwcy0xMS4zNS0xMS4zNC0xMS4zNS0xMS4zNGwtMTYuMDQtMTYuMDQtMy4zMy0zLjMzLTguMDItOC4wMi0yLjM1LTIuMzUtOS4wMS05LjAxTDgzLjQ2LDB2NTQuNzhsOC45OSw5LDIuMzUsMi4zNWgwWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTIyNy4wNywyNTUuNzZsLTguMDItOC4wMi0zLjMzLTMuMzMtMjcuMzktMjcuMzloLS4wMS4wMXMtOC4wMy04LjAzLTguMDMtOC4wM2wtNS42Ny01LjY4LTUuNjgtNS42Ny04LjAyLTguMDJoMHMtMTMuNywxMy42OC0xMy43LDEzLjY4bC01LjY4LDUuNjgtOC4wMiw4LjAyaDBzLS4wMS4wMS0uMDEuMDFsLTI3LjM5LDI3LjM5LTMuMzMsMy4zMy04LjAyLDguMDItMi4zNSwyLjM1LTguOTksOXY1NC43OGwyNy4zOC0yNy4zOCw5LjAxLTkuMDEsMi4zNS0yLjM1LDguMDItOC4wMiwzLjMzLTMuMzMsMTYuMDQtMTYuMDQsMTEuMzUtMTEuMzVoMHMyNy4zOSwyNy40LDI3LjM5LDI3LjRsMy4zMywzLjMzLDguMDIsOC4wMiwyLjM2LDIuMzUsOC45OSw5LjAxLDI3LjM4LDI3LjM4di01NC43OGwtOC45OS05LTIuMzYtMi4zNWgwWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTEwNC44NiwxODguMzNoLjAxczguMDItOC4wMSw4LjAyLTguMDFsNS42OC01LjY3LDUuNjctNS42OCw4LjAyLTguMDJoLjAxbC0xMy43LTEzLjctNS42OC01LjY4LTguMDItOC4wMmgtLjAxcy0yNy4zOS0yNy40LTI3LjM5LTI3LjRsLTMuMzMtMy4zMy04LjAyLTguMDItMi4zNS0yLjM1LTktOC45OUgwbDI3LjM4LDI3LjM4LDkuMDEsOS4wMSwyLjM1LDIuMzUsOC4wMiw4LjAyLDMuMzMsMy4zMywxNi4wNCwxNi4wNCwxMS4zNSwxMS4zNWgtLjAxbC0yNy4zOSwyNy4zOS0zLjMzLDMuMzMtOC4wMiw4LjAyLTIuMzUsMi4zNi05LjAxLDguOTlMMCwyMzguNDJoNTQuNzhsOS04Ljk5LDIuMzUtMi4zNiw4LjAyLTguMDIsMy4zMy0zLjMzLDI3LjM5LTI3LjM5aDBzMCwwLDAsMFoiLz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0yODUuNSwyMDIuMDNsLTIuMzUtMi4zNS04LjAyLTguMDItMy4zMy0zLjMzLTE2LjA0LTE2LjA0LTExLjM1LTExLjM1aC4wMWwyNy4zOS0yNy4zOSwzLjMzLTMuMzMsOC4wMi04LjAyLDIuMzUtMi4zNiw5LjAxLTguOTksMjcuMzgtMjcuMzhoLTU0Ljc4bC05LDguOTktMi4zNSwyLjM2LTguMDIsOC4wMi0zLjMzLDMuMzMtMjcuMzksMjcuMzloMHMtLjAxLDAtLjAxLDBsLTguMDIsOC4wMy01LjY4LDUuNjctNS42Nyw1LjY4LTguMDIsOC4wMmgtLjAxbDEzLjcsMTMuNyw1LjY4LDUuNjgsOC4wMiw4LjAyaC4wMXMyNy4zOSwyNy40LDI3LjM5LDI3LjRsMy4zMywzLjMzLDguMDIsOC4wMiwyLjM1LDIuMzUsOSw4Ljk5aDU0Ljc4bC0yNy4zOC0yNy4zOC05LjAxLTkuMDFoMFoiLz4KICAgICAgPC9nPgogICAgPC9nPgogIDwvZz4KPC9zdmc+" alt="" class="footer-logo-mark" />
   </div>
+</div><!-- /.inner -->
 </footer>
 
 
@@ -2481,103 +2420,7 @@ function toggleIncludes(btn) {
 })();
 
 
-function toggleProcessSteps(btn) {
-  var wrapper = btn.nextElementSibling;
-  var isOpen = wrapper.classList.contains('expanded');
-  if (isOpen) {
-    wrapper.classList.remove('expanded');
-    wrapper.classList.add('collapsed');
-    btn.classList.remove('open');
-    btn.childNodes[0].textContent = 'View the process ';
-  } else {
-    wrapper.classList.remove('collapsed');
-    wrapper.classList.add('expanded');
-    btn.classList.add('open');
-    btn.childNodes[0].textContent = 'Hide the process ';
-  }
-}
-
-// ── PROCESS PAGE TOGGLE ───────────────────────────────────────────────────────
-(function() {
-  var mainPage    = document.getElementById('main-page');
-  var processPage = document.getElementById('process-page');
-
-  function showProcess() {
-    mainPage.style.display    = 'none';
-    processPage.style.display = 'block';
-    window.scrollTo({ top: 0 });
-    history.pushState(null, '', '#process');
-  }
-
-  function showMain(hash) {
-    processPage.style.display = 'none';
-    mainPage.style.display    = 'block';
-    if (hash && hash !== '#process') {
-      var target = document.querySelector(hash);
-      if (target) setTimeout(function() { target.scrollIntoView({ behavior: 'smooth' }); }, 10);
-    } else {
-      window.scrollTo({ top: 0 });
-    }
-  }
-
-  // Intercept all navbar / mobile nav links
-  document.querySelectorAll('a[href="#process"]').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      showProcess();
-    });
-  });
-
-  // Clicking the logo goes back to main
-  document.querySelectorAll('a.nav-logo, a[href="#"]').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      if (processPage.style.display !== 'none') {
-        e.preventDefault();
-        history.pushState(null, '', location.pathname);
-        showMain(null);
-      }
-    });
-  });
-
-  // All other nav links should close process page and go to their section
-  document.querySelectorAll('.nav-links a:not([href="#process"]), .mobile-nav-drawer a:not([href="#process"])').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      if (processPage.style.display !== 'none') {
-        e.preventDefault();
-        var hash = link.getAttribute('href');
-        history.pushState(null, '', hash);
-        showMain(hash);
-      }
-    });
-  });
-
-  // Get Started button
-  var navCta = document.querySelector('.nav-cta');
-  if (navCta) {
-    navCta.addEventListener('click', function() {
-      if (processPage.style.display !== 'none') {
-        processPage.style.display = 'none';
-        mainPage.style.display    = 'block';
-        setTimeout(function() {
-          var contact = document.getElementById('contact');
-          if (contact) contact.scrollIntoView({ behavior: 'smooth' });
-        }, 10);
-      }
-    });
-  }
-
-  // Handle browser back/forward
-  window.addEventListener('popstate', function() {
-    if (window.location.hash === '#process') {
-      showProcess();
-    } else {
-      showMain(window.location.hash || null);
-    }
-  });
-
-  // On load, if hash is #process show it
-  if (window.location.hash === '#process') showProcess();
-})();
+// ── PROCESS PAGE TOGGLE REMOVED ──────────────────────────────────────────────
 
 function toggleMobileNav(btn) {
   btn.classList.toggle('open');
@@ -2646,6 +2489,29 @@ function closeMobileNav() {
   handleScroll();
 })();
 
+// ── ROTATING WORD ────────────────────────────────────────────────────────────
+(function() {
+  var words = ['logos', 'brands', 'identities'];
+  var el = document.getElementById('rotatingWord');
+  if (!el) return;
+  var current = 0;
+  function rotate() {
+    current = (current + 1) % words.length;
+    el.classList.add('exit');
+    setTimeout(function() {
+      el.textContent = words[current];
+      el.classList.remove('exit');
+      el.classList.add('enter');
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          el.classList.remove('enter');
+        });
+      });
+    }, 320);
+  }
+  setInterval(rotate, 2400);
+})();
+
 // ── LIGHTBOX ──────────────────────────────────────────────────────────────
 (function() {
   var overlay = document.getElementById('lightboxOverlay');
@@ -2658,18 +2524,6 @@ function closeMobileNav() {
     item.addEventListener('click', function(e) {
       var src = item.querySelector('img').src;
       var alt = item.querySelector('img').alt;
-      img.src = src;
-      img.alt = alt;
-      overlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-  });
-
-  // Attach click handlers to process step images
-  document.querySelectorAll('.process-step-img-wrap').forEach(function(wrap) {
-    wrap.addEventListener('click', function(e) {
-      var src = wrap.querySelector('img').src;
-      var alt = wrap.querySelector('img').alt;
       img.src = src;
       img.alt = alt;
       overlay.classList.add('active');
