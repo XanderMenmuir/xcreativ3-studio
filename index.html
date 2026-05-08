@@ -2074,17 +2074,17 @@ nav.scrolled {
   </div>
   <div class="stats-inner">
     <div class="stat-item reveal">
-      <span class="stat-number"><span class="stat-accent stat-count" data-target="10000" data-suffix="+" data-comma="true">0</span></span>
+      <span class="stat-number"><span class="stat-accent stat-count" data-startyear="2019" data-startvalue="1500" data-peryear="1500" data-suffix="+" data-comma="true">0</span></span>
       <span class="stat-label">Hours Spent Designing</span>
     </div>
     <div class="stats-divider"></div>
     <div class="stat-item reveal reveal-delay-2">
-      <span class="stat-number"><span class="stat-accent stat-count" data-target="700" data-suffix="+">0</span></span>
+      <span class="stat-number"><span class="stat-accent stat-count" data-startyear="2019" data-startvalue="0" data-peryear="100" data-suffix="+">0</span></span>
       <span class="stat-label">Projects Completed</span>
     </div>
     <div class="stats-divider"></div>
     <div class="stat-item reveal reveal-delay-4">
-      <span class="stat-number"><span class="stat-accent stat-count" data-target="7" data-suffix="+">0</span></span>
+      <span class="stat-number"><span class="stat-accent stat-count" data-startyear="2019" data-suffix="+">0</span></span>
       <span class="stat-label">Years of Experience</span>
     </div>
   </div>
@@ -2537,8 +2537,19 @@ function closeMobileNav() {
 
 // ── STAT COUNTERS ─────────────────────────────────────────────────────────────
 (function() {
-  var counters = document.querySelectorAll('.stat-count[data-target]');
+  var counters = document.querySelectorAll('.stat-count[data-target], .stat-count[data-startyear]');
   if (!counters.length) return;
+  // Pre-calculate dynamic targets
+  counters.forEach(function(el) {
+    if (el.dataset.startyear) {
+      var yearsDiff = new Date().getFullYear() - parseInt(el.dataset.startyear, 10);
+      if (el.dataset.peryear) {
+        el.dataset.target = parseInt(el.dataset.startvalue, 10) + yearsDiff * parseInt(el.dataset.peryear, 10);
+      } else {
+        el.dataset.target = yearsDiff;
+      }
+    }
+  });
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (!entry.isIntersecting) return;
