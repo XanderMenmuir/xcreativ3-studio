@@ -1472,6 +1472,12 @@ nav.scrolled {
   overflow: hidden;
   background: var(--black);
 }
+.brands-heading-mobile { display: none; }
+.brands-heading-desktop { display: inline; }
+@media (max-width: 767px) {
+  .brands-heading-mobile { display: inline; }
+  .brands-heading-desktop { display: none; }
+}
 .brands-header {
   text-align: center;
   margin-bottom: 48px;
@@ -2207,7 +2213,7 @@ nav.scrolled {
 <div class="inner">
   <div class="brands-header reveal">
     <p class="section-label reveal" style="justify-content:center;">Brands</p>
-    <h2 class="section-title reveal reveal-delay-1" style="color:var(--white);text-align:center;">Well-known brands<br>I've <span class="accent">worked with</span></h2>
+    <h2 class="section-title reveal reveal-delay-1" style="color:var(--white);text-align:center;"><span class="brands-heading-desktop">Well-known brands<br>I've <span class="accent">worked with</span></span><span class="brands-heading-mobile">Well-known<br>brands I've<br><span class="accent">worked with</span></span></h2>
     <p class="brands-sub">Through agency collaborations and freelance work</p>
   </div>
   <div class="brands-marquee-wrap">
