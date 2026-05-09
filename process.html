@@ -36,8 +36,26 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
   overflow-x: hidden;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+}
+
+/* SITE LOADER */
+.site-loader {
+  position: fixed; inset: 0; z-index: 1200;
+  display: grid; place-items: center;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(180,0,13,0.15) 0%, transparent 32%),
+    #0a0a0a;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+.site-loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.site-loader img {
+  width: clamp(72px, 8vw, 108px); height: clamp(72px, 8vw, 108px);
+  filter: drop-shadow(0 0 24px rgba(180,0,13,0.15));
+  animation: loaderPulse 1.35s ease-in-out infinite;
+}
+@keyframes loaderPulse {
+  0%, 100% { opacity: 0.78; transform: scale(0.96); }
+  50% { opacity: 1; transform: scale(1); }
 }
 
 /* NAV */
@@ -485,12 +503,34 @@ footer {
 </div>
 
 <script>
-// ── FONT LOAD GATE (mirrors main site loader behaviour)
-document.fonts.ready.then(function() {
-  document.body.style.opacity = '1';
-});
-// Fallback in case fonts.ready never fires
-setTimeout(function() { document.body.style.opacity = '1'; }, 800);
+var siteLoader = null;
+
+(function() {
+  var startedAt = Date.now();
+
+  function buildLoader() {
+    if (siteLoader) return;
+    var footerMark = document.querySelector('.footer-logo-mark');
+    if (!footerMark) return;
+    siteLoader = document.createElement('div');
+    siteLoader.className = 'site-loader';
+    siteLoader.innerHTML = '<img src="' + footerMark.getAttribute('src') + '" alt="" />';
+    document.body.appendChild(siteLoader);
+  }
+
+  function hideLoader() {
+    if (!siteLoader) return;
+    var elapsed = Date.now() - startedAt;
+    var delay = Math.max(0, 850 - elapsed);
+    window.setTimeout(function() {
+      siteLoader.classList.add('hidden');
+    }, delay);
+  }
+
+  document.addEventListener('DOMContentLoaded', buildLoader, { once: true });
+  window.addEventListener('load', hideLoader, { once: true });
+  window.setTimeout(hideLoader, 4200);
+})();
 
 // ── NAV SCROLL
 (function() {
